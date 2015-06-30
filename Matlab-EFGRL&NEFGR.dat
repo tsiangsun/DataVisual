@@ -1,0 +1,467 @@
+
+%%% ----------- EFGRL -------------
+Eq FGR linear coupling (non-Condon): 
+Ohmic bath spectral density (and effective Lorentzian SD)
+
+/Users/xiangs/dropbox/code/EFGRL.cpp
+g++ -o EFGRL EFGRL.cpp -llapack -lrefblas -lgfortran
+
+
+//*******************
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+-trouble shooting noise with b10e0.1 and DeltaT = 0.2 N = 1024
+df = 0.00488281
+xoo = [0: 511]
+xoo = xoo * df * 2 * pi
+qml1001 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_b10e0.1_.dat')
+lscl1001 = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL_b10e0.1_.dat')
+semilogy(xoo, qml1001, xoo, lscl1001, 'r')
+xlim([0 6])
+ylim([1e-5  1])
+
+tre = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_t_re_b10e0.1_.dat')
+tim = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_t_im_b10e0.1_.dat')
+//The oscillation problem is the tail of C(t) is not exact zero, adding # oscillators helps, and maybe we can add a exponential decay function to the tail.
+
+
+jeff = importdata('/Users/xiangs/Dropbox/code/J_eff(omega).dat')
+nm = importdata('/Users/xiangs/Dropbox/code/normal_mode_freq.dat')
+huangrhys = importdata('/Users/xiangs/Dropbox/code/Huang-Rhys.dat')
+qm = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR.dat')
+qmc = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_cont.dat')
+qml = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL.dat')
+lscl = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL.dat')
+
+
+
+
+Figure 1 - compare LSC with Exact QM in EFGR linear coupling(non-Condon)
+
+semilogy(xo, qml, xo, lscl, 'r')
+
+xlim([0 15])
+ylim([1e-10  1])
+
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+
+axis([0 15 0 0.015])
+
+legend('exact','LSC')
+
+
+Figure 2 - EFGRL comparison exact vs LSC in different temp and friction
+
+0.1 - 1 - 10 ratio
+
+qm0110 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_b0.1e10_.dat')
+qmc0110 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_cont_b0.1e10_.dat')
+qml0110 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_b0.1e10_.dat')
+lscl0110 = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL_b0.1e10_.dat')
+
+keep beta the same ---
+
+semilogy( xo, qml0101, 'b', xo, lscl0101, 'b--', xo, qml0110, 'c', xo, lscl011, 'c--', xo, qml0110, 'r', xo, lscl0110, 'r--')
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+xlim([0 8])
+ylim([1e-6 1])
+legend('\eta=0.1', '\eta=0.1 lsc', '\eta=1', '\eta=1 lsc', '\eta=10', '\eta=10 lsc')
+
+semilogy( xo, qml101, 'b', xo, lscl101, 'b--', xo, qml11, 'c', xo, lscl11, 'c--', xo, qml110, 'r', xo, lscl110, 'r--')
+
+semilogy( xoo, qml1001, 'b', xoo, lscl1001, 'b--', xo, qml10_1, 'c', xo, lscl10_1, 'c--', xo, qml1010, 'r', xo, lscl1010, 'r--')
+
+keep eta the same ---
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+xlim([0 8])
+ylim([1e-6 1])
+legend('\beta=0.1','\beta=0.1 lsc', '\beta=1', '\beta=1 lsc', '\beta=10', '\beta=10 lsc', 'FontSize',24)
+
+semilogy( xo, qml0101, 'r', xo, lscl0101, 'r--', xo, qml101, 'c', xo, lscl101, 'c--', xoo, qml1001, 'b', xoo, lscl1001, 'b--')
+
+
+semilogy( xo, qml011, 'r', xo, lscl011, 'r--', xo, qml11, 'c', xo, lscl11, 'c--', xo, qml10_1, 'b', xo, lscl10_1, 'b--')
+
+semilogy( xo, qml0110, 'r', xo, lscl0110, 'r--', xo, qml110, 'c', xo, lscl110, 'c--', xo, qml1010, 'b', xo, lscl1010, 'b--')
+
+
+
+0.2 - 1 - 5 ratio 
+
+qm0202 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_b0.2e0.2_.dat')
+qmc0202 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_cont_b0.2e0.2_.dat')
+qml0202 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_b0.2e0.2_.dat')
+lscl0202 = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL_b0.2e0.2_.dat')
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+xlim([0 10])
+ylim([1e-10 1])
+legend('b0.2','LSC', 'b1', 'LSC', 'b5', 'LSC', 'FontSize',24)
+
+keep beta the same ---
+
+semilogy( xo, qml0202, 'b', xo, lscl0202, 'b--', xo, qml021, 'c', xo, lscl021, 'c--', xo, qml025, 'r', xo, lscl025, 'r--')
+
+semilogy( xo, qml102, 'b', xo, lscl102, 'b--', xo, qml11, 'c', xo, lscl11, 'c--', xo, qml15, 'r', xo, lscl15, 'r--')
+
+
+semilogy( xo, qml502, 'b', xo, lscl502, 'b--', xo, qml51, 'c', xo, lscl51, 'c--', xo, qml55, 'r', xo, lscl55, 'r--')
+
+keep eta the same ---
+
+semilogy( xo, qml0202, 'r', xo, lscl0202, 'r--', xo, qml102, 'c', xo, lscl102, 'c--', xo, qml502, 'b', xo, lscl502, 'b--')
+
+semilogy( xo, qml021, 'r', xo, lscl021, 'r--', xo, qml11, 'c', xo, lscl11, 'c--', xo, qml51, 'b', xo, lscl51, 'b--')
+
+semilogy( xo, qml025, 'r', xo, lscl025, 'r--', xo, qml15, 'c', xo, lscl15, 'c--', xo, qml55, 'b', xo, lscl55, 'b--')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%% ----------------------- NEFGR --------------------------------------
+d_omega_DA = 0.0613592
+wda = [0 : 255]
+wda = wda * d_omega_DA
+
+dtp = 0.2
+tp = [0:199]
+tp = tp * dtp
+
+qmeb1e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_EFGR_b1e1_.dat')
+
+qmnetp5 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b1e1_s1tp5.dat')
+qmnew1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b1e1_s1w1.dat')
+pqmnew1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b1e1_s1w1.dat')
+
+
+Figure 3 ---- fix tp and scan omega_DA
+
+semilogy(wda, qmeb1e1, wda, qmnetp5)
+semilogy(wda, qmeb1e1, 'k' , wda, qmnetp5, 'r' , wda, qmnetp10, 'c',  wda, qmnetp20,'m', wda, qmnetp40,'b')
+
+xlabel('\omega_{DA} / \omega_{c}','FontSize',40)
+ylabel('k(t^\prime) / \omega_{c}','FontSize', 40)
+xlim([0 8])
+ylim([1e-6 1e-1])
+
+
+Figure 4 --- fix omega_DA and scan tp essential plot!!!!
+
+plot(tp, qmnew0, tp, qmnew05, tp, qmnew1, tp, qmnew15, tp, qmnew2, tp, qmnew3, tp, qmnew4)
+
+semilogy(tp, qmnew0, tp, qmnew05, tp, qmnew1, tp, qmnew15, tp, qmnew2, tp, qmnew3, tp, qmnew4)
+
+xlabel('\omega_{c}t^\prime ','FontSize',40)
+ylabel('k(t^\prime) / \omega_{c}','FontSize', 40)
+legend('\omega_{DA}=0.5','\omega_{DA}=1', '\omega_{DA}=1.5', '\omega_{DA}=2', '\omega_{DA}=3' )
+xlim([0 25])
+
+
+Figure 5 & 6 --- compare noneq shifting s=1 vs s=2 
+
+semilogy(wda, qmnetp5, wda, qmnetp5s2, 'r')
+
+plot(tp, qmnew1, tp, qmnew1s2,'r', tp, qmnew1s2,'c')
+xlabel('\omega_{c} t','FontSize',40)
+ylabel('k(t)/\omega_c','FontSize', 40)
+
+semilogy(tp, pqmnew1, tp, pqmnew1s2,'r', tp, pqmnew1s10, 'c')
+xlabel('\omega_{c} t','FontSize',40)
+ylabel('P(t)','FontSize', 40)
+
+
+Figure 7 - NEFGR plateau number compared with Eq FGR value
+xod = [0  0.5 1 1.5 2 3 4 5]
+plat=[0.0230 0.0256 0.0216 0.0143  0.0077 0.0014  0.00016393 3.08594e-05]
+
+plot(xo, qmeb1e1, xod, plat,'ro','MarkerSize',10)
+xlabel(' \omega_{DA} / \omega_{c}','FontSize',40)
+ylabel('k^{eq} / \omega_{c}','FontSize', 40)
+
+xlim([0 5])
+ylim([1e-4 1e-1])
+
+>>>>> Relative oscillation : : 
+plot(tp, qmnew0/plat(1), tp, qmnew05/plat(2), tp, qmnew1/plat(3), tp, qmnew15/plat(4), tp, qmnew2/plat(5), tp, qmnew3/plat(6))
+xlabel('\omega_{c} t^\prime','FontSize',40)
+ylabel('k(t^\prime) / k^{eq}','FontSize', 40)
+xlim([0 10])
+
+>>>> k(t')/keq vs. keq*t'
+plot(tp*plat(1), qmnew0/plat(1), tp*plat(2), qmnew05/plat(2), tp*plat(3), qmnew1/plat(3), tp*plat(4), qmnew15/plat(4), tp*plat(5), qmnew2/plat(5), tp*plat(6), qmnew3/plat(6))
+xlabel('k^{eq} t\prime','FontSize',40)
+ylabel('k(t\prime) / k^{eq}','FontSize', 40)
+
+
+Figure 8 - NEFGR of Prob P(t') vs t'
+pqmnew1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b1e1_s1w1.dat')
+
+plot(tp, pqmnew0, tp, pqmnew05, tp, pqmnew1, tp, pqmnew15, tp, pqmnew2, tp, pqmnew3)
+xlabel(' t/ \omega_{c}^{-1}','FontSize',40)
+ylabel('P(t)','FontSize', 40)
+xlim([0 40])
+ylim([0.4 1])
+legend('0', '0.5', '1', '1.5', '2', '3')
+legend boxoff
+
+from qme
+xod = [0  0.5 1 1.5 2 3 4] 
+keq = [0.022965  0.0255738  0.021056  0.0138035  0.00741248  0.00132891  0.0001481]
+
+plot(tp, pqmnew0, tp, pqmnew05, tp, pqmnew1, tp, pqmnew15, tp, pqmnew2, tp, pqmnew3)
+plot(tp, exp(-tp*keq(1)),'--', tp, exp(-tp*keq(2)),'--', tp, exp(-tp*keq(3)),'--', tp, exp(-tp*keq(4)),'--',tp, exp(-tp*keq(5)),'--',tp, exp(-tp*keq(6)),'--')
+
+
+Figure 9 - ln P (t') vs t'
+
+pqmnew1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b1e1_s1w1.dat')
+
+plot(tp, log(pqmnew0), tp, log(pqmnew05), tp, log(pqmnew1), tp, log(pqmnew15), tp, log(pqmnew2), tp, log(pqmnew3))
+plot(tp, -tp*keq(1),'--', tp, -tp*keq(2),'--', tp, -tp*keq(3),'--', tp, -tp*keq(4),'--',tp, -tp*keq(5),'--',tp, -tp*keq(6),'--')
+
+*** NEW *** modified plot:
+
+semilogy(tp, pqmnew0, tp, pqmnew05, tp, pqmnew1, tp, pqmnew15, tp, pqmnew2, tp, pqmnew3)
+hold on
+semilogy(tp, exp(-tp*keq(1)),'--', tp, exp(-tp*keq(2)),'--', tp, exp(-tp*keq(3)),'--', tp, exp(-tp*keq(4)),'--',tp, exp(-tp*keq(5)),'--',tp, exp(-tp*keq(6)),'--')
+hold off
+
+xlabel(' \omega_{c} t ','FontSize',40)
+ylabel('P(t)','FontSize', 40)
+xlim([0 25])
+ylim([0.5 1])
+legend('0', '0.5', '1', '1.5', '2', '3')
+
+*** NEW *** ln P(t) vs keq*t
+plot(tp*plat(1), pqmnew0, tp*plat(2), pqmnew05, tp*plat(3), pqmnew1, tp*plat(4), pqmnew15, tp*plat(5), pqmnew2, tp*plat(6), pqmnew3)
+hold on
+plot(tp*plat(1), exp(-tp*keq(1)),'--', tp*plat(2), exp(-tp*keq(2)),'--', tp*plat(3), exp(-tp*keq(3)),'--', tp*plat(4), exp(-tp*keq(4)),'--',tp*plat(5), exp(-tp*keq(5)),'--',tp*plat(6), exp(-tp*keq(6)),'--')
+hold off
+xlim([0 0.5])
+ylim([0.5 1])
+xlabel(' k^{eq} t ','FontSize',40)
+ylabel('P(t)','FontSize', 40)
+
+
+Figure 10 - P(t) vs t with fixed omega_DA = 0 or 3 with beta= 0.2, 1, 5 eta= 0.5, 1, 5 
+
+
+new3b5e05 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b5e0.5_s1w3.dat')
+pnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b5e0.5_s1w3.dat')
+new3b5e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b5e1_s1w3.dat')
+pnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b5e1_s1w3.dat')
+new3b5e5 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b5e5_s1w3.dat')
+pnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b5e5_s1w3.dat')
+new3b1e05 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b1e0.5_s1w3.dat')
+pnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b1e0.5_s1w3.dat')
+new3b1e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b1e1_s1w3.dat')
+pnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b1e1_s1w3.dat')
+new3b1e5 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b1e5_s1w3.dat')
+pnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b1e5_s1w3.dat')
+new3b02e05 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b0.2e0.5_s1w3.dat')
+pnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b0.2e0.5_s1w3.dat')
+new3b02e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b0.2e1_s1w3.dat')
+pnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b0.2e1_s1w3.dat')
+new3b02e5 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b0.2e5_s1w3.dat')
+pnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b0.2e5_s1w3.dat')
+
+
+
+
+plot(tp, pnew0b02e5,'r', tp, pnew0b1e5,'c', tp, pnew0b5e5, 'b', tp, pnew0b02e1,'r--', tp, pnew0b1e1,'c--', tp, pnew0b5e1, 'b--', tp, pnew0b02e05,'r-.', tp, pnew0b1e05,'c-.', tp, pnew0b5e05, 'b-.')
+
+plot(tp, pnew3b02e5,'r', tp, pnew3b1e5,'c', tp, pnew3b5e5, 'b', tp, pnew3b02e1,'r--', tp, pnew3b1e1,'c--', tp, pnew3b5e1, 'b--', tp, pnew3b02e05,'r-.', tp, pnew3b1e05,'c-.', tp, pnew3b5e05, 'b-.')
+
+xlabel(' \omega_{c} t','FontSize',40)
+ylabel('P(t)','FontSize', 40)
+xlim([0 20])
+ylim([0.6  1])
+legend('\beta=0.2', '\beta=1', '\beta=5')
+
+run fix_lines.m script
+
+
+Figure 11 - k(t') vs t' with fixed omega_DA = 0 or 3 but beta = eta= 0.2,1, 5 choices
+
+plot(tp, new0b02e5, tp, new0b02e1, tp, new0b02e05)
+plot(tp, new0b1e5, tp, new0b1e1, tp, new0b1e05)
+plot(tp, new0b5e5, tp, new0b5e1, tp, new0b5e05)
+xlabel(' \omega_{c} t\prime','FontSize',36)
+ylabel('k(t\prime)','FontSize', 36)
+legend('\eta=5', '\eta=1', '\eta=0.5')
+
+alternative as in P(t)
+
+plot(tp, new0b02e5,'r', tp, new0b1e5,'c', tp, new0b5e5, 'b', tp, new0b02e1,'r--', tp, new0b1e1,'c--', tp, new0b5e1, 'b--', tp, new0b02e05,'r-.', tp, new0b1e05,'c-.', tp, new0b5e05, 'b-.')
+
+plot(tp, new3b02e5,'r', tp, new3b1e5,'c', tp, new3b5e5, 'b', tp, new3b02e1,'r--', tp, new3b1e1,'c--', tp, new3b5e1, 'b--', tp, new3b02e05,'r-.', tp, new3b1e05,'c-.', tp, new3b5e05, 'b-.')
+
+
+Figure 12- Eq FGR Condon 
+
+qmeb1e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_EFGR_b1e1_.dat')
+
+semilogy(xo, qmeb02e5,'r', xo, qmeb1e5,'c', xo, qmeb5e5, 'b', xo, qmeb02e1,'r--', xo, qmeb1e1,'c--', xo, qmeb5e1, 'b--', xo, qmeb02e02,'r-.', xo, qmeb1e02,'c-.', xo, qmeb5e02, 'b-.')
+xlabel('\omega_{DA} / \omega_{c}','FontSize',40)
+ylabel('k^{eq} / \omega_{c}','FontSize', 40)
+xlim([0 5])
+ylim([1e-4 1e-1])
+
+lsc = importdata('/Users/xiangs/Dropbox/code/EFGR_lsc.dat')
+tre = importdata('/Users/xiangs/Dropbox/code/EFGR_tre_lsc.dat')
+tim = importdata('/Users/xiangs/Dropbox/code/EFGR_tim_lsc.dat')
+
+
+
+Figure 13 - EFGR Condon fix omega_DA=1 and scan eta
+
+wave1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/EFGR_lsc.dat')
+cave1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/EFGR_CAV.dat')
+cde1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/EFGR_CD.dat')
+w0e1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/EFGR_marcus-levich.dat')
+marcuse1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/EFGR_marcus.dat')
+
+semilogy(xo, wave1, xo, cave1, xo, cde1(1:256), xo, w0e1, xo, marcuse1)
+
+at omega_DA=3 (beta=2) : WAV, CAV, CD, W-0(marcus-levich) Marcus
+
+etaarray = [0.1  0.2  0.3  0.4  0.5  0.6   0.7   0.8   0.9  1.0        ]
+
+wave = [0.000374658  0.00034677  0.000353898]
+
+cave = [0.000317106  0.000286282 0.00029378]
+
+cde = [0.000170707 0.00015529  0.00015807]
+
+w0e = [0.000102315 0.000102175 0.000102036 ]
+
+marce = [6.62077e-05  6.62077e-05  6.62077e-05]
+
+
+Figure 14 - comparison between approximations for NEFGR Condon case
+
+new0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_NEFGR_b0.2e1_s1w0.dat')
+cavnew0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/CAV_NEFGR_b0.2e1_s1w0.dat')
+cdnew0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/CD_NEFGR_b0.2e1_s1w0.dat')
+w0new0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/W0_NEFGR_b0.2e1_s1w0.dat')
+marcnew0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/Marcus_NEFGR_b0.2e1_s1w0.dat')
+
+pnew0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_P_NEFGR_b0.2e1_s1w0.dat')
+cavpnew0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/CAV_P_NEFGR_b0.2e1_s1w0.dat')
+cdpnew0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/CD_P_NEFGR_b0.2e1_s1w0.dat')
+w0pnew0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/W0_P_NEFGR_b0.2e1_s1w0.dat')
+marcpnew0b02e02 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/Marcus_P_NEFGR_b0.2e1_s1w0.dat')
+
+Plot - k(t') vs t' 
+plot(tp, new0b5e1,  tp, cavnew0b5e1,  tp, cdnew0b5e1, tp, w0new0b5e1, tp, marcnew0b5e1)
+ylim([0.01 0.02])
+ylim([0.015 0.03])
+xlim([0 40])
+xlabel(' t^\prime / \omega_{c}^{-1}','FontSize',30)
+ylabel('k(t^\prime) / \omega_c','FontSize', 30)
+legend('W-AV', 'C-AV', 'C-D', 'W-0', 'Marcus')
+
+
+SUBPLOT **** 3x3 Full k(t') vs t' at fixed omega_DA
+
+subplot(3,3,1)
+plot(tp, new3b2e05,  tp, cavnew3b2e05,  tp, cdnew3b2e05, tp, w0new3b2e05, tp, marcnew3b2e05)
+subplot(3,3,2)
+plot(tp, new3b2e1,  tp, cavnew3b2e1,  tp, cdnew3b2e1, tp, w0new3b2e1, tp, marcnew3b2e1)
+subplot(3,3,3)
+plot(tp, new3b2e2,  tp, cavnew3b2e2,  tp, cdnew3b2e2, tp, w0new3b2e2, tp, marcnew3b2e2)
+subplot(3,3,4)
+plot(tp, new3b1e05,  tp, cavnew3b1e05,  tp, cdnew3b1e05, tp, w0new3b1e05, tp, marcnew3b1e05)
+subplot(3,3,5)
+plot(tp, new3b1e1,  tp, cavnew3b1e1,  tp, cdnew3b1e1, tp, w0new3b1e1, tp, marcnew3b1e1)
+subplot(3,3,6)
+plot(tp, new3b1e2,  tp, cavnew3b1e2,  tp, cdnew3b1e2, tp, w0new3b1e2, tp, marcnew3b1e2)
+subplot(3,3,7)
+plot(tp, new3b05e05,  tp, cavnew3b05e05,  tp, cdnew3b05e05, tp, w0new3b05e05, tp, marcnew3b05e05)
+subplot(3,3,8)
+plot(tp, new3b05e1,  tp, cavnew3b05e1,  tp, cdnew3b05e1, tp, w0new3b05e1, tp, marcnew3b05e1)
+subplot(3,3,9)
+plot(tp, new3b05e2,  tp, cavnew3b05e2,  tp, cdnew3b05e2, tp, w0new3b05e2, tp, marcnew3b05e2)
+
+subplot(3,3,1)
+ylim([-0.002 0.003])
+subplot(3,3,2)
+ylim([-0.002 0.003])
+subplot(3,3,3)
+ylim([-0.002 0.003])
+subplot(3,3,4)
+ylim([0 0.004])
+subplot(3,3,5)
+ylim([0 0.004])
+subplot(3,3,6)
+ylim([0 0.004])
+subplot(3,3,7)
+ylim([0.002 0.007])
+subplot(3,3,8)
+ylim([0.002 0.007])
+subplot(3,3,9)
+ylim([0.002 0.007])
+subplot(3,3,4)
+ylabel('P(t) ','FontSize', 24)
+subplot(3,3,8)
+xlabel(' t / \omega_{c}^{-1}','FontSize',24)
+
+
+Main plot - P(t) vs t
+plot(tp, pnew0b5e1,  tp, cavpnew0b5e1,  tp, cdpnew0b5e1, tp, w0pnew0b5e1, tp, marcpnew0b5e1)
+ylim([0.7 1])
+ylim([0.93 1])
+ylim([0.8 1])
+ylim([0.9 1])
+ylim([0.99 1]) 
+ylim([0.97 1])
+ylim([0.6 1])
+xlim([0 20])
+xlabel(' t / \omega_{c}^{-1}','FontSize',30)
+ylabel('P(t) ','FontSize', 30)
+legend('W-AV', 'C-AV', 'C-D', 'W-0', 'Marcus')
+
+
+Figure 15 - Comparison of Eq FGR plot - beta/eta = 0.5 1 2or 5
+
+qmeb1e1 = importdata('/Users/xiangs/Dropbox/code/NE_FGR/QMLSC_EFGR_b1e1_.dat')
+
+semilogy(xo, qmeb05e2,'r', xo, qmeb1e2,'c', xo, qmeb2e2, 'b', xo, qmeb05e1,'r--', xo, qmeb1e1,'c--', xo, qmeb2e1, 'b--', xo, qmeb05e05,'r-.', xo, qmeb1e05,'c-.', xo, qmeb2e05, 'b-.')
+
+xlabel('\omega_{DA} / \omega_{c}','FontSize',40)
+ylabel('k^{eq} / \omega_{c}','FontSize', 40)
+xlim([0 5])
+ylim([1e-4 1e-1])
+legend('\beta=0.5', '\beta=1', '\beta=5')
+fix_lines('EFGR_be0.5-5.eps')   with external script fix_lines.m in the same folder
+
+
+
+
+
+
+
+
+
+

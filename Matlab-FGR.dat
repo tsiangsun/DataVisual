@@ -1,0 +1,269 @@
+/Users/xsun/dropbox/code
+
+lsc = importdata('/Users/xsun/Dropbox/code/LSC_re.dat')
+inh = importdata('/Users/xsun/Dropbox/code/inh_re.dat')
+cla = importdata('/Users/xsun/Dropbox/code/CL_avg_re.dat')
+cld = importdata('/Users/xsun/Dropbox/code/CL_donor_re.dat')
+cui = importdata('/Users/xsun/Dropbox/code/2cumu_inh_re.dat')
+marcus = importdata('/Users/xsun/Dropbox/code/marcus.dat')
+marcusl = importdata('/Users/xsun/Dropbox/code/marcus-levich.dat')
+SD = importdata('/Users/xsun/Dropbox/code/SpectralDensity.dat')
+
+
+/Users/xiangs/Dropbox/code
+lsc = importdata('/Users/xiangs/Dropbox/code/LSC_re.dat')
+inh = importdata('/Users/xiangs/Dropbox/code/inh_re.dat')
+cla = importdata('/Users/xiangs/Dropbox/code/CL_avg_re.dat')
+cld = importdata('/Users/xiangs/Dropbox/code/CL_donor_re.dat')
+cui = importdata('/Users/xiangs/Dropbox/code/2cumu_inh_re.dat')
+marcus = importdata('/Users/xiangs/Dropbox/code/marcus.dat')
+marcusl = importdata('/Users/xiangs/Dropbox/code/marcus-levich.dat')
+SD = importdata('/Users/xiangs/Dropbox/code/SpectralDensity.dat')
+
+
+
+******* Ohmic SD **********
+>>>>>Figure - ana_Ohmic_b1e1.eps
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+semilogy(xo ,lsc, 'b', xo(2:256/20:256),lsc(2:256/20:256),'bo','MarkerSize',8)
+hold on 
+semilogy(xo, cla, 'r') 
+semilogy(xo, cld(1:256), 'color',[0 0.75 0.75])
+semilogy(xo, inh, 'color',[0.75 0 0.75])
+semilogy(xo, cui, 'g')
+hold off
+
+legend('W-AV','W-AV','C-AV', 'C-D', 'W-0','Marcus')
+
+axis([0 10 10^-4 10^-1])
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+
+xlim([0 10])
+legend('boxoff')
+
+>>>>>Figure - ana_Ohmic_b1e1_m.eps
+
+plot(xo, lsc,'b', xo, marcus, 'g', xo, marcusl, 'r')
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+legend('exact','Marcus','Marcus-Levich')
+axis([0 10 0 0.015])
+
+******* Gaussian SD **********
+df = 0.00325521
+x = [0:511]
+x = x * df * 2 *pi
+
+>>>>>Figure - ana_Gauss_b1e1.eps
+
+lsc = importdata('/Users/xiangs/Dropbox/code/LSC_re.dat')
+inh = importdata('/Users/xiangs/Dropbox/code/inh_re.dat')
+cla = importdata('/Users/xiangs/Dropbox/code/CL_avg_re.dat')
+cld = importdata('/Users/xiangs/Dropbox/code/CL_donor_re.dat')
+cui = importdata('/Users/xiangs/Dropbox/code/2cumu_inh_re.dat')
+
+semilogy(x ,lsc, 'b',x(2:512/20:512),lsc(2:512/20:512),'bo','MarkerSize',8)
+hold on 
+semilogy(x, cla, 'r') 
+semilogy(x, cld(1:512), 'color',[0 0.75 0.75])
+semilogy(x, inh, 'color',[0.75 0 0.75])
+semilogy(x, cui, 'g')
+hold off
+
+axis([0 10 10^-10 10^0])
+xlabel('\omega / \omega_{op}','FontSize', 36)
+ylabel('k / \omega_{op}','FontSize', 36)
+xlim([0 10])
+legend('W-AV' , 'W-AV', 'C-AV', 'C-D', 'W-0','Marcus')
+
+>>>>>Figure - ana_Gauss_b1e1_m.eps
+
+plot(x, lsc,'b', x, marcus, 'g', x, marcusl, 'r')
+
+xlim([0 6])
+axis([0 6 0 0.1])
+xlabel('\omega / \omega_{op}','FontSize',40)
+ylabel('k / \omega_{op}','FontSize', 40)
+legend('exact','Marcus','Marcus-Levich')
+
+>>> Figure - Avg_error_Gau_b1e1.eps
+
+semilogy(avg, gau_b1e1,'o-','MarkerSize',8)
+ylim([1e-2 1e-4])
+
+
+semilogy(avg, ohm_b02e5,'ro-','MarkerSize',9)
+hold on
+semilogy(avg, ohm_b02e1,'rs--','MarkerSize',9)
+semilogy(avg, ohm_b02e02,'r+:','MarkerSize',9)
+semilogy(avg, ohm_b1e5,'go-','MarkerSize',9)
+semilogy(avg, ohm_b1e1,'gs--','MarkerSize',9)
+semilogy(avg, ohm_b1e02,'g+:','MarkerSize',9)
+semilogy(avg, ohm_b5e5,'bo-','MarkerSize',9)
+semilogy(avg, ohm_b5e1,'bs--','MarkerSize',9)
+semilogy(avg, ohm_b5e02,'b+:','MarkerSize',9)
+hold off
+
+semilogy(avg, ohm_b02e5,'r-')
+hold on
+semilogy(avg, ohm_b02e1,'r--')
+semilogy(avg, ohm_b02e02,'r:')
+semilogy(avg, ohm_b1e5,'g-')
+semilogy(avg, ohm_b1e1,'g--')
+semilogy(avg, ohm_b1e02,'g:')
+semilogy(avg, ohm_b5e5,'b-')
+semilogy(avg, ohm_b5e1,'b--')
+semilogy(avg, ohm_b5e02,'b:')
+hold off
+
+xlabel('#Traj. x10^6','FontSize',40)
+ylabel('log(error)','FontSize', 40)
+
+semilogy(avg, gau_b02e5,'r-')
+hold on
+semilogy(avg, gau_b02e1,'r--')
+semilogy(avg, gau_b02e02,'r:')
+semilogy(avg, gau_b1e5,'g-')
+semilogy(avg, gau_b1e1,'g--')
+semilogy(avg, gau_b1e02,'g:')
+semilogy(avg, gau_b5e5,'b-')
+semilogy(avg, gau_b5e1,'b--')
+semilogy(avg, gau_b5e02,'b:')
+hold off
+
+xlabel('#Traj. x10^6','FontSize',40)
+ylabel('log(error)','FontSize', 40)
+
+
+
+
+
+====================
+EFGRL
+
+qm_el = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_re.dat')
+lsc_el = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL_re.dat')
+
+semilogy(x,lsc_el, x,qm_el)
+
+
+NEFGR C
+
+qm_nc = importdata('/Users/xiangs/Dropbox/code/Exact_NEFGRC_Gau_b1e1_tp=1.dat')
+
+
+
+=======================
+EFGR_Jeff
+Parameters LEN=512, deltaT = 0.2
+
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+lsc = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_Jeff.dat') 
+inh = importdata('/Users/xiangs/Dropbox/code/E_FGR/inh_EFGR_Jeff.dat')
+cav = importdata('/Users/xiangs/Dropbox/code/E_FGR/CAV_EFGR_Jeff.dat')
+cd = importdata('/Users/xiangs/Dropbox/code/E_FGR/CD_EFGR_Jeff.dat')
+marcus = importdata('/Users/xiangs/Dropbox/code/E_FGR/Marcus_EFGR_Jeff.dat')
+marcusl = importdata('/Users/xiangs/Dropbox/code/E_FGR/Marcus-levich_EFGR_Jeff.dat')
+
+SD = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff(omega).dat')
+lsc_nm = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_nm.dat')
+
+
+>>>>>> Figure 1 - compare Jeff with exact numerical normal modes
+
+lsc_jeff = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_Jeff.dat') 
+lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_Jeff2.dat') 
+lsc_nm = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_nm.dat') 
+
+semilogy(xo, lsc_jeff,'b', xo, lsc_jeff2, 'c' , xo, lsc_nm, 'r')
+
+xlabel('\omega_{DA} / \omega_c','FontSize', 36)
+ylabel('k / \omega_c','FontSize', 36)
+xlim([ 0 15])
+ylim([1e-6  1])
+legend('J_{eff}(1)','J_{eff}(2)', 'exact')
+
+>>>>>> Figure 2 - EFGR approximations with Jeff (evenly sampled)
+
+semilogy(xo ,lsc, 'b', xo(2:256/20:256),lsc(2:256/20:256),'bo','MarkerSize',8)
+hold on 
+semilogy(xo, cav, 'r') 
+semilogy(xo, cd(1:256), 'color',[0 0.75 0.75])
+semilogy(xo, marcusl, 'color',[0.75 0 0.75])
+semilogy(xo, marcus, 'g')
+hold off
+
+legend('W-AV','W-AV','C-AV', 'C-D', 'W-0','Marcus')
+
+axis([0 10 10^-4 10^-1])
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+
+xlim([0 10])
+ylim([1e-10  1])
+
+legend('boxoff')
+
+
+-----
+Parameters LEN=1024, deltaT=0.3
+df = 0.00325521
+x = [0: 511]
+x = x * df * 2 * pi
+
+
+semilogy(x ,lsc, 'b', x(2:512/20:512),lsc(2:512/20:512),'bo','MarkerSize',8)
+hold on 
+semilogy(x, cav, 'r') 
+semilogy(x, cd(1:512), 'color',[0 0.75 0.75])
+semilogy(x, inh, 'color',[0.75 0 0.75])
+semilogy(x, marcus, 'g')
+hold off
+
+
+xlim([0 8])
+ylim([1e-8  1])
+
+
+>>>>>>> Figure 3 - compare Jeff at two limits with normal mode Jeff from histogram
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff(omega).dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff2(omega).dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_nm_hist.dat')
+
+bin = 0: 15/200:15-15/200
+w = 15/1000: 15/1000 : 15-15/1000
+
+bar(bin,jnm)
+hold on
+plot(w, jeff1, 'r', w, jeff2, 'g')
+hold off
+xlim([0 6])
+ylim([0  0.5])
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('J(\omega)','FontSize', 40)
+
+>>>>>>> Figure 4 - compare Jeff integral at two limits with exact normal mode
+
+dt =0 .2
+t= 0:511
+t= t - 256
+t= t * dt
+
+plot(t, nm_re,'r', t, jeff_re,'b', t, jeff2_re, 'c')
+plot(t, nm_im,'r', t, jeff_im,'b', t, jeff2_im, 'c')
+xlabel('\omega_c t')
+ylabel('Re')
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
+legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+legend boxoff
+
