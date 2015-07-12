@@ -254,13 +254,13 @@ ylabel('J(\omega)','FontSize', 40)
 
 >>>>>>> Figure 4 - compare Jeff integral at two limits with exact normal mode
 
-dt =0 .2
+dt = 0.2
 t= 0:511
 t= t - 256
 t= t * dt
 
-plot(t, nm_re,'r', t, jeff_re,'b', t, jeff2_re, 'c')
-plot(t, nm_im,'r', t, jeff_im,'b', t, jeff2_im, 'c')
+plot(t, nm_re1,'r', t, jeff_re1,'b', t, jeff2_re1, 'c')
+plot(t, nm_im1,'r', t, jeff_im1,'b', t, jeff2_im1, 'c')
 xlabel('\omega_c t')
 ylabel('Re')
 annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')

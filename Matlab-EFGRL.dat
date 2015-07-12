@@ -1,0 +1,168 @@
+
+%%% ----------- EFGRL -------------
+Eq FGR linear coupling (non-Condon): 
+Ohmic bath spectral density (and effective Lorentzian SD)
+
+/Users/xiangs/dropbox/code/EFGRL.cpp
+g++ -o EFGRL EFGRL.cpp -llapack -lrefblas -lgfortran
+
+
+//*******************
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+-trouble shooting noise with b10e0.1 and DeltaT = 0.2 N = 1024
+df = 0.00488281
+xoo = [0: 511]
+xoo = xoo * df * 2 * pi
+qml1001 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_b10e0.1_.dat')
+lscl1001 = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL_b10e0.1_.dat')
+semilogy(xoo, qml1001, xoo, lscl1001, 'r')
+xlim([0 6])
+ylim([1e-5  1])
+
+tre = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_t_re_b10e0.1_.dat')
+tim = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_t_im_b10e0.1_.dat')
+//The oscillation problem is the tail of C(t) is not exact zero, adding # oscillators helps, and maybe we can add a exponential decay function to the tail.
+
+
+jeff = importdata('/Users/xiangs/Dropbox/code/J_eff(omega).dat')
+nm = importdata('/Users/xiangs/Dropbox/code/normal_mode_freq.dat')
+huangrhys = importdata('/Users/xiangs/Dropbox/code/Huang-Rhys.dat')
+qm = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR.dat')
+qmc = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_cont.dat')
+qml = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL.dat')
+lscl = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL.dat')
+
+
+
+
+Figure 1 - compare LSC with Exact QM in EFGR linear coupling(non-Condon)
+
+semilogy(xo, qml, xo, lscl, 'r')
+
+xlim([0 15])
+ylim([1e-10  1])
+
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+
+axis([0 15 0 0.015])
+
+legend('exact','LSC')
+
+
+Figure 2 - EFGRL comparison exact vs LSC in different temp and friction
+
+0.1 - 1 - 10 ratio
+
+qm0110 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_b0.1e10_.dat')
+qmc0110 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_cont_b0.1e10_.dat')
+qml0110 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_b0.1e10_.dat')
+lscl0110 = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL_b0.1e10_.dat')
+
+keep beta the same ---
+
+semilogy( xo, qml0101, 'b', xo, lscl0101, 'b--', xo, qml0110, 'c', xo, lscl011, 'c--', xo, qml0110, 'r', xo, lscl0110, 'r--')
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+xlim([0 8])
+ylim([1e-6 1])
+legend('\eta=0.1', '\eta=0.1 lsc', '\eta=1', '\eta=1 lsc', '\eta=10', '\eta=10 lsc')
+
+semilogy( xo, qml101, 'b', xo, lscl101, 'b--', xo, qml11, 'c', xo, lscl11, 'c--', xo, qml110, 'r', xo, lscl110, 'r--')
+
+semilogy( xoo, qml1001, 'b', xoo, lscl1001, 'b--', xo, qml10_1, 'c', xo, lscl10_1, 'c--', xo, qml1010, 'r', xo, lscl1010, 'r--')
+
+keep eta the same ---
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+xlim([0 8])
+ylim([1e-6 1])
+legend('\beta=0.1','\beta=0.1 lsc', '\beta=1', '\beta=1 lsc', '\beta=10', '\beta=10 lsc', 'FontSize',24)
+
+semilogy( xo, qml0101, 'r', xo, lscl0101, 'r--', xo, qml101, 'c', xo, lscl101, 'c--', xoo, qml1001, 'b', xoo, lscl1001, 'b--')
+
+
+semilogy( xo, qml011, 'r', xo, lscl011, 'r--', xo, qml11, 'c', xo, lscl11, 'c--', xo, qml10_1, 'b', xo, lscl10_1, 'b--')
+
+semilogy( xo, qml0110, 'r', xo, lscl0110, 'r--', xo, qml110, 'c', xo, lscl110, 'c--', xo, qml1010, 'b', xo, lscl1010, 'b--')
+
+
+
+0.2 - 1 - 5 ratio 
+
+qm0202 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_b0.2e0.2_.dat')
+qmc0202 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGR_cont_b0.2e0.2_.dat')
+qml0202 = importdata('/Users/xiangs/Dropbox/code/Exact_EFGRL_b0.2e0.2_.dat')
+lscl0202 = importdata('/Users/xiangs/Dropbox/code/LSC_EFGRL_b0.2e0.2_.dat')
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+xlim([0 10])
+ylim([1e-10 1])
+legend('b0.2','LSC', 'b1', 'LSC', 'b5', 'LSC', 'FontSize',24)
+
+keep beta the same ---
+
+semilogy( xo, qml0202, 'b', xo, lscl0202, 'b--', xo, qml021, 'c', xo, lscl021, 'c--', xo, qml025, 'r', xo, lscl025, 'r--')
+
+semilogy( xo, qml102, 'b', xo, lscl102, 'b--', xo, qml11, 'c', xo, lscl11, 'c--', xo, qml15, 'r', xo, lscl15, 'r--')
+
+
+semilogy( xo, qml502, 'b', xo, lscl502, 'b--', xo, qml51, 'c', xo, lscl51, 'c--', xo, qml55, 'r', xo, lscl55, 'r--')
+
+keep eta the same ---
+
+semilogy( xo, qml0202, 'r', xo, lscl0202, 'r--', xo, qml102, 'c', xo, lscl102, 'c--', xo, qml502, 'b', xo, lscl502, 'b--')
+
+semilogy( xo, qml021, 'r', xo, lscl021, 'r--', xo, qml11, 'c', xo, lscl11, 'c--', xo, qml51, 'b', xo, lscl51, 'b--')
+
+semilogy( xo, qml025, 'r', xo, lscl025, 'r--', xo, qml15, 'c', xo, lscl15, 'c--', xo, qml55, 'b', xo, lscl55, 'b--')
+
+
+==================
+
+
+New EFGRL.cpp with approximations, Omega = 0.5
+beta = 0.2, 1 ,5,  eta = 0.5, 1 ,5
+
+qmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e1.dat')
+qmlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e1.dat')
+lsclb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e1.dat')
+cavlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e1.dat')
+cdlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e1.dat')
+inhlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e1.dat')
+marlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e1.dat')
+
+
+semilogy( xo, qmlb1e1, xo, lsclb1e1, xo, cavlb1e1 , xo, cdlb1e1, xo, inhlb1e1, xo, marlb1e1)
+
+
+semilogy(xo, marlb1e1, 'g')
+hold on
+semilogy(xo, inhlb1e1, 'color',[0.75 0 0.75])
+semilogy(xo, cdlb1e1,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb1e1, 'r')
+semilogy(xo, lsclb1e1, 'b')
+semilogy(xo, qmlb1e1, 'k')
+hold off
+
+xlim([0 8])
+ylim([1e-8 1])
+
+
+
+-----
+semilogy(x ,lsc, 'b',x(2:512/20:512),lsc(2:512/20:512),'bo','MarkerSize',8)
+hold on 
+semilogy(x, cla, 'r') 
+semilogy(x, cld(1:512), 'color',[0 0.75 0.75])
+semilogy(x, inh, 'color',[0.75 0 0.75])
+semilogy(x, cui, 'g')
+hold off
+

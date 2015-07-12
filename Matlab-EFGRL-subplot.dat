@@ -1,0 +1,550 @@
+SUBPLOT for EFGRL
+
+New EFGRL.cpp with approximations, Omega = 0.5
+
+Case(1):  beta = 0.2, 1 ,5,  eta = 0.5, 1 ,5
+
+
+INPUT DATA ******
+
+qmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e0.5.dat')
+qmlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e0.5.dat')
+lsclb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e0.5.dat')
+cavlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e0.5.dat')
+cdlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e0.5.dat')
+inhlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e0.5.dat')
+marlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e0.5.dat')
+
+qmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e1.dat')
+qmlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e1.dat')
+lsclb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e1.dat')
+cavlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e1.dat')
+cdlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e1.dat')
+inhlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e1.dat')
+marlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e1.dat')
+
+qmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e5.dat')
+qmlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e5.dat')
+lsclb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e5.dat')
+cavlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e5.dat')
+cdlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e5.dat')
+inhlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e5.dat')
+marlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e5.dat')
+
+
+qmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e0.5.dat')
+qmlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e0.5.dat')
+lsclb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e0.5.dat')
+cavlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e0.5.dat')
+cdlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e0.5.dat')
+inhlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e0.5.dat')
+marlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e0.5.dat')
+
+qmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e1.dat')
+qmlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e1.dat')
+lsclb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e1.dat')
+cavlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e1.dat')
+cdlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e1.dat')
+inhlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e1.dat')
+marlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e1.dat')
+
+qmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e5.dat')
+qmlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e5.dat')
+lsclb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e5.dat')
+cavlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e5.dat')
+cdlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e5.dat')
+inhlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e5.dat')
+marlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e5.dat')
+
+
+qmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e0.5.dat')
+qmlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e0.5.dat')
+lsclb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e0.5.dat')
+cavlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e0.5.dat')
+cdlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e0.5.dat')
+inhlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e0.5.dat')
+marlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e0.5.dat')
+
+qmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e1.dat')
+qmlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e1.dat')
+lsclb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e1.dat')
+cavlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e1.dat')
+cdlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e1.dat')
+inhlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e1.dat')
+marlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e1.dat')
+
+qmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e5.dat')
+qmlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e5.dat')
+lsclb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e5.dat')
+cavlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e5.dat')
+cdlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e5.dat')
+inhlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e5.dat')
+marlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e5.dat')
+
+
+===========
+
+Case(2):  beta / eta = 0.1, 1, 10 
+
+
+
+qmb01e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.1e0.1.dat')
+qmlb01e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.1e0.1.dat')
+lsclb01e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.1e0.1.dat')
+cavlb01e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.1e0.1.dat')
+cdlb01e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.1e0.1.dat')
+inhlb01e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.1e0.1.dat')
+marlb01e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.1e0.1.dat')
+
+qmb01e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.1e1.dat')
+qmlb01e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.1e1.dat')
+lsclb01e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.1e1.dat')
+cavlb01e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.1e1.dat')
+cdlb01e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.1e1.dat')
+inhlb01e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.1e1.dat')
+marlb01e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.1e1.dat')
+
+qmb01e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.1e10.dat')
+qmlb01e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.1e10.dat')
+lsclb01e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.1e10.dat')
+cavlb01e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.1e10.dat')
+cdlb01e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.1e10.dat')
+inhlb01e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.1e10.dat')
+marlb01e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.1e10.dat')
+
+
+qmb1e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e0.1.dat')
+qmlb1e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e0.1.dat')
+lsclb1e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e0.1.dat')
+cavlb1e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e0.1.dat')
+cdlb1e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e0.1.dat')
+inhlb1e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e0.1.dat')
+marlb1e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e0.1.dat')
+
+qmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e1.dat')
+qmlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e1.dat')
+lsclb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e1.dat')
+cavlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e1.dat')
+cdlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e1.dat')
+inhlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e1.dat')
+marlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e1.dat')
+
+qmb1e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e10.dat')
+qmlb1e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e10.dat')
+lsclb1e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e10.dat')
+cavlb1e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e10.dat')
+cdlb1e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e10.dat')
+inhlb1e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e10.dat')
+marlb1e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e10.dat')
+
+
+
+qmb10e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b10e0.1.dat')
+qmlb10e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b10e0.1.dat')
+lsclb10e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b10e0.1.dat')
+cavlb10e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b10e0.1.dat')
+cdlb10e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b10e0.1.dat')
+inhlb10e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b10e0.1.dat')
+marlb10e01 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b10e0.1.dat')
+
+
+
+qmb10e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b10e1.dat')
+qmlb10e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b10e1.dat')
+lsclb10e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b10e1.dat')
+cavlb10e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b10e1.dat')
+cdlb10e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b10e1.dat')
+inhlb10e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b10e1.dat')
+marlb10e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b10e1.dat')
+
+qmb10e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b10e10.dat')
+qmlb10e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b10e10.dat')
+lsclb10e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b10e10.dat')
+cavlb10e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b10e10.dat')
+cdlb10e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b10e10.dat')
+inhlb10e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b10e10.dat')
+marlb10e10 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b10e10.dat')
+
+
+
+
+
+
+
+
+
+Plotting *******
+
+
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+semilogy( xo, qmlb1e1, xo, lsclb1e1, xo, cavlb1e1 , xo, cdlb1e1, xo, inhlb1e1, xo, marlb1e1)
+
+
+semilogy(xo, inhlb1e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb1e1, 'g')
+semilogy(xo, cdlb1e1,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb1e1, 'r')
+semilogy(xo, lsclb1e1, 'b', xo(2:256/20:256) ,lsclb1e1(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb1e1, 'color',[0.93 0.69 0.13])
+hold off
+
+
+
+FIGURE 1 - SUBPLOT *********** 3x3 Full k(omega) vs omega_DA 
+
+Case(1):  beta = 0.2, 1 ,5,  eta = 0.5, 1 ,5
+
+subplot(3,3,1)
+semilogy(xo, inhlb5e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb5e05, 'g')
+semilogy(xo, cdlb5e05,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb5e05, 'r')
+semilogy(xo, lsclb5e05, 'b', xo(2:256/20:256) ,lsclb5e05(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb5e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,2)
+semilogy(xo, inhlb5e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb5e1, 'g')
+semilogy(xo, cdlb5e1,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb5e1, 'r')
+semilogy(xo, lsclb5e1, 'b', xo(2:256/20:256) ,lsclb5e1(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb5e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,3)
+semilogy(xo, inhlb5e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb5e5, 'g')
+semilogy(xo, cdlb5e5,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb5e5, 'r')
+semilogy(xo, lsclb5e5, 'b', xo(2:256/20:256) ,lsclb5e5(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb5e5, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,4)
+semilogy(xo, inhlb1e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb1e05, 'g')
+semilogy(xo, cdlb1e05,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb1e05, 'r')
+semilogy(xo, lsclb1e05, 'b', xo(2:256/20:256) ,lsclb1e05(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb1e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,5)
+semilogy(xo, inhlb1e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb1e1, 'g')
+semilogy(xo, cdlb1e1,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb1e1, 'r')
+semilogy(xo, lsclb1e1, 'b', xo(2:256/20:256) ,lsclb1e1(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb1e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,6)
+semilogy(xo, inhlb1e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb1e5, 'g')
+semilogy(xo, cdlb1e5,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb1e5, 'r')
+semilogy(xo, lsclb1e5, 'b', xo(2:256/20:256) ,lsclb1e5(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb1e5, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,7)
+semilogy(xo, inhlb02e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb02e05, 'g')
+semilogy(xo, cdlb02e05,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb02e05, 'r')
+semilogy(xo, lsclb02e05, 'b', xo(2:256/20:256) ,lsclb02e05(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb02e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,8)
+semilogy(xo, inhlb02e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb02e1, 'g')
+semilogy(xo, cdlb02e1,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb02e1, 'r')
+semilogy(xo, lsclb02e1, 'b', xo(2:256/20:256) ,lsclb02e1(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb02e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,9)
+semilogy(xo, inhlb02e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb02e5, 'g')
+semilogy(xo, cdlb02e5,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb02e5, 'r')
+semilogy(xo, lsclb02e5, 'b', xo(2:256/20:256) ,lsclb02e5(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb02e5, 'color',[0.93 0.69 0.13])
+hold off
+
+
+
+subplot(3,3,1)
+xlim([0 8])
+subplot(3,3,2)
+xlim([0 8])
+subplot(3,3,3)
+xlim([0 8])
+subplot(3,3,4)
+xlim([0 8])
+subplot(3,3,5)
+xlim([0 8])
+subplot(3,3,6)
+xlim([0 8])
+subplot(3,3,7)
+xlim([0 8])
+subplot(3,3,8)
+xlim([0 8])
+subplot(3,3,9)
+xlim([0 8])
+
+
+subplot(3,3,1)
+ylim([1e-8 1])
+subplot(3,3,2)
+ylim([1e-8 1])
+subplot(3,3,3)
+ylim([1e-8 1])
+subplot(3,3,4)
+ylim([1e-8 1])
+subplot(3,3,5)
+ylim([1e-8 1])
+subplot(3,3,6)
+ylim([1e-8 1])
+subplot(3,3,7)
+ylim([1e-8 1])
+subplot(3,3,8)
+ylim([1e-8 1])
+subplot(3,3,9)
+ylim([1e-8 1])
+
+
+subplot(3,3,4)
+ylabel('log(k/\omega_{c})','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+
+legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', ,'Exact')
+
+========
+
+FIGURE 2 - SUBPLOT *********** 3x3 Full k(omega) vs omega_DA 
+
+CASE(2):  beta , eta = 0.1, 1 ,10
+
+dfoex = 0.00488281
+xoex = [0: 511]
+xoex = xoex * dfoex * 2 * pi
+
+
+subplot(3,3,1)
+semilogy(xoex, inhlb10e01, 'color',[0.75 0 0.75])
+hold on
+semilogy(xoex, marlb10e01, 'g')
+semilogy(xoex, cdlb10e01,  'color',[0 0.75 0.75])
+semilogy(xoex, cavlb10e01, 'r')
+semilogy(xoex, lsclb10e01, 'b', xoex(2:512/20:511) ,lsclb10e01(2:512/20:511),'bo','MarkerSize',9)
+semilogy(xoex, qmlb10e01, 'color',[0.93 0.69 0.13])
+hold off
+
+OR
+
+subplot(3,3,1)
+semilogy(xo, inhlb10e01, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb10e01, 'g')
+semilogy(xo, cdlb10e01,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb10e01, 'r')
+semilogy(xo, lsclb10e01, 'b', xo(2:256/20:256) ,lsclb10e01(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb10e01, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,2)
+semilogy(xo, inhlb10e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb10e1, 'g')
+semilogy(xo, cdlb10e1,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb10e1, 'r')
+semilogy(xo, lsclb10e1, 'b', xo(2:256/20:256) ,lsclb10e1(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb10e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,3)
+semilogy(xo, inhlb10e10, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb10e10, 'g')
+semilogy(xo, cdlb10e10,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb10e10, 'r')
+semilogy(xo, lsclb10e10, 'b', xo(2:256/20:256) ,lsclb10e10(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb10e10, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,4)
+semilogy(xo, inhlb1e01, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb1e01, 'g')
+semilogy(xo, cdlb1e01,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb1e01, 'r')
+semilogy(xo, lsclb1e01, 'b', xo(2:256/20:256) ,lsclb1e01(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb1e01, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,5)
+semilogy(xo, inhlb1e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb1e1, 'g')
+semilogy(xo, cdlb1e1,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb1e1, 'r')
+semilogy(xo, lsclb1e1, 'b', xo(2:256/20:256) ,lsclb1e1(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb1e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,6)
+semilogy(xo, inhlb1e10, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb1e10, 'g')
+semilogy(xo, cdlb1e10,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb1e10, 'r')
+semilogy(xo, lsclb1e10, 'b', xo(2:256/20:256) ,lsclb1e10(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb1e10, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,7)
+semilogy(xo, inhlb01e01, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb01e01, 'g')
+semilogy(xo, cdlb01e01,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb01e01, 'r')
+semilogy(xo, lsclb01e01, 'b', xo(2:256/20:256) ,lsclb01e01(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb01e01, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,8)
+semilogy(xo, inhlb01e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb01e1, 'g')
+semilogy(xo, cdlb01e1,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb01e1, 'r')
+semilogy(xo, lsclb01e1, 'b', xo(2:256/20:256) ,lsclb01e1(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb01e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,9)
+semilogy(xo, inhlb01e10, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, marlb01e10, 'g')
+semilogy(xo, cdlb01e10,  'color',[0 0.75 0.75])
+semilogy(xo, cavlb01e10, 'r')
+semilogy(xo, lsclb01e10, 'b', xo(2:256/20:256) ,lsclb01e10(2:256/20:256),'bo','MarkerSize',9)
+semilogy(xo, qmlb01e10, 'color',[0.93 0.69 0.13])
+hold off
+
+
+subplot(3,3,1)
+xlim([0 8])
+subplot(3,3,2)
+xlim([0 8])
+subplot(3,3,3)
+xlim([0 8])
+subplot(3,3,4)
+xlim([0 8])
+subplot(3,3,5)
+xlim([0 8])
+subplot(3,3,6)
+xlim([0 8])
+subplot(3,3,7)
+xlim([0 8])
+subplot(3,3,8)
+xlim([0 8])
+subplot(3,3,9)
+xlim([0 8])
+
+
+subplot(3,3,1)
+ylim([1e-6 1])
+subplot(3,3,2)
+ylim([1e-6 1])
+subplot(3,3,3)
+ylim([1e-6 1])
+subplot(3,3,4)
+ylim([1e-6 1])
+subplot(3,3,5)
+ylim([1e-6 1])
+subplot(3,3,6)
+ylim([1e-6 1])
+subplot(3,3,7)
+ylim([1e-6 1])
+subplot(3,3,8)
+ylim([1e-6 1])
+subplot(3,3,9)
+ylim([1e-6 1])
+
+
+
+subplot(3,3,4)
+ylabel('log(k/\omega_{c})','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+
+
+
+Figure 3 - compare LSC with Exact QM in EFGR linear coupling(non-Condon) only b1e1
+
+
+semilogy(xo, qmb1e1, xo, qmlb1e1, 'r', xo(2:256/20:256) ,lsclb1e1(2:256/20:256),'co','MarkerSize',9)
+
+xlim([0 10])
+ylim([1e-10  1])
+
+xlabel('\omega / \omega_{c}','FontSize',30)
+ylabel('k / \omega_{c}','FontSize', 30)
+
+legend('Condon','non-Condon exact', 'non-Condon LSC')
+legend boxoff
+
+
+Figure 4 - EFGRL comparison exact vs LSC in different temp and friction
+
+keep beta the same --->>>
+
+semilogy( xo, qmlb01e01, 'b', xo, qmlb01e1, 'c', xo, qmlb01e10, 'r', xo, lsclb01e01, 'b--',  xo, lsclb01e1, 'c--',  xo, lsclb01e10, 'r--')
+
+xlabel('\omega / \omega_{c}','FontSize',30)
+ylabel('k / \omega_{c}','FontSize', 30)
+annotation('textbox', 'String', '\bf \beta = 1', 'FontSize', 30,'EdgeColor','none')
+xlim([0 8])
+ylim([1e-6 1])
+legend('\eta=0.1', '\eta=1',  '\eta=10')
+legend boxoff
+
+
+semilogy( xo, qmlb1e01, 'b', xo, qmlb1e1, 'c', xo, qmlb1e10, 'r', xo, lsclb1e01, 'b--',  xo, lsclb1e1, 'c--',  xo, lsclb1e10, 'r--')
+
+semilogy( xoex, qmlb10e01, 'b', xo, qmlb10e1, 'c', xo, qmlb10e10, 'r', xoex, lsclb10e01, 'b--',  xo, lsclb10e1, 'c--',  xo, lsclb10e10, 'r--')
+
+keep eta the same --->>>
+
+xlabel('\omega / \omega_{c}','FontSize',30)
+ylabel('k / \omega_{c}','FontSize', 30)
+xlim([0 8])
+ylim([1e-6 1])
+legend('\beta=0.1', '\beta=1', '\beta=10')
+
+semilogy( xo, qmlb01e01, 'r', xo, qmlb1e01, 'c', xoex, qmlb10e01, 'b' , xo, lsclb01e01, 'r--',  xo, lsclb1e01, 'c--',  xoex, lsclb10e01, 'b--')
+
+
+semilogy( xo, qmlb01e1, 'r', xo, qmlb1e1, 'c', xo, qmlb10e1, 'b' , xo, lsclb01e1, 'r--',  xo, lsclb1e1, 'c--',  xo, lsclb10e1, 'b--')
+
+semilogy( xo, qmlb01e10, 'r', xo, qmlb1e10, 'c', xo, qmlb10e10, 'b' , xo, lsclb01e10, 'r--',  xo, lsclb1e10, 'c--',  xo, lsclb10e10, 'b--')
+

@@ -1,0 +1,393 @@
+
+%%% ----------------------- NEFGRL --------------------------------------
+
+dtp = 0.2
+tp = [0:199]
+tp = tp * dtp
+
+
+Figure 1 - comparison between approximations for NEFGR non-Condon case
+
+
+nelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b0.2e0.5_s1w3.dat')
+lscnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b0.2e0.5_s1w3.dat')
+cavnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b0.2e0.5_s1w3.dat')
+cdnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b0.2e0.5_s1w3.dat')
+inhnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b0.2e0.5_s1w3.dat')
+marcnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b0.2e0.5_s1w3.dat')
+pnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b0.2e0.5_s1w3.dat')
+lscpnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b0.2e0.5_s1w3.dat')
+cavpnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b0.2e0.5_s1w3.dat')
+cdpnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b0.2e0.5_s1w3.dat')
+inhpnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b0.2e0.5_s1w3.dat')
+marcpnelw3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b0.2e0.5_s1w3.dat')
+
+nelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b0.2e1_s1w3.dat')
+lscnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b0.2e1_s1w3.dat')
+cavnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b0.2e1_s1w3.dat')
+cdnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b0.2e1_s1w3.dat')
+inhnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b0.2e1_s1w3.dat')
+marcnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b0.2e1_s1w3.dat')
+pnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b0.2e1_s1w3.dat')
+lscpnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b0.2e1_s1w3.dat')
+cavpnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b0.2e1_s1w3.dat')
+cdpnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b0.2e1_s1w3.dat')
+inhpnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b0.2e1_s1w3.dat')
+marcpnelw3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b0.2e1_s1w3.dat')
+
+nelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b0.2e5_s1w3.dat')
+lscnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b0.2e5_s1w3.dat')
+cavnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b0.2e5_s1w3.dat')
+cdnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b0.2e5_s1w3.dat')
+inhnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b0.2e5_s1w3.dat')
+marcnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b0.2e5_s1w3.dat')
+pnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b0.2e5_s1w3.dat')
+lscpnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b0.2e5_s1w3.dat')
+cavpnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b0.2e5_s1w3.dat')
+cdpnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b0.2e5_s1w3.dat')
+inhpnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b0.2e5_s1w3.dat')
+marcpnelw3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b0.2e5_s1w3.dat')
+
+nelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b1e0.5_s1w3.dat')
+lscnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b1e0.5_s1w3.dat')
+cavnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b1e0.5_s1w3.dat')
+cdnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b1e0.5_s1w3.dat')
+inhnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b1e0.5_s1w3.dat')
+marcnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b1e0.5_s1w3.dat')
+pnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b1e0.5_s1w3.dat')
+lscpnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b1e0.5_s1w3.dat')
+cavpnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b1e0.5_s1w3.dat')
+cdpnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b1e0.5_s1w3.dat')
+inhpnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b1e0.5_s1w3.dat')
+marcpnelw3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b1e0.5_s1w3.dat')
+
+nelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b1e1_s1w3.dat')
+lscnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b1e1_s1w3.dat')
+cavnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b1e1_s1w3.dat')
+cdnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b1e1_s1w3.dat')
+inhnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b1e1_s1w3.dat')
+marcnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b1e1_s1w3.dat')
+pnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b1e1_s1w3.dat')
+lscpnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b1e1_s1w3.dat')
+cavpnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b1e1_s1w3.dat')
+cdpnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b1e1_s1w3.dat')
+inhpnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b1e1_s1w3.dat')
+marcpnelw3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b1e1_s1w3.dat')
+
+nelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b1e5_s1w3.dat')
+lscnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b1e5_s1w3.dat')
+cavnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b1e5_s1w3.dat')
+cdnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b1e5_s1w3.dat')
+inhnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b1e5_s1w3.dat')
+marcnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b1e5_s1w3.dat')
+pnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b1e5_s1w3.dat')
+lscpnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b1e5_s1w3.dat')
+cavpnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b1e5_s1w3.dat')
+cdpnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b1e5_s1w3.dat')
+inhpnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b1e5_s1w3.dat')
+marcpnelw3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b1e5_s1w3.dat')
+
+nelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b5e0.5_s1w3.dat')
+lscnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b5e0.5_s1w3.dat')
+cavnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b5e0.5_s1w3.dat')
+cdnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b5e0.5_s1w3.dat')
+inhnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b5e0.5_s1w3.dat')
+marcnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b5e0.5_s1w3.dat')
+pnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b5e0.5_s1w3.dat')
+lscpnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b5e0.5_s1w3.dat')
+cavpnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b5e0.5_s1w3.dat')
+cdpnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b5e0.5_s1w3.dat')
+inhpnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b5e0.5_s1w3.dat')
+marcpnelw3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b5e0.5_s1w3.dat')
+
+nelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b5e1_s1w3.dat')
+lscnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b5e1_s1w3.dat')
+cavnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b5e1_s1w3.dat')
+cdnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b5e1_s1w3.dat')
+inhnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b5e1_s1w3.dat')
+marcnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b5e1_s1w3.dat')
+pnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b5e1_s1w3.dat')
+lscpnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b5e1_s1w3.dat')
+cavpnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b5e1_s1w3.dat')
+cdpnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b5e1_s1w3.dat')
+inhpnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b5e1_s1w3.dat')
+marcpnelw3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b5e1_s1w3.dat')
+
+nelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b5e5_s1w3.dat')
+lscnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b5e5_s1w3.dat')
+cavnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b5e5_s1w3.dat')
+cdnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b5e5_s1w3.dat')
+inhnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b5e5_s1w3.dat')
+marcnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b5e5_s1w3.dat')
+pnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b5e5_s1w3.dat')
+lscpnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b5e5_s1w3.dat')
+cavpnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b5e5_s1w3.dat')
+cdpnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b5e5_s1w3.dat')
+inhpnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b5e5_s1w3.dat')
+marcpnelw3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b5e5_s1w3.dat')
+
+
+
+Plot - k(t') vs t' 
+plot(tp, nelw3b1e1,  tp, lscnelw3b1e1,  tp, cavnelw3b1e1, tp, cdnelw3b1e1, tp, inhnelw3b1e1, tp, marcnelw3b1e1)
+ylim([0.01 0.02])
+ylim([0.015 0.03])
+xlim([0 40])
+xlabel(' t^\prime / \omega_{c}^{-1}','FontSize',30)
+ylabel('k(t^\prime) / \omega_c','FontSize', 30)
+legend('exact', 'W-AV', 'C-AV', 'C-D', 'W-0', 'Marcus')
+
+
+Plot - P(t) vs t 
+plot(tp, pnelw3b1e1,  tp, lscpnelw3b1e1,  tp, cavpnelw3b1e1, tp, cdpnelw3b1e1, tp, inhpnelw3b1e1, tp, marcpnelw3b1e1)
+
+
+
+
+
+
+
+
+
+
+SUBPLOT **** 3x3 Full k(t') vs t' at fixed omega_DA=3
+
+subplot(3,3,1)
+plot(tp, inhnelw3b5e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b5e05, 'g')
+plot(tp, cdnelw3b5e05,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b5e05, 'r')
+plot(tp, lscnelw3b5e05, 'b', tp(5:20:200) ,lscnelw3b5e05(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b5e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,2)
+plot(tp, inhnelw3b5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b5e1, 'g')
+plot(tp, cdnelw3b5e1,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b5e1, 'r')
+plot(tp, lscnelw3b5e1, 'b', tp(5:20:200) ,lscnelw3b5e1(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b5e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,3)
+plot(tp, inhnelw3b5e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b5e5, 'g')
+plot(tp, cdnelw3b5e5,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b5e5, 'r')
+plot(tp, lscnelw3b5e5, 'b', tp(5:20:200) ,lscnelw3b5e5(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b5e5, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,4)
+plot(tp, inhnelw3b1e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b1e05, 'g')
+plot(tp, cdnelw3b1e05,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b1e05, 'r')
+plot(tp, lscnelw3b1e05, 'b', tp(5:20:200) ,lscnelw3b1e05(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b1e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,5)
+plot(tp, inhnelw3b1e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b1e1, 'g')
+plot(tp, cdnelw3b1e1,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b1e1, 'r')
+plot(tp, lscnelw3b1e1, 'b', tp(5:20:200) ,lscnelw3b1e1(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b1e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,6)
+plot(tp, inhnelw3b1e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b1e5, 'g')
+plot(tp, cdnelw3b1e5,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b1e5, 'r')
+plot(tp, lscnelw3b1e5, 'b', tp(5:20:200) ,lscnelw3b1e5(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b1e5, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,7)
+plot(tp, inhnelw3b02e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b02e05, 'g')
+plot(tp, cdnelw3b02e05,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b02e05, 'r')
+plot(tp, lscnelw3b02e05, 'b', tp(5:20:200) ,lscnelw3b02e05(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b02e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,8)
+plot(tp, inhnelw3b02e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b02e1, 'g')
+plot(tp, cdnelw3b02e1,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b02e1, 'r')
+plot(tp, lscnelw3b02e1, 'b', tp(5:20:200) ,lscnelw3b02e1(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b02e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,9)
+plot(tp, inhnelw3b02e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelw3b02e5, 'g')
+plot(tp, cdnelw3b02e5,  'color',[0 0.75 0.75])
+plot(tp, cavnelw3b02e5, 'r')
+plot(tp, lscnelw3b02e5, 'b', tp(5:20:200) ,lscnelw3b02e5(5:20:200),'bo','MarkerSize',9)
+plot(tp, nelw3b02e5, 'color',[0.93 0.69 0.13])
+hold off
+
+
+subplot(3,3,1)
+ylim([-0.01 0.015])
+subplot(3,3,2)
+ylim([-0.01 0.015])
+subplot(3,3,3)
+ylim([-0.01 0.015])
+subplot(3,3,4)
+ylim([0 0.05])
+subplot(3,3,5)
+ylim([0 0.05])
+subplot(3,3,6)
+ylim([0 0.05])
+subplot(3,3,7)
+ylim([0.1 0.16])
+subplot(3,3,8)
+ylim([0.1 0.16])
+subplot(3,3,9)
+ylim([0.1 0.16])
+
+subplot(3,3,4)
+ylabel('k(t\prime) ','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{c} t\prime','FontSize',24)
+
+
+
+legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', '', 'exact')
+
+
+
+
+SUBPLOT **** 3x3 Full P(t) vs t at fixed omega_DA=3
+
+subplot(3,3,1)
+plot(tp, inhpnelw3b5e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b5e05, 'g')
+plot(tp, cdpnelw3b5e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b5e05, 'r')
+plot(tp, lscpnelw3b5e05, 'b', tp(5:20:200) ,lscpnelw3b5e05(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b5e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,2)
+plot(tp, inhpnelw3b5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b5e1, 'g')
+plot(tp, cdpnelw3b5e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b5e1, 'r')
+plot(tp, lscpnelw3b5e1, 'b', tp(5:20:200) ,lscpnelw3b5e1(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b5e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,3)
+plot(tp, inhpnelw3b5e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b5e5, 'g')
+plot(tp, cdpnelw3b5e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b5e5, 'r')
+plot(tp, lscpnelw3b5e5, 'b', tp(5:20:200) ,lscpnelw3b5e5(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b5e5, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,4)
+plot(tp, inhpnelw3b1e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b1e05, 'g')
+plot(tp, cdpnelw3b1e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b1e05, 'r')
+plot(tp, lscpnelw3b1e05, 'b', tp(5:20:200) ,lscpnelw3b1e05(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b1e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,5)
+plot(tp, inhpnelw3b1e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b1e1, 'g')
+plot(tp, cdpnelw3b1e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b1e1, 'r')
+plot(tp, lscpnelw3b1e1, 'b', tp(5:20:200) ,lscpnelw3b1e1(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b1e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,6)
+plot(tp, inhpnelw3b1e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b1e5, 'g')
+plot(tp, cdpnelw3b1e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b1e5, 'r')
+plot(tp, lscpnelw3b1e5, 'b', tp(5:20:200) ,lscpnelw3b1e5(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b1e5, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,7)
+plot(tp, inhpnelw3b02e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b02e05, 'g')
+plot(tp, cdpnelw3b02e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b02e05, 'r')
+plot(tp, lscpnelw3b02e05, 'b', tp(5:20:200) ,lscpnelw3b02e05(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b02e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,8)
+plot(tp, inhpnelw3b02e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b02e1, 'g')
+plot(tp, cdpnelw3b02e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b02e1, 'r')
+plot(tp, lscpnelw3b02e1, 'b', tp(5:20:200) ,lscpnelw3b02e1(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b02e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,9)
+plot(tp, inhpnelw3b02e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelw3b02e5, 'g')
+plot(tp, cdpnelw3b02e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnelw3b02e5, 'r')
+plot(tp, lscpnelw3b02e5, 'b', tp(5:20:200) ,lscpnelw3b02e5(5:20:200),'bo','MarkerSize',9)
+plot(tp, pnelw3b02e5, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,1)
+ylim([0.9 1])
+subplot(3,3,2)
+ylim([0.9 1])
+subplot(3,3,3)
+ylim([0.9 1])
+subplot(3,3,4)
+ylim([0.6 1])
+subplot(3,3,5)
+ylim([0.6 1])
+subplot(3,3,6)
+ylim([0.6 1])
+subplot(3,3,7)
+ylim([0 1])
+subplot(3,3,8)
+ylim([0 1])
+subplot(3,3,9)
+ylim([0 1])
+
+subplot(3,3,4)
+ylabel('P(t) ','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{c} t','FontSize',24)
+
+
