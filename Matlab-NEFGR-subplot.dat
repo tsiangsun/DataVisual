@@ -16,34 +16,34 @@ parameters:  beta, eta = 0.2, 1 , 5
 new0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e0.5_s1w0.dat')
 cavnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b5e0.5_s1w0.dat')
 cdnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b5e0.5_s1w0.dat')
-w0new0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e0.5_s1w0.dat')
+inhnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e0.5_s1w0.dat')
 marcnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b5e0.5_s1w0.dat')
 pnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e0.5_s1w0.dat')
 cavpnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b5e0.5_s1w0.dat')
 cdpnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b5e0.5_s1w0.dat')
-w0pnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e0.5_s1w0.dat')
+inhpnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e0.5_s1w0.dat')
 marcpnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e0.5_s1w0.dat')
 
 new0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e1_s1w0.dat')
 cavnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b5e1_s1w0.dat')
 cdnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b5e1_s1w0.dat')
-w0new0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e1_s1w0.dat')
+inhnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e1_s1w0.dat')
 marcnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b5e1_s1w0.dat')
 pnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s1w0.dat')
 cavpnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b5e1_s1w0.dat')
 cdpnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b5e1_s1w0.dat')
-w0pnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e1_s1w0.dat')
+inhpnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e1_s1w0.dat')
 marcpnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e1_s1w0.dat')
 
 new0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e5_s1w0.dat')
 cavnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b5e5_s1w0.dat')
 cdnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b5e5_s1w0.dat')
-w0new0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e5_s1w0.dat')
+inhnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e5_s1w0.dat')
 marcnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b5e5_s1w0.dat')
 pnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e5_s1w0.dat')
 cavpnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b5e5_s1w0.dat')
 cdpnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b5e5_s1w0.dat')
-w0pnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e5_s1w0.dat')
+inhpnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e5_s1w0.dat')
 marcpnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e5_s1w0.dat')
 
 
@@ -52,34 +52,34 @@ marcpnew0b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e5
 new0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e0.5_s1w0.dat')
 cavnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b1e0.5_s1w0.dat')
 cdnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b1e0.5_s1w0.dat')
-w0new0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e0.5_s1w0.dat')
+inhnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e0.5_s1w0.dat')
 marcnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b1e0.5_s1w0.dat')
 pnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e0.5_s1w0.dat')
 cavpnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b1e0.5_s1w0.dat')
 cdpnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b1e0.5_s1w0.dat')
-w0pnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e0.5_s1w0.dat')
+inhpnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e0.5_s1w0.dat')
 marcpnew0b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b1e0.5_s1w0.dat')
 
 new0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w0.dat')
 cavnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b1e1_s1w0.dat')
 cdnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b1e1_s1w0.dat')
-w0new0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e1_s1w0.dat')
+inhnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e1_s1w0.dat')
 marcnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b1e1_s1w0.dat')
 pnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w0.dat')
 cavpnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b1e1_s1w0.dat')
 cdpnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b1e1_s1w0.dat')
-w0pnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e1_s1w0.dat')
+inhpnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e1_s1w0.dat')
 marcpnew0b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b1e1_s1w0.dat')
 
 new0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e5_s1w0.dat')
 cavnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b1e5_s1w0.dat')
 cdnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b1e5_s1w0.dat')
-w0new0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e5_s1w0.dat')
+inhnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e5_s1w0.dat')
 marcnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b1e5_s1w0.dat')
 pnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e5_s1w0.dat')
 cavpnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b1e5_s1w0.dat')
 cdpnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b1e5_s1w0.dat')
-w0pnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e5_s1w0.dat')
+inhpnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e5_s1w0.dat')
 marcpnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b1e5_s1w0.dat')
 
 
@@ -87,34 +87,34 @@ marcpnew0b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b1e5
 new0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b0.2e0.5_s1w0.dat')
 cavnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b0.2e0.5_s1w0.dat')
 cdnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b0.2e0.5_s1w0.dat')
-w0new0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e0.5_s1w0.dat')
+inhnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e0.5_s1w0.dat')
 marcnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b0.2e0.5_s1w0.dat')
 pnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b0.2e0.5_s1w0.dat')
 cavpnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b0.2e0.5_s1w0.dat')
 cdpnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b0.2e0.5_s1w0.dat')
-w0pnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e0.5_s1w0.dat')
+inhpnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e0.5_s1w0.dat')
 marcpnew0b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b0.2e0.5_s1w0.dat')
 
 new0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b0.2e1_s1w0.dat')
 cavnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b0.2e1_s1w0.dat')
 cdnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b0.2e1_s1w0.dat')
-w0new0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e1_s1w0.dat')
+inhnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e1_s1w0.dat')
 marcnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b0.2e1_s1w0.dat')
 pnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b0.2e1_s1w0.dat')
 cavpnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b0.2e1_s1w0.dat')
 cdpnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b0.2e1_s1w0.dat')
-w0pnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e1_s1w0.dat')
+inhpnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e1_s1w0.dat')
 marcpnew0b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b0.2e1_s1w0.dat')
 
 new0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b0.2e5_s1w0.dat')
 cavnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b0.2e5_s1w0.dat')
 cdnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b0.2e5_s1w0.dat')
-w0new0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e5_s1w0.dat')
+inhnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e5_s1w0.dat')
 marcnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b0.2e5_s1w0.dat')
 pnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b0.2e5_s1w0.dat')
 cavpnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b0.2e5_s1w0.dat')
 cdpnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b0.2e5_s1w0.dat')
-w0pnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e5_s1w0.dat')
+inhpnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e5_s1w0.dat')
 marcpnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b0.2e5_s1w0.dat')
 
 
@@ -126,34 +126,34 @@ marcpnew0b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b0.
 new3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e0.5_s1w3.dat')
 cavnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b5e0.5_s1w3.dat')
 cdnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b5e0.5_s1w3.dat')
-w0new3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e0.5_s1w3.dat')
+inhnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e0.5_s1w3.dat')
 marcnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b5e0.5_s1w3.dat')
 pnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e0.5_s1w3.dat')
 cavpnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b5e0.5_s1w3.dat')
 cdpnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b5e0.5_s1w3.dat')
-w0pnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e0.5_s1w3.dat')
+inhpnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e0.5_s1w3.dat')
 marcpnew3b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e0.5_s1w3.dat')
 
 new3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e1_s1w3.dat')
 cavnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b5e1_s1w3.dat')
 cdnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b5e1_s1w3.dat')
-w0new3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e1_s1w3.dat')
+inhnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e1_s1w3.dat')
 marcnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b5e1_s1w3.dat')
 pnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s1w3.dat')
 cavpnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b5e1_s1w3.dat')
 cdpnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b5e1_s1w3.dat')
-w0pnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e1_s1w3.dat')
+inhpnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e1_s1w3.dat')
 marcpnew3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e1_s1w3.dat')
 
 new3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e5_s1w3.dat')
 cavnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b5e5_s1w3.dat')
 cdnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b5e5_s1w3.dat')
-w0new3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e5_s1w3.dat')
+inhnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e5_s1w3.dat')
 marcnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b5e5_s1w3.dat')
 pnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e5_s1w3.dat')
 cavpnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b5e5_s1w3.dat')
 cdpnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b5e5_s1w3.dat')
-w0pnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e5_s1w3.dat')
+inhpnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e5_s1w3.dat')
 marcpnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e5_s1w3.dat')
 
 
@@ -162,34 +162,34 @@ marcpnew3b5e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e5
 new3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e0.5_s1w3.dat')
 cavnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b1e0.5_s1w3.dat')
 cdnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b1e0.5_s1w3.dat')
-w0new3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e0.5_s1w3.dat')
+inhnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e0.5_s1w3.dat')
 marcnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b1e0.5_s1w3.dat')
 pnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e0.5_s1w3.dat')
 cavpnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b1e0.5_s1w3.dat')
 cdpnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b1e0.5_s1w3.dat')
-w0pnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e0.5_s1w3.dat')
+inhpnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e0.5_s1w3.dat')
 marcpnew3b1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b1e0.5_s1w3.dat')
 
 new3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w3.dat')
 cavnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b1e1_s1w3.dat')
 cdnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b1e1_s1w3.dat')
-w0new3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e1_s1w3.dat')
+inhnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e1_s1w3.dat')
 marcnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b1e1_s1w3.dat')
 pnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w3.dat')
 cavpnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b1e1_s1w3.dat')
 cdpnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b1e1_s1w3.dat')
-w0pnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e1_s1w3.dat')
+inhpnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e1_s1w3.dat')
 marcpnew3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b1e1_s1w3.dat')
 
 new3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e5_s1w3.dat')
 cavnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b1e5_s1w3.dat')
 cdnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b1e5_s1w3.dat')
-w0new3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e5_s1w3.dat')
+inhnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b1e5_s1w3.dat')
 marcnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b1e5_s1w3.dat')
 pnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e5_s1w3.dat')
 cavpnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b1e5_s1w3.dat')
 cdpnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b1e5_s1w3.dat')
-w0pnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e5_s1w3.dat')
+inhpnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b1e5_s1w3.dat')
 marcpnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b1e5_s1w3.dat')
 
 
@@ -197,34 +197,34 @@ marcpnew3b1e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b1e5
 new3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b0.2e0.5_s1w3.dat')
 cavnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b0.2e0.5_s1w3.dat')
 cdnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b0.2e0.5_s1w3.dat')
-w0new3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e0.5_s1w3.dat')
+inhnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e0.5_s1w3.dat')
 marcnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b0.2e0.5_s1w3.dat')
 pnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b0.2e0.5_s1w3.dat')
 cavpnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b0.2e0.5_s1w3.dat')
 cdpnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b0.2e0.5_s1w3.dat')
-w0pnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e0.5_s1w3.dat')
+inhpnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e0.5_s1w3.dat')
 marcpnew3b02e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b0.2e0.5_s1w3.dat')
 
 new3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b0.2e1_s1w3.dat')
 cavnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b0.2e1_s1w3.dat')
 cdnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b0.2e1_s1w3.dat')
-w0new3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e1_s1w3.dat')
+inhnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e1_s1w3.dat')
 marcnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b0.2e1_s1w3.dat')
 pnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b0.2e1_s1w3.dat')
 cavpnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b0.2e1_s1w3.dat')
 cdpnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b0.2e1_s1w3.dat')
-w0pnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e1_s1w3.dat')
+inhpnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e1_s1w3.dat')
 marcpnew3b02e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b0.2e1_s1w3.dat')
 
 new3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b0.2e5_s1w3.dat')
 cavnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b0.2e5_s1w3.dat')
 cdnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b0.2e5_s1w3.dat')
-w0new3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e5_s1w3.dat')
+inhnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b0.2e5_s1w3.dat')
 marcnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b0.2e5_s1w3.dat')
 pnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b0.2e5_s1w3.dat')
 cavpnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b0.2e5_s1w3.dat')
 cdpnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b0.2e5_s1w3.dat')
-w0pnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e5_s1w3.dat')
+inhpnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b0.2e5_s1w3.dat')
 marcpnew3b02e5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b0.2e5_s1w3.dat')
 
 
@@ -246,33 +246,194 @@ tp = tp * dtp
 
 
 Plot - k(t') vs t' 
-plot(tp, new0b5e1,  tp, cavnew0b5e1,  tp, cdnew0b5e1, tp, w0new0b5e1, tp, marcnew0b5e1)
+plot(tp, new0b5e1,  tp, cavnew0b5e1,  tp, cdnew0b5e1, tp, inhnew0b5e1, tp, marcnew0b5e1)
 ylim([0.01 0.02])
 ylim([0.015 0.03])
 xlim([0 40])
 
 
 
-SUBPLOT **** 3x3 Full k(t') vs t' at fixed omega_DA=0 or 3
+SUBPLOT **** 3x3 Full k(t') vs t' at fixed omega_DA=0  
 
 subplot(3,3,1)
-plot(tp, new3b5e05,  tp, cavnew3b5e05,  tp, cdnew3b5e05, tp, w0new3b5e05, tp, marcnew3b5e05)
+plot(tp, inhnew0b5e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b5e05,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b5e05, 'r')
+plot(tp, new0b5e05, 'b', tp(5:10:200) ,new0b5e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b5e05, 'g')
+hold off
+
+
 subplot(3,3,2)
-plot(tp, new3b5e1,  tp, cavnew3b5e1,  tp, cdnew3b5e1, tp, w0new3b5e1, tp, marcnew3b5e1)
+plot(tp, inhnew0b5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b5e1,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b5e1, 'r')
+plot(tp, new0b5e1, 'b', tp(5:10:200) ,new0b5e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b5e1, 'g')
+hold off
+
+
 subplot(3,3,3)
-plot(tp, new3b5e5,  tp, cavnew3b5e5,  tp, cdnew3b5e5, tp, w0new3b5e5, tp, marcnew3b5e5)
+plot(tp, inhnew0b5e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b5e5,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b5e5, 'r')
+plot(tp, new0b5e5, 'b', tp(5:10:200) ,new0b5e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b5e5, 'g')
+hold off
+
+
 subplot(3,3,4)
-plot(tp, new3b1e05,  tp, cavnew3b1e05,  tp, cdnew3b1e05, tp, w0new3b1e05, tp, marcnew3b1e05)
+plot(tp, inhnew0b1e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b1e05,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b1e05, 'r')
+plot(tp, new0b1e05, 'b', tp(5:10:200) ,new0b1e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b1e05, 'g')
+hold off
+
 subplot(3,3,5)
-plot(tp, new3b1e1,  tp, cavnew3b1e1,  tp, cdnew3b1e1, tp, w0new3b1e1, tp, marcnew3b1e1)
+plot(tp, inhnew0b1e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b1e1,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b1e1, 'r')
+plot(tp, new0b1e1, 'b', tp(5:10:200) ,new0b1e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b1e1, 'g')
+hold off
+
 subplot(3,3,6)
-plot(tp, new3b1e5,  tp, cavnew3b1e5,  tp, cdnew3b1e5, tp, w0new3b1e5, tp, marcnew3b1e5)
+plot(tp, inhnew0b1e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b1e5,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b1e5, 'r')
+plot(tp, new0b1e5, 'b', tp(5:10:200) ,new0b1e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b1e5, 'g')
+hold off
+
 subplot(3,3,7)
-plot(tp, new3b02e05,  tp, cavnew3b02e05,  tp, cdnew3b02e05, tp, w0new3b02e05, tp, marcnew3b02e05)
+plot(tp, inhnew0b02e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b02e05,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b02e05, 'r')
+plot(tp, new0b02e05, 'b', tp(5:10:200) ,new0b02e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b02e05, 'g')
+hold off
+
+
 subplot(3,3,8)
-plot(tp, new3b02e1,  tp, cavnew3b02e1,  tp, cdnew3b02e1, tp, w0new3b02e1, tp, marcnew3b02e1)
+plot(tp, inhnew0b02e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b02e1,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b02e1, 'r')
+plot(tp, new0b02e1, 'b', tp(5:10:200) ,new0b02e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b02e1, 'g')
+hold off
+
+
 subplot(3,3,9)
-plot(tp, new3b02e5,  tp, cavnew3b02e5,  tp, cdnew3b02e5, tp, w0new3b02e5, tp, marcnew3b02e5)
+plot(tp, inhnew0b02e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew0b02e5,  'color',[0 0.75 0.75])
+plot(tp, cavnew0b02e5, 'r')
+plot(tp, new0b02e5, 'b', tp(5:10:200) ,new0b02e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew0b02e5, 'g')
+hold off
+
+
+
+
+SUBPLOT **** 3x3 Full k(t') vs t' at fixed omega_DA= 3
+
+
+subplot(3,3,1)
+plot(tp, inhnew3b5e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b5e05,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b5e05, 'r')
+plot(tp, new3b5e05, 'b', tp(5:10:200) ,new3b5e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b5e05, 'g')
+hold off
+
+
+subplot(3,3,2)
+plot(tp, inhnew3b5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b5e1,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b5e1, 'r')
+plot(tp, new3b5e1, 'b', tp(5:10:200) ,new3b5e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b5e1, 'g')
+hold off
+
+
+subplot(3,3,3)
+plot(tp, inhnew3b5e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b5e5,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b5e5, 'r')
+plot(tp, new3b5e5, 'b', tp(5:10:200) ,new3b5e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b5e5, 'g')
+hold off
+
+
+subplot(3,3,4)
+plot(tp, inhnew3b1e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b1e05,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b1e05, 'r')
+plot(tp, new3b1e05, 'b', tp(5:10:200) ,new3b1e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b1e05, 'g')
+hold off
+
+subplot(3,3,5)
+plot(tp, inhnew3b1e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b1e1,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b1e1, 'r')
+plot(tp, new3b1e1, 'b', tp(5:10:200) ,new3b1e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b1e1, 'g')
+hold off
+
+subplot(3,3,6)
+plot(tp, inhnew3b1e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b1e5,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b1e5, 'r')
+plot(tp, new3b1e5, 'b', tp(5:10:200) ,new3b1e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b1e5, 'g')
+hold off
+
+subplot(3,3,7)
+plot(tp, inhnew3b02e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b02e05,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b02e05, 'r')
+plot(tp, new3b02e05, 'b', tp(5:10:200) ,new3b02e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b02e05, 'g')
+hold off
+
+
+subplot(3,3,8)
+plot(tp, inhnew3b02e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b02e1,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b02e1, 'r')
+plot(tp, new3b02e1, 'b', tp(5:10:200) ,new3b02e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b02e1, 'g')
+hold off
+
+
+subplot(3,3,9)
+plot(tp, inhnew3b02e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdnew3b02e5,  'color',[0 0.75 0.75])
+plot(tp, cavnew3b02e5, 'r')
+plot(tp, new3b02e5, 'b', tp(5:10:200) ,new3b02e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcnew3b02e5, 'g')
+hold off
+
+
 
 
 subplot(3,3,1)
@@ -338,40 +499,214 @@ ylim([0 0.008])
 
 
 subplot(3,3,4)
-ylabel('k(t) ','FontSize', 24)
+ylabel('k(t^\prime) ','FontSize', 24)
 subplot(3,3,8)
-xlabel('\omega_{c} t','FontSize',24)
+xlabel('\omega_{c} t^\prime','FontSize',24)
 
 legend('W-AV', 'C-AV', 'C-D', 'W-0', 'Marcus')
 
 
 
 
-SUBPLOT **** 3x3 FullP(t) vs t at fixed omega_DA=0 or 3
-
-plot(tp, pnew0b5e1,  tp, cavpnew0b5e1,  tp, cdpnew0b5e1, tp, w0pnew0b5e1, tp, marcpnew0b5e1)
-
-
+SUBPLOT **** 3x3 FullP(t) vs t at fixed omega_DA=0 
 
 
 subplot(3,3,1)
-plot(tp, pnew0b5e05,  tp, cavpnew0b5e05,  tp, cdpnew0b5e05, tp, w0pnew0b5e05, tp, marcpnew0b5e05)
+plot(tp, inhpnew0b5e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b5e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b5e05, 'r')
+plot(tp, pnew0b5e05, 'b', tp(5:10:200) ,pnew0b5e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b5e05, 'g')
+hold off
+
 subplot(3,3,2)
-plot(tp, pnew0b5e1,  tp, cavpnew0b5e1,  tp, cdpnew0b5e1, tp, w0pnew0b5e1, tp, marcpnew0b5e1)
+plot(tp, pnew0b5e1,  tp, cavpnew0b5e1,  tp, cdpnew0b5e1, tp, inhpnew0b5e1, tp, marcpnew0b5e1)
+plot(tp, inhpnew0b5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b5e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b5e1, 'r')
+plot(tp, pnew0b5e1, 'b', tp(5:10:200) ,pnew0b5e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b5e1, 'g')
+hold off
+
+
 subplot(3,3,3)
-plot(tp, pnew0b5e5,  tp, cavpnew0b5e5,  tp, cdpnew0b5e5, tp, w0pnew0b5e5, tp, marcpnew0b5e5)
+plot(tp, pnew0b5e5,  tp, cavpnew0b5e5,  tp, cdpnew0b5e5, tp, inhpnew0b5e5, tp, marcpnew0b5e5)
+plot(tp, inhpnew0b5e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b5e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b5e5, 'r')
+plot(tp, pnew0b5e5, 'b', tp(5:10:200) ,pnew0b5e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b5e5, 'g')
+hold off
+
+
 subplot(3,3,4)
-plot(tp, pnew0b1e05,  tp, cavpnew0b1e05,  tp, cdpnew0b1e05, tp, w0pnew0b1e05, tp, marcpnew0b1e05)
+plot(tp, pnew0b1e05,  tp, cavpnew0b1e05,  tp, cdpnew0b1e05, tp, inhpnew0b1e05, tp, marcpnew0b1e05)
+plot(tp, inhpnew0b1e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b1e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b1e05, 'r')
+plot(tp, pnew0b1e05, 'b', tp(5:10:200) ,pnew0b1e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b1e05, 'g')
+hold off
+
 subplot(3,3,5)
-plot(tp, pnew0b1e1,  tp, cavpnew0b1e1,  tp, cdpnew0b1e1, tp, w0pnew0b1e1, tp, marcpnew0b1e1)
+plot(tp, pnew0b1e1,  tp, cavpnew0b1e1,  tp, cdpnew0b1e1, tp, inhpnew0b1e1, tp, marcpnew0b1e1)
+plot(tp, inhpnew0b1e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b1e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b1e1, 'r')
+plot(tp, pnew0b1e1, 'b', tp(5:10:200) ,pnew0b1e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b1e1, 'g')
+hold off
+
+
 subplot(3,3,6)
-plot(tp, pnew0b1e5,  tp, cavpnew0b1e5,  tp, cdpnew0b1e5, tp, w0pnew0b1e5, tp, marcpnew0b1e5)
+plot(tp, pnew0b1e5,  tp, cavpnew0b1e5,  tp, cdpnew0b1e5, tp, inhpnew0b1e5, tp, marcpnew0b1e5)
+plot(tp, inhpnew0b1e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b1e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b1e5, 'r')
+plot(tp, pnew0b1e5, 'b', tp(5:10:200) ,pnew0b1e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b1e5, 'g')
+hold off
+
+
 subplot(3,3,7)
-plot(tp, pnew0b02e05,  tp, cavpnew0b02e05,  tp, cdpnew0b02e05, tp, w0pnew0b02e05, tp, marcpnew0b02e05)
+plot(tp, pnew0b02e05,  tp, cavpnew0b02e05,  tp, cdpnew0b02e05, tp, inhpnew0b02e05, tp, marcpnew0b02e05)
+plot(tp, inhpnew0b02e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b02e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b02e05, 'r')
+plot(tp, pnew0b02e05, 'b', tp(5:10:200) ,pnew0b02e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b02e05, 'g')
+hold off
+
+
 subplot(3,3,8)
-plot(tp, pnew0b02e1,  tp, cavpnew0b02e1,  tp, cdpnew0b02e1, tp, w0pnew0b02e1, tp, marcpnew0b02e1)
+plot(tp, pnew0b02e1,  tp, cavpnew0b02e1,  tp, cdpnew0b02e1, tp, inhpnew0b02e1, tp, marcpnew0b02e1)
+plot(tp, inhpnew0b02e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b02e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b02e1, 'r')
+plot(tp, pnew0b02e1, 'b', tp(5:10:200) ,pnew0b02e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b02e1, 'g')
+hold off
+
+
 subplot(3,3,9)
-plot(tp, pnew0b02e5,  tp, cavpnew0b02e5,  tp, cdpnew0b02e5, tp, w0pnew0b02e5, tp, marcpnew0b02e5)
+plot(tp, pnew0b02e5,  tp, cavpnew0b02e5,  tp, cdpnew0b02e5, tp, inhpnew0b02e5, tp, marcpnew0b02e5)
+plot(tp, inhpnew0b02e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew0b02e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnew0b02e5, 'r')
+plot(tp, pnew0b02e5, 'b', tp(5:10:200) ,pnew0b02e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew0b02e5, 'g')
+hold off
+
+
+
+SUBPLOT **** 3x3 FullP(t) vs t at fixed omega_DA=3
+
+
+subplot(3,3,1)
+plot(tp, inhpnew3b5e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b5e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b5e05, 'r')
+plot(tp, pnew3b5e05, 'b', tp(5:10:200) ,pnew3b5e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b5e05, 'g')
+hold off
+
+subplot(3,3,2)
+plot(tp, pnew3b5e1,  tp, cavpnew3b5e1,  tp, cdpnew3b5e1, tp, inhpnew3b5e1, tp, marcpnew3b5e1)
+plot(tp, inhpnew3b5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b5e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b5e1, 'r')
+plot(tp, pnew3b5e1, 'b', tp(5:10:200) ,pnew3b5e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b5e1, 'g')
+hold off
+
+
+subplot(3,3,3)
+plot(tp, pnew3b5e5,  tp, cavpnew3b5e5,  tp, cdpnew3b5e5, tp, inhpnew3b5e5, tp, marcpnew3b5e5)
+plot(tp, inhpnew3b5e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b5e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b5e5, 'r')
+plot(tp, pnew3b5e5, 'b', tp(5:10:200) ,pnew3b5e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b5e5, 'g')
+hold off
+
+
+subplot(3,3,4)
+plot(tp, pnew3b1e05,  tp, cavpnew3b1e05,  tp, cdpnew3b1e05, tp, inhpnew3b1e05, tp, marcpnew3b1e05)
+plot(tp, inhpnew3b1e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b1e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b1e05, 'r')
+plot(tp, pnew3b1e05, 'b', tp(5:10:200) ,pnew3b1e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b1e05, 'g')
+hold off
+
+subplot(3,3,5)
+plot(tp, pnew3b1e1,  tp, cavpnew3b1e1,  tp, cdpnew3b1e1, tp, inhpnew3b1e1, tp, marcpnew3b1e1)
+plot(tp, inhpnew3b1e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b1e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b1e1, 'r')
+plot(tp, pnew3b1e1, 'b', tp(5:10:200) ,pnew3b1e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b1e1, 'g')
+hold off
+
+
+subplot(3,3,6)
+plot(tp, pnew3b1e5,  tp, cavpnew3b1e5,  tp, cdpnew3b1e5, tp, inhpnew3b1e5, tp, marcpnew3b1e5)
+plot(tp, inhpnew3b1e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b1e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b1e5, 'r')
+plot(tp, pnew3b1e5, 'b', tp(5:10:200) ,pnew3b1e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b1e5, 'g')
+hold off
+
+
+subplot(3,3,7)
+plot(tp, pnew3b02e05,  tp, cavpnew3b02e05,  tp, cdpnew3b02e05, tp, inhpnew3b02e05, tp, marcpnew3b02e05)
+plot(tp, inhpnew3b02e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b02e05,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b02e05, 'r')
+plot(tp, pnew3b02e05, 'b', tp(5:10:200) ,pnew3b02e05(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b02e05, 'g')
+hold off
+
+
+subplot(3,3,8)
+plot(tp, pnew3b02e1,  tp, cavpnew3b02e1,  tp, cdpnew3b02e1, tp, inhpnew3b02e1, tp, marcpnew3b02e1)
+plot(tp, inhpnew3b02e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b02e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b02e1, 'r')
+plot(tp, pnew3b02e1, 'b', tp(5:10:200) ,pnew3b02e1(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b02e1, 'g')
+hold off
+
+
+subplot(3,3,9)
+plot(tp, pnew3b02e5,  tp, cavpnew3b02e5,  tp, cdpnew3b02e5, tp, inhpnew3b02e5, tp, marcpnew3b02e5)
+plot(tp, inhpnew3b02e5, 'color',[0.75 0 0.75])
+hold on
+plot(tp, cdpnew3b02e5,  'color',[0 0.75 0.75])
+plot(tp, cavpnew3b02e5, 'r')
+plot(tp, pnew3b02e5, 'b', tp(5:10:200) ,pnew3b02e5(5:10:200),'bo','MarkerSize',9)
+plot(tp, marcpnew3b02e5, 'g')
+hold off
+
+
 
 
 subplot(3,3,1)
