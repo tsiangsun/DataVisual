@@ -342,6 +342,136 @@ plot(tp, cavnew0b02e5, 'r')
 hold off
 
 
+---------------- semilogy plot -----------------
+
+subplot(3,3,1)
+semilogy(tp, inhnew3b5e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b5e05,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b5e05, 'g')
+semilogy(tp, new3b5e05, 'b', tp(5:10:200) ,new3b5e05(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b5e05, 'r')
+hold off
+
+
+subplot(3,3,2)
+semilogy(tp, inhnew3b5e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b5e1,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b5e1, 'g')
+semilogy(tp, new3b5e1, 'b', tp(5:10:200) ,new3b5e1(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b5e1, 'r')
+hold off
+
+
+subplot(3,3,3)
+semilogy(tp, inhnew3b5e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b5e5,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b5e5, 'g')
+semilogy(tp, new3b5e5, 'b', tp(5:10:200) ,new3b5e5(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b5e5, 'r')
+hold off
+
+
+subplot(3,3,4)
+semilogy(tp, inhnew3b1e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b1e05,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b1e05, 'g')
+semilogy(tp, new3b1e05, 'b', tp(5:10:200) ,new3b1e05(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b1e05, 'r')
+hold off
+
+subplot(3,3,5)
+semilogy(tp, inhnew3b1e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b1e1,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b1e1, 'g')
+semilogy(tp, new3b1e1, 'b', tp(5:10:200) ,new3b1e1(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b1e1, 'r')
+hold off
+
+subplot(3,3,6)
+semilogy(tp, inhnew3b1e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b1e5,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b1e5, 'g')
+semilogy(tp, new3b1e5, 'b', tp(5:10:200) ,new3b1e5(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b1e5, 'r')
+hold off
+
+subplot(3,3,7)
+semilogy(tp, inhnew3b02e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b02e05,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b02e05, 'g')
+semilogy(tp, new3b02e05, 'b', tp(5:10:200) ,new3b02e05(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b02e05, 'r')
+hold off
+
+
+subplot(3,3,8)
+semilogy(tp, inhnew3b02e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b02e1,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b02e1, 'g')
+semilogy(tp, new3b02e1, 'b', tp(5:10:200) ,new3b02e1(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b02e1, 'r')
+hold off
+
+
+subplot(3,3,9)
+semilogy(tp, inhnew3b02e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b02e5,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b02e5, 'g')
+semilogy(tp, new3b02e5, 'b', tp(5:10:200) ,new3b02e5(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b02e5, 'r')
+hold off
+
+omega_DA = 0
+
+subplot(3,3,1)
+ylim([5e-3 0.1])
+subplot(3,3,2)
+ylim([5e-3 0.1])
+subplot(3,3,3)
+ylim([5e-3 0.1])
+subplot(3,3,4)
+ylim([5e-3 0.1])
+subplot(3,3,5)
+ylim([5e-3 0.1])
+subplot(3,3,6)
+ylim([5e-3 0.1])
+subplot(3,3,7)
+ylim([5e-3 0.1])
+subplot(3,3,8)
+ylim([5e-3 0.1])
+subplot(3,3,9)
+ylim([5e-3 0.1])
+
+omega_DA=3
+
+subplot(3,3,1)
+ylim([1e-6 1e-2])
+subplot(3,3,2)
+ylim([1e-6 1e-2])
+subplot(3,3,3)
+ylim([1e-6 1e-2])
+subplot(3,3,4)
+ylim([1e-4 1e-2])
+subplot(3,3,5)
+ylim([1e-4 1e-2])
+subplot(3,3,6)
+ylim([1e-4 1e-2])
+subplot(3,3,7)
+ylim([1e-3 1e-2])
+subplot(3,3,8)
+ylim([1e-3 1e-2])
+subplot(3,3,9)
+ylim([1e-3 1e-2])
+
 
 
 SUBPLOT **** 3x3 Full k(t') vs t' at fixed omega_DA= 3
