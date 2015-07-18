@@ -259,9 +259,9 @@ subplot(3,3,1)
 plot(tp, inhnew0b5e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b5e05,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b5e05, 'r')
-plot(tp, new0b5e05, 'b', tp(5:10:200) ,new0b5e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b5e05, 'g')
+plot(tp, new0b5e05, 'b', tp(5:10:200) ,new0b5e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b5e05, 'r')
 hold off
 
 
@@ -269,9 +269,9 @@ subplot(3,3,2)
 plot(tp, inhnew0b5e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b5e1,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b5e1, 'r')
-plot(tp, new0b5e1, 'b', tp(5:10:200) ,new0b5e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b5e1, 'g')
+plot(tp, new0b5e1, 'b', tp(5:10:200) ,new0b5e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b5e1, 'r')
 hold off
 
 
@@ -279,9 +279,9 @@ subplot(3,3,3)
 plot(tp, inhnew0b5e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b5e5,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b5e5, 'r')
-plot(tp, new0b5e5, 'b', tp(5:10:200) ,new0b5e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b5e5, 'g')
+plot(tp, new0b5e5, 'b', tp(5:10:200) ,new0b5e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b5e5, 'r')
 hold off
 
 
@@ -289,36 +289,36 @@ subplot(3,3,4)
 plot(tp, inhnew0b1e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b1e05,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b1e05, 'r')
-plot(tp, new0b1e05, 'b', tp(5:10:200) ,new0b1e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b1e05, 'g')
+plot(tp, new0b1e05, 'b', tp(5:10:200) ,new0b1e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b1e05, 'r')
 hold off
 
 subplot(3,3,5)
 plot(tp, inhnew0b1e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b1e1,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b1e1, 'r')
-plot(tp, new0b1e1, 'b', tp(5:10:200) ,new0b1e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b1e1, 'g')
+plot(tp, new0b1e1, 'b', tp(5:10:200) ,new0b1e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b1e1, 'r')
 hold off
 
 subplot(3,3,6)
 plot(tp, inhnew0b1e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b1e5,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b1e5, 'r')
-plot(tp, new0b1e5, 'b', tp(5:10:200) ,new0b1e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b1e5, 'g')
+plot(tp, new0b1e5, 'b', tp(5:10:200) ,new0b1e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b1e5, 'r')
 hold off
 
 subplot(3,3,7)
 plot(tp, inhnew0b02e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b02e05,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b02e05, 'r')
-plot(tp, new0b02e05, 'b', tp(5:10:200) ,new0b02e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b02e05, 'g')
+plot(tp, new0b02e05, 'b', tp(5:10:200) ,new0b02e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b02e05, 'r')
 hold off
 
 
@@ -326,9 +326,9 @@ subplot(3,3,8)
 plot(tp, inhnew0b02e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b02e1,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b02e1, 'r')
-plot(tp, new0b02e1, 'b', tp(5:10:200) ,new0b02e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b02e1, 'g')
+plot(tp, new0b02e1, 'b', tp(5:10:200) ,new0b02e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b02e1, 'r')
 hold off
 
 
@@ -336,11 +336,141 @@ subplot(3,3,9)
 plot(tp, inhnew0b02e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew0b02e5,  'color',[0 0.75 0.75])
-plot(tp, cavnew0b02e5, 'r')
-plot(tp, new0b02e5, 'b', tp(5:10:200) ,new0b02e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew0b02e5, 'g')
+plot(tp, new0b02e5, 'b', tp(5:10:200) ,new0b02e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew0b02e5, 'r')
 hold off
 
+
+---------------- semilogy plot -----------------
+
+subplot(3,3,1)
+semilogy(tp, inhnew3b5e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b5e05,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b5e05, 'g')
+semilogy(tp, new3b5e05, 'b', tp(5:10:200) ,new3b5e05(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b5e05, 'r')
+hold off
+
+
+subplot(3,3,2)
+semilogy(tp, inhnew3b5e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b5e1,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b5e1, 'g')
+semilogy(tp, new3b5e1, 'b', tp(5:10:200) ,new3b5e1(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b5e1, 'r')
+hold off
+
+
+subplot(3,3,3)
+semilogy(tp, inhnew3b5e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b5e5,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b5e5, 'g')
+semilogy(tp, new3b5e5, 'b', tp(5:10:200) ,new3b5e5(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b5e5, 'r')
+hold off
+
+
+subplot(3,3,4)
+semilogy(tp, inhnew3b1e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b1e05,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b1e05, 'g')
+semilogy(tp, new3b1e05, 'b', tp(5:10:200) ,new3b1e05(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b1e05, 'r')
+hold off
+
+subplot(3,3,5)
+semilogy(tp, inhnew3b1e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b1e1,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b1e1, 'g')
+semilogy(tp, new3b1e1, 'b', tp(5:10:200) ,new3b1e1(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b1e1, 'r')
+hold off
+
+subplot(3,3,6)
+semilogy(tp, inhnew3b1e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b1e5,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b1e5, 'g')
+semilogy(tp, new3b1e5, 'b', tp(5:10:200) ,new3b1e5(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b1e5, 'r')
+hold off
+
+subplot(3,3,7)
+semilogy(tp, inhnew3b02e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b02e05,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b02e05, 'g')
+semilogy(tp, new3b02e05, 'b', tp(5:10:200) ,new3b02e05(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b02e05, 'r')
+hold off
+
+
+subplot(3,3,8)
+semilogy(tp, inhnew3b02e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b02e1,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b02e1, 'g')
+semilogy(tp, new3b02e1, 'b', tp(5:10:200) ,new3b02e1(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b02e1, 'r')
+hold off
+
+
+subplot(3,3,9)
+semilogy(tp, inhnew3b02e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(tp, cdnew3b02e5,  'color',[0 0.75 0.75])
+semilogy(tp, marcnew3b02e5, 'g')
+semilogy(tp, new3b02e5, 'b', tp(5:10:200) ,new3b02e5(5:10:200),'bo','MarkerSize',8)
+semilogy(tp, cavnew3b02e5, 'r')
+hold off
+
+omega_DA = 0
+
+subplot(3,3,1)
+ylim([5e-3 0.1])
+subplot(3,3,2)
+ylim([5e-3 0.1])
+subplot(3,3,3)
+ylim([5e-3 0.1])
+subplot(3,3,4)
+ylim([5e-3 0.1])
+subplot(3,3,5)
+ylim([5e-3 0.1])
+subplot(3,3,6)
+ylim([5e-3 0.1])
+subplot(3,3,7)
+ylim([5e-3 0.1])
+subplot(3,3,8)
+ylim([5e-3 0.1])
+subplot(3,3,9)
+ylim([5e-3 0.1])
+
+omega_DA=3
+
+subplot(3,3,1)
+ylim([1e-6 1e-2])
+subplot(3,3,2)
+ylim([1e-6 1e-2])
+subplot(3,3,3)
+ylim([1e-6 1e-2])
+subplot(3,3,4)
+ylim([1e-4 1e-2])
+subplot(3,3,5)
+ylim([1e-4 1e-2])
+subplot(3,3,6)
+ylim([1e-4 1e-2])
+subplot(3,3,7)
+ylim([1e-3 1e-2])
+subplot(3,3,8)
+ylim([1e-3 1e-2])
+subplot(3,3,9)
+ylim([1e-3 1e-2])
 
 
 
@@ -351,9 +481,9 @@ subplot(3,3,1)
 plot(tp, inhnew3b5e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b5e05,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b5e05, 'r')
-plot(tp, new3b5e05, 'b', tp(5:10:200) ,new3b5e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b5e05, 'g')
+plot(tp, new3b5e05, 'b', tp(5:10:200) ,new3b5e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b5e05, 'r')
 hold off
 
 
@@ -361,9 +491,9 @@ subplot(3,3,2)
 plot(tp, inhnew3b5e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b5e1,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b5e1, 'r')
-plot(tp, new3b5e1, 'b', tp(5:10:200) ,new3b5e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b5e1, 'g')
+plot(tp, new3b5e1, 'b', tp(5:10:200) ,new3b5e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b5e1, 'r')
 hold off
 
 
@@ -371,9 +501,9 @@ subplot(3,3,3)
 plot(tp, inhnew3b5e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b5e5,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b5e5, 'r')
-plot(tp, new3b5e5, 'b', tp(5:10:200) ,new3b5e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b5e5, 'g')
+plot(tp, new3b5e5, 'b', tp(5:10:200) ,new3b5e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b5e5, 'r')
 hold off
 
 
@@ -381,36 +511,36 @@ subplot(3,3,4)
 plot(tp, inhnew3b1e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b1e05,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b1e05, 'r')
-plot(tp, new3b1e05, 'b', tp(5:10:200) ,new3b1e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b1e05, 'g')
+plot(tp, new3b1e05, 'b', tp(5:10:200) ,new3b1e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b1e05, 'r')
 hold off
 
 subplot(3,3,5)
 plot(tp, inhnew3b1e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b1e1,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b1e1, 'r')
-plot(tp, new3b1e1, 'b', tp(5:10:200) ,new3b1e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b1e1, 'g')
+plot(tp, new3b1e1, 'b', tp(5:10:200) ,new3b1e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b1e1, 'r')
 hold off
 
 subplot(3,3,6)
 plot(tp, inhnew3b1e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b1e5,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b1e5, 'r')
-plot(tp, new3b1e5, 'b', tp(5:10:200) ,new3b1e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b1e5, 'g')
+plot(tp, new3b1e5, 'b', tp(5:10:200) ,new3b1e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b1e5, 'r')
 hold off
 
 subplot(3,3,7)
 plot(tp, inhnew3b02e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b02e05,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b02e05, 'r')
-plot(tp, new3b02e05, 'b', tp(5:10:200) ,new3b02e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b02e05, 'g')
+plot(tp, new3b02e05, 'b', tp(5:10:200) ,new3b02e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b02e05, 'r')
 hold off
 
 
@@ -418,9 +548,9 @@ subplot(3,3,8)
 plot(tp, inhnew3b02e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b02e1,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b02e1, 'r')
-plot(tp, new3b02e1, 'b', tp(5:10:200) ,new3b02e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b02e1, 'g')
+plot(tp, new3b02e1, 'b', tp(5:10:200) ,new3b02e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b02e1, 'r')
 hold off
 
 
@@ -428,9 +558,9 @@ subplot(3,3,9)
 plot(tp, inhnew3b02e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdnew3b02e5,  'color',[0 0.75 0.75])
-plot(tp, cavnew3b02e5, 'r')
-plot(tp, new3b02e5, 'b', tp(5:10:200) ,new3b02e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcnew3b02e5, 'g')
+plot(tp, new3b02e5, 'b', tp(5:10:200) ,new3b02e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavnew3b02e5, 'r')
 hold off
 
 
@@ -515,9 +645,9 @@ subplot(3,3,1)
 plot(tp, inhpnew0b5e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b5e05,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b5e05, 'r')
-plot(tp, pnew0b5e05, 'b', tp(5:10:200) ,pnew0b5e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b5e05, 'g')
+plot(tp, pnew0b5e05, 'b', tp(5:10:200) ,pnew0b5e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b5e05, 'r')
 hold off
 
 subplot(3,3,2)
@@ -525,9 +655,9 @@ plot(tp, pnew0b5e1,  tp, cavpnew0b5e1,  tp, cdpnew0b5e1, tp, inhpnew0b5e1, tp, m
 plot(tp, inhpnew0b5e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b5e1,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b5e1, 'r')
-plot(tp, pnew0b5e1, 'b', tp(5:10:200) ,pnew0b5e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b5e1, 'g')
+plot(tp, pnew0b5e1, 'b', tp(5:10:200) ,pnew0b5e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b5e1, 'r')
 hold off
 
 
@@ -536,9 +666,9 @@ plot(tp, pnew0b5e5,  tp, cavpnew0b5e5,  tp, cdpnew0b5e5, tp, inhpnew0b5e5, tp, m
 plot(tp, inhpnew0b5e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b5e5,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b5e5, 'r')
-plot(tp, pnew0b5e5, 'b', tp(5:10:200) ,pnew0b5e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b5e5, 'g')
+plot(tp, pnew0b5e5, 'b', tp(5:10:200) ,pnew0b5e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b5e5, 'r')
 hold off
 
 
@@ -547,9 +677,9 @@ plot(tp, pnew0b1e05,  tp, cavpnew0b1e05,  tp, cdpnew0b1e05, tp, inhpnew0b1e05, t
 plot(tp, inhpnew0b1e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b1e05,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b1e05, 'r')
-plot(tp, pnew0b1e05, 'b', tp(5:10:200) ,pnew0b1e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b1e05, 'g')
+plot(tp, pnew0b1e05, 'b', tp(5:10:200) ,pnew0b1e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b1e05, 'r')
 hold off
 
 subplot(3,3,5)
@@ -557,9 +687,9 @@ plot(tp, pnew0b1e1,  tp, cavpnew0b1e1,  tp, cdpnew0b1e1, tp, inhpnew0b1e1, tp, m
 plot(tp, inhpnew0b1e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b1e1,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b1e1, 'r')
-plot(tp, pnew0b1e1, 'b', tp(5:10:200) ,pnew0b1e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b1e1, 'g')
+plot(tp, pnew0b1e1, 'b', tp(5:10:200) ,pnew0b1e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b1e1, 'r')
 hold off
 
 
@@ -568,9 +698,9 @@ plot(tp, pnew0b1e5,  tp, cavpnew0b1e5,  tp, cdpnew0b1e5, tp, inhpnew0b1e5, tp, m
 plot(tp, inhpnew0b1e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b1e5,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b1e5, 'r')
-plot(tp, pnew0b1e5, 'b', tp(5:10:200) ,pnew0b1e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b1e5, 'g')
+plot(tp, pnew0b1e5, 'b', tp(5:10:200) ,pnew0b1e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b1e5, 'r')
 hold off
 
 
@@ -579,9 +709,9 @@ plot(tp, pnew0b02e05,  tp, cavpnew0b02e05,  tp, cdpnew0b02e05, tp, inhpnew0b02e0
 plot(tp, inhpnew0b02e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b02e05,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b02e05, 'r')
-plot(tp, pnew0b02e05, 'b', tp(5:10:200) ,pnew0b02e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b02e05, 'g')
+plot(tp, pnew0b02e05, 'b', tp(5:10:200) ,pnew0b02e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b02e05, 'r')
 hold off
 
 
@@ -590,9 +720,9 @@ plot(tp, pnew0b02e1,  tp, cavpnew0b02e1,  tp, cdpnew0b02e1, tp, inhpnew0b02e1, t
 plot(tp, inhpnew0b02e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b02e1,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b02e1, 'r')
-plot(tp, pnew0b02e1, 'b', tp(5:10:200) ,pnew0b02e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b02e1, 'g')
+plot(tp, pnew0b02e1, 'b', tp(5:10:200) ,pnew0b02e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b02e1, 'r')
 hold off
 
 
@@ -601,9 +731,9 @@ plot(tp, pnew0b02e5,  tp, cavpnew0b02e5,  tp, cdpnew0b02e5, tp, inhpnew0b02e5, t
 plot(tp, inhpnew0b02e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew0b02e5,  'color',[0 0.75 0.75])
-plot(tp, cavpnew0b02e5, 'r')
-plot(tp, pnew0b02e5, 'b', tp(5:10:200) ,pnew0b02e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew0b02e5, 'g')
+plot(tp, pnew0b02e5, 'b', tp(5:10:200) ,pnew0b02e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew0b02e5, 'r')
 hold off
 
 
@@ -615,9 +745,9 @@ subplot(3,3,1)
 plot(tp, inhpnew3b5e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b5e05,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b5e05, 'r')
-plot(tp, pnew3b5e05, 'b', tp(5:10:200) ,pnew3b5e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b5e05, 'g')
+plot(tp, pnew3b5e05, 'b', tp(5:10:200) ,pnew3b5e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b5e05, 'r')
 hold off
 
 subplot(3,3,2)
@@ -625,9 +755,9 @@ plot(tp, pnew3b5e1,  tp, cavpnew3b5e1,  tp, cdpnew3b5e1, tp, inhpnew3b5e1, tp, m
 plot(tp, inhpnew3b5e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b5e1,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b5e1, 'r')
-plot(tp, pnew3b5e1, 'b', tp(5:10:200) ,pnew3b5e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b5e1, 'g')
+plot(tp, pnew3b5e1, 'b', tp(5:10:200) ,pnew3b5e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b5e1, 'r')
 hold off
 
 
@@ -636,9 +766,9 @@ plot(tp, pnew3b5e5,  tp, cavpnew3b5e5,  tp, cdpnew3b5e5, tp, inhpnew3b5e5, tp, m
 plot(tp, inhpnew3b5e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b5e5,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b5e5, 'r')
-plot(tp, pnew3b5e5, 'b', tp(5:10:200) ,pnew3b5e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b5e5, 'g')
+plot(tp, pnew3b5e5, 'b', tp(5:10:200) ,pnew3b5e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b5e5, 'r')
 hold off
 
 
@@ -647,9 +777,9 @@ plot(tp, pnew3b1e05,  tp, cavpnew3b1e05,  tp, cdpnew3b1e05, tp, inhpnew3b1e05, t
 plot(tp, inhpnew3b1e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b1e05,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b1e05, 'r')
-plot(tp, pnew3b1e05, 'b', tp(5:10:200) ,pnew3b1e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b1e05, 'g')
+plot(tp, pnew3b1e05, 'b', tp(5:10:200) ,pnew3b1e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b1e05, 'r')
 hold off
 
 subplot(3,3,5)
@@ -657,9 +787,9 @@ plot(tp, pnew3b1e1,  tp, cavpnew3b1e1,  tp, cdpnew3b1e1, tp, inhpnew3b1e1, tp, m
 plot(tp, inhpnew3b1e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b1e1,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b1e1, 'r')
-plot(tp, pnew3b1e1, 'b', tp(5:10:200) ,pnew3b1e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b1e1, 'g')
+plot(tp, pnew3b1e1, 'b', tp(5:10:200) ,pnew3b1e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b1e1, 'r')
 hold off
 
 
@@ -668,9 +798,9 @@ plot(tp, pnew3b1e5,  tp, cavpnew3b1e5,  tp, cdpnew3b1e5, tp, inhpnew3b1e5, tp, m
 plot(tp, inhpnew3b1e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b1e5,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b1e5, 'r')
-plot(tp, pnew3b1e5, 'b', tp(5:10:200) ,pnew3b1e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b1e5, 'g')
+plot(tp, pnew3b1e5, 'b', tp(5:10:200) ,pnew3b1e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b1e5, 'r')
 hold off
 
 
@@ -679,9 +809,9 @@ plot(tp, pnew3b02e05,  tp, cavpnew3b02e05,  tp, cdpnew3b02e05, tp, inhpnew3b02e0
 plot(tp, inhpnew3b02e05, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b02e05,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b02e05, 'r')
-plot(tp, pnew3b02e05, 'b', tp(5:10:200) ,pnew3b02e05(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b02e05, 'g')
+plot(tp, pnew3b02e05, 'b', tp(5:10:200) ,pnew3b02e05(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b02e05, 'r')
 hold off
 
 
@@ -690,9 +820,9 @@ plot(tp, pnew3b02e1,  tp, cavpnew3b02e1,  tp, cdpnew3b02e1, tp, inhpnew3b02e1, t
 plot(tp, inhpnew3b02e1, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b02e1,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b02e1, 'r')
-plot(tp, pnew3b02e1, 'b', tp(5:10:200) ,pnew3b02e1(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b02e1, 'g')
+plot(tp, pnew3b02e1, 'b', tp(5:10:200) ,pnew3b02e1(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b02e1, 'r')
 hold off
 
 
@@ -701,9 +831,9 @@ plot(tp, pnew3b02e5,  tp, cavpnew3b02e5,  tp, cdpnew3b02e5, tp, inhpnew3b02e5, t
 plot(tp, inhpnew3b02e5, 'color',[0.75 0 0.75])
 hold on
 plot(tp, cdpnew3b02e5,  'color',[0 0.75 0.75])
-plot(tp, cavpnew3b02e5, 'r')
-plot(tp, pnew3b02e5, 'b', tp(5:10:200) ,pnew3b02e5(5:10:200),'bo','MarkerSize',9)
 plot(tp, marcpnew3b02e5, 'g')
+plot(tp, pnew3b02e5, 'b', tp(5:10:200) ,pnew3b02e5(5:10:200),'bo','MarkerSize',8)
+plot(tp, cavpnew3b02e5, 'r')
 hold off
 
 
