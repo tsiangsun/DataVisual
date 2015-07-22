@@ -79,6 +79,72 @@ marceqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_nm_b0.2e
 inh2eqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_nm_b0.2e5.dat')
 
 
+
+
+lsceqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b5e0.5.dat')
+caveqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b5e0.5.dat')
+cdeqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b5e0.5.dat')
+inheqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b5e0.5.dat')
+marceqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b5e0.5.dat')
+inh2eqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b5e0.5.dat')
+
+lsceqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b5e1.dat')
+caveqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b5e1.dat')
+cdeqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b5e1.dat')
+inheqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b5e1.dat')
+marceqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b5e1.dat')
+inh2eqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b5e1.dat')
+
+lsceqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b5e5.dat')
+caveqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b5e5.dat')
+cdeqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b5e5.dat')
+inheqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b5e5.dat')
+marceqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b5e5.dat')
+inh2eqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b5e5.dat')
+
+lsceqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b1e0.5.dat')
+caveqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b1e0.5.dat')
+cdeqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b1e0.5.dat')
+inheqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b1e0.5.dat')
+marceqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b1e0.5.dat')
+inh2eqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b1e0.5.dat')
+
+lsceqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b1e1.dat')
+caveqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b1e1.dat')
+cdeqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b1e1.dat')
+inheqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b1e1.dat')
+marceqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b1e1.dat')
+inh2eqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b1e1.dat')
+
+lsceqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b1e5.dat')
+caveqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b1e5.dat')
+cdeqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b1e5.dat')
+inheqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b1e5.dat')
+marceqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b1e5.dat')
+inh2eqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b1e5.dat')
+
+lsceqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b0.2e0.5.dat')
+caveqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b0.2e0.5.dat')
+cdeqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b0.2e0.5.dat')
+inheqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b0.2e0.5.dat')
+marceqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b0.2e0.5.dat')
+inh2eqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b0.2e0.5.dat')
+
+lsceqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b0.2e1.dat')
+caveqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b0.2e1.dat')
+cdeqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b0.2e1.dat')
+inheqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b0.2e1.dat')
+marceqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b0.2e1.dat')
+inh2eqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b0.2e1.dat')
+
+lsceqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jcont_b0.2e5.dat')
+caveqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jcont_b0.2e5.dat')
+cdeqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jcont_b0.2e5.dat')
+inheqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jcont_b0.2e5.dat')
+marceqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jcont_b0.2e5.dat')
+inh2eqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jcont_b0.2e5.dat')
+
+
 SUBPLOT **** 3x3 Full k vs omega_DA
 
 subplot(3,3,1)
