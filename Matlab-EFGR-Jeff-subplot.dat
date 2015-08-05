@@ -1,0 +1,798 @@
+
+=======================
+EFGR_Jeff - Ohmic bath spectral density using Jeff(omega)
+
+Parameters LEN=512, deltaT = 0.2
+
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+lsc = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_Jeff.dat') 
+inh = importdata('/Users/xiangs/Dropbox/code/E_FGR/inh_EFGR_Jeff.dat')
+cav = importdata('/Users/xiangs/Dropbox/code/E_FGR/CAV_EFGR_Jeff.dat')
+cd = importdata('/Users/xiangs/Dropbox/code/E_FGR/CD_EFGR_Jeff.dat')
+marcus = importdata('/Users/xiangs/Dropbox/code/E_FGR/Marcus_EFGR_Jeff.dat')
+marcusl = importdata('/Users/xiangs/Dropbox/code/E_FGR/Marcus-levich_EFGR_Jeff.dat')
+
+SD = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff(omega).dat')
+lsc_nm = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_nm.dat')
+
+
+>>>>>> Figure 1 - compare Jeff with exact numerical normal modes
+
+lsc_jeff = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_Jeff.dat') 
+lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_Jeff2.dat') 
+lsc_nm = importdata('/Users/xiangs/Dropbox/code/E_FGR/Exact_EFGR_nm.dat') 
+
+semilogy(xo, lsc_jeff,'b', xo, lsc_jeff2, 'c' , xo, lsc_nm, 'r')
+
+xlabel('\omega_{DA} / \omega_c','FontSize', 36)
+ylabel('k / \omega_c','FontSize', 36)
+xlim([ 0 15])
+ylim([1e-6  1])
+legend('J_{eff}(1)','J_{eff}(2)', 'exact')
+
+>>>>>> Figure 2 - EFGR approximations with Jeff (evenly sampled)
+
+semilogy(xo ,lsc, 'b', xo(2:256/20:256),lsc(2:256/20:256),'bo','MarkerSize',8)
+hold on 
+semilogy(xo, cav, 'r') 
+semilogy(xo, cd(1:256), 'color',[0 0.75 0.75])
+semilogy(xo, marcusl, 'color',[0.75 0 0.75])
+semilogy(xo, marcus, 'g')
+hold off
+
+legend('W-AV','W-AV','C-AV', 'C-D', 'W-0','Marcus')
+
+axis([0 10 10^-4 10^-1])
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('k / \omega_{c}','FontSize', 40)
+
+xlim([0 10])
+ylim([1e-10  1])
+
+legend('boxoff')
+
+
+-----
+Parameters LEN=1024, deltaT=0.3
+df = 0.00325521
+x = [0: 511]
+x = x * df * 2 * pi
+
+
+semilogy(x ,lsc, 'b', x(2:512/20:512),lsc(2:512/20:512),'bo','MarkerSize',8)
+hold on 
+semilogy(x, cav, 'r') 
+semilogy(x, cd(1:512), 'color',[0 0.75 0.75])
+semilogy(x, inh, 'color',[0.75 0 0.75])
+semilogy(x, marcus, 'g')
+hold off
+
+
+xlim([0 8])
+ylim([1e-8  1])
+
+
+>>>>>>> Figure 3 - compare Jeff at two limits with normal mode Jeff from histogram
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff(omega).dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff2(omega).dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_nm_hist.dat')
+
+bin = 0: 15/200:15-15/200
+w = 15/1000: 15/1000 : 15-15/1000
+
+bar(bin,jnm)
+hold on
+plot(w, jeff1, 'r', w, jeff2, 'g')
+hold off
+xlim([0 6])
+ylim([0  0.5])
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('J(\omega)','FontSize', 40)
+
+>>>>>>> Figure 4 - compare Jeff integral at two limits with exact normal mode
+
+dt = 0.2
+t= 0:511
+t= t - 256
+t= t * dt
+
+plot(t, nm_re1,'r', t, jeff_re1,'b', t, jeff2_re1, 'c')
+plot(t, nm_im1,'r', t, jeff_im1,'b', t, jeff2_im1, 'c')
+xlabel('\omega_c t')
+ylabel('Re')
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
+legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+legend boxoff
+
+
+>>>>>>> Figure 5 - Compare numerical with analytical LSC
+Parameters LEN=1024, deltaT=0.3
+df = 0.00325521
+x = [0: 511]
+x = x * df * 2 * pi
+
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+
+lsc = importdata('/Users/xiangs/Dropbox/code/EFGR/Exact_EFGR_Jeff.dat') 
+nlsc = importdata('/Users/xiangs/Dropbox/code/EFGR/num_LSC_EFGR_Jeff_Omega0.2_b1e1_50000_AVG50.dat')
+
+semilogy(xo, lsc, 'b', xo, nlsc,'r')
+
+nlsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/num_LSC_EFGR_nm_Omega0.2_b1e1_5000_AVG50.dat')
+
+
+
+
+
+
+
+
+
+
+
+
+*************** subplot Full 3x3 *********************
+
+
+LEN = 512, DT= 0.2;
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+LEN = 1024, DT= 0.3; check 
+df = 0.00325521
+xo = [0: 511]
+xo = xo * df * 2 * pi
+
+LEN= 1024, DT=0.2
+df = 0.00488281
+xo = [0: 511]
+xo = xo * df * 2 * pi
+
+0.00651042
+
+
+parameters:  beta, 0.2, 1 , 5, eta= 0.5, 1, 5
+
+
+----- input data EFGR Condon using exact discrete normal modes ------
+
+tauc = importdata('/Users/xiangs/Dropbox/code/EFGR/Tau_c_EFGR_Jeff.dat')
+
+lsceqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b5e0.5.dat')
+caveqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b5e0.5.dat')
+cdeqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b5e0.5.dat')
+inheqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b5e0.5.dat')
+marceqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b5e0.5.dat')
+inh2eqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b5e0.5.dat')
+
+lsceqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b5e1.dat')
+caveqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b5e1.dat')
+cdeqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b5e1.dat')
+inheqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b5e1.dat')
+marceqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b5e1.dat')
+inh2eqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b5e1.dat')
+
+lsceqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b5e5.dat')
+caveqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b5e5.dat')
+cdeqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b5e5.dat')
+inheqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b5e5.dat')
+marceqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b5e5.dat')
+inh2eqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b5e5.dat')
+
+lsceqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b1e0.5.dat')
+caveqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b1e0.5.dat')
+cdeqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b1e0.5.dat')
+inheqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b1e0.5.dat')
+marceqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b1e0.5.dat')
+inh2eqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b1e0.5.dat')
+
+lsceqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b1e1.dat')
+caveqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b1e1.dat')
+cdeqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b1e1.dat')
+inheqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b1e1.dat')
+marceqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b1e1.dat')
+inh2eqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b1e1.dat')
+
+lsceqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b1e5.dat')
+caveqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b1e5.dat')
+cdeqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b1e5.dat')
+inheqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b1e5.dat')
+marceqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b1e5.dat')
+inh2eqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b1e5.dat')
+
+lsceqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b0.2e0.5.dat')
+caveqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b0.2e0.5.dat')
+cdeqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b0.2e0.5.dat')
+inheqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b0.2e0.5.dat')
+marceqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b0.2e0.5.dat')
+inh2eqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b0.2e0.5.dat')
+
+lsceqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b0.2e1.dat')
+caveqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b0.2e1.dat')
+cdeqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b0.2e1.dat')
+inheqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b0.2e1.dat')
+marceqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b0.2e1.dat')
+inh2eqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b0.2e1.dat')
+
+lsceqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b0.2e5.dat')
+caveqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b0.2e5.dat')
+cdeqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b0.2e5.dat')
+inheqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b0.2e5.dat')
+marceqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b0.2e5.dat')
+inh2eqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b0.2e5.dat')
+
+
+
+SUBPLOT **** 3x3 Full k vs omega_DA
+
+subplot(3,3,1)
+semilogy(xo, inheqnmb5e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb5e05(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb5e05, 'r')
+semilogy(xo, lsceqnmb5e05, 'b', xo(2:40:512) ,lsceqnmb5e05(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb5e05, 'color', 'g')
+hold off
+
+
+subplot(3,3,2)
+semilogy(xo, inheqnmb5e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb5e1(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb5e1, 'r')
+semilogy(xo, lsceqnmb5e1, 'b', xo(2:40:512) ,lsceqnmb5e1(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb5e1, 'color', 'g')
+hold off
+
+
+subplot(3,3,3)
+semilogy(xo, inheqnmb5e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb5e5(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb5e5, 'r')
+semilogy(xo, lsceqnmb5e5, 'b', xo(2:40:512) ,lsceqnmb5e5(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb5e5, 'color', 'g')
+hold off
+
+
+subplot(3,3,4)
+semilogy(xo, inheqnmb1e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb1e05(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb1e05, 'r')
+semilogy(xo, lsceqnmb1e05, 'b', xo(2:40:512) ,lsceqnmb1e05(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb1e05, 'color', 'g')
+hold off
+
+
+subplot(3,3,5)
+semilogy(xo, inheqnmb1e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb1e1(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb1e1, 'r')
+semilogy(xo, lsceqnmb1e1, 'b', xo(2:40:512) ,lsceqnmb1e1(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb1e1, 'color', 'g')
+hold off
+
+
+subplot(3,3,6)
+semilogy(xo, inheqnmb1e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb1e5(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb1e5, 'r')
+semilogy(xo, lsceqnmb1e5, 'b', xo(2:40:512) ,lsceqnmb1e5(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb1e5, 'color', 'g')
+hold off
+
+
+subplot(3,3,7)
+semilogy(xo, inheqnmb02e05, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb02e05(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb02e05, 'r')
+semilogy(xo, lsceqnmb02e05, 'b', xo(2:40:512) ,lsceqnmb02e05(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb02e05, 'color', 'g')
+hold off
+
+
+subplot(3,3,8)
+semilogy(xo, inheqnmb02e1, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb02e1(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb02e1, 'r')
+semilogy(xo, lsceqnmb02e1, 'b', xo(2:40:512) ,lsceqnmb02e1(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb02e1, 'color', 'g')
+hold off
+
+
+subplot(3,3,9)
+semilogy(xo, inheqnmb02e5, 'color',[0.75 0 0.75])
+hold on
+semilogy(xo, cdeqnmb02e5(1:512), 'color',[0 0.75 0.75])
+semilogy(xo, caveqnmb02e5, 'r')
+semilogy(xo, lsceqnmb02e5, 'b', xo(2:40:512) ,lsceqnmb02e5(2:40:512),'bo','MarkerSize',6)
+semilogy(xo, marceqnmb02e5, 'color', 'g')
+hold off
+
+
+
+subplot(3,3,4)
+ylabel('log (k/\omega_c) ','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+
+legend('W-0', 'C-AV', 'C-D', 'W-AV','', 'Marcus')
+
+
+X-axis ------------------>>
+
+subplot(3,3,1)
+xlim([0  10])
+subplot(3,3,2)
+xlim([0  10])
+subplot(3,3,3)
+xlim([0  10])
+subplot(3,3,4)
+xlim([0  10])
+subplot(3,3,5)
+xlim([0  10])
+subplot(3,3,6)
+xlim([0  10])
+subplot(3,3,7)
+xlim([0  10])
+subplot(3,3,8)
+xlim([0  10])
+subplot(3,3,9)
+xlim([0  10])
+
+subplot(3,3,1)
+xlim([0  15])
+subplot(3,3,2)
+xlim([0  15])
+subplot(3,3,3)
+xlim([0  15])
+subplot(3,3,4)
+xlim([0  15])
+subplot(3,3,5)
+xlim([0  15])
+subplot(3,3,6)
+xlim([0  15])
+subplot(3,3,7)
+xlim([0  15])
+subplot(3,3,8)
+xlim([0  15])
+subplot(3,3,9)
+xlim([0  15])
+
+Y-axis --------------------->>
+
+subplot(3,3,1)
+ylim([1e-10 1])
+subplot(3,3,2)
+ylim([1e-10 1])
+subplot(3,3,3)
+ylim([1e-10 1])
+subplot(3,3,4)
+ylim([1e-10 1])
+subplot(3,3,5)
+ylim([1e-10 1])
+subplot(3,3,6)
+ylim([1e-10 1])
+subplot(3,3,7)
+ylim([1e-10 1])
+subplot(3,3,8)
+ylim([1e-10 1])
+subplot(3,3,9)
+ylim([1e-10 1])
+
+subplot(3,3,1)
+ylim([1e-8 1])
+subplot(3,3,2)
+ylim([1e-8 1])
+subplot(3,3,3)
+ylim([1e-8 1])
+subplot(3,3,4)
+ylim([1e-8 1])
+subplot(3,3,5)
+ylim([1e-8 1])
+subplot(3,3,6)
+ylim([1e-8 1])
+subplot(3,3,7)
+ylim([1e-8 1])
+subplot(3,3,8)
+ylim([1e-8 1])
+subplot(3,3,9)
+ylim([1e-8 1])
+
+subplot(3,3,1)
+ylim([1e-6 1])
+subplot(3,3,2)
+ylim([1e-6 1])
+subplot(3,3,3)
+ylim([1e-6 1])
+subplot(3,3,4)
+ylim([1e-6 1])
+subplot(3,3,5)
+ylim([1e-6 1])
+subplot(3,3,6)
+ylim([1e-6 1])
+subplot(3,3,7)
+ylim([1e-6 1])
+subplot(3,3,8)
+ylim([1e-6 1])
+subplot(3,3,9)
+ylim([1e-6 1])
+
+
+SUBPLOT ********* 3x3 Full k*tau_c vs omega_DA  *************
+
+LEN = 1024
+DeltaT = 0.2
+ df = 0.00488281
+
+DeltaT = 0.1
+ df = 0.00976562
+
+DeltaT = 0.05
+ df = 0.0195312
+
+LEN = 2048
+ DeltaT = 0.05
+ df = 0.00976562
+ DeltaT = 0.03
+ df = 0.016276
+ DeltaT  = 0.04
+ df = 0.012207
+
+LEN = 4096
+  DeltaT = 0.03
+  df = 0.00813802
+  DeltaT = 0.04
+  df = 0.00610352
+
+FTP = LEN/2
+GAP = int64(FTP/12)
+xo = [0: FTP-1]
+xo = xo * df * 2 * pi
+
+
+subplot(3,3,1)
+semilogy(xo, lsceqnmb5e05 * tauc(7) )
+
+subplot(3,3,2)
+semilogy(xo, lsceqnmb5e1 * tauc(8))
+
+subplot(3,3,3)
+semilogy(xo, lsceqnmb5e5 * tauc(9))
+
+subplot(3,3,4)
+semilogy(xo, lsceqnmb1e05 * tauc(4))
+
+subplot(3,3,5)
+semilogy(xo, lsceqnmb1e1 * tauc(5))
+
+subplot(3,3,6)
+semilogy(xo, lsceqnmb1e5 * tauc(6))
+
+subplot(3,3,7)
+semilogy(xo, lsceqnmb02e05 * tauc(1))
+
+subplot(3,3,8)
+semilogy(xo, lsceqnmb02e1 * tauc(2))
+
+subplot(3,3,9)
+semilogy(xo, lsceqnmb02e5 * tauc(3))
+
+subplot(3,3,4)
+ylabel('log (k \tau_c) ','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+
+subplot(3,3,1)
+xlim([0  15])
+subplot(3,3,2)
+xlim([0  15])
+subplot(3,3,3)
+xlim([0  15])
+subplot(3,3,4)
+xlim([0  15])
+subplot(3,3,5)
+xlim([0  15])
+subplot(3,3,6)
+xlim([0  15])
+subplot(3,3,7)
+xlim([0  15])
+subplot(3,3,8)
+xlim([0  15])
+subplot(3,3,9)
+xlim([0  15])
+
+subplot(3,3,1)
+xlim([0  20])
+subplot(3,3,2)
+xlim([0  20])
+subplot(3,3,3)
+xlim([0  20])
+subplot(3,3,4)
+xlim([0  20])
+subplot(3,3,5)
+xlim([0  20])
+subplot(3,3,6)
+xlim([0  20])
+subplot(3,3,7)
+xlim([0  20])
+subplot(3,3,8)
+xlim([0  20])
+subplot(3,3,9)
+xlim([0  20])
+
+subplot(3,3,1)
+xlim([0  30])
+subplot(3,3,2)
+xlim([0  30])
+subplot(3,3,3)
+xlim([0  30])
+subplot(3,3,4)
+xlim([0  30])
+subplot(3,3,5)
+xlim([0  30])
+subplot(3,3,6)
+xlim([0  30])
+subplot(3,3,7)
+xlim([0  30])
+subplot(3,3,8)
+xlim([0  30])
+subplot(3,3,9)
+xlim([0  30])
+
+subplot(3,3,1)
+xlim([0  60])
+subplot(3,3,2)
+xlim([0  60])
+subplot(3,3,3)
+xlim([0  60])
+subplot(3,3,4)
+xlim([0  60])
+subplot(3,3,5)
+xlim([0  60])
+subplot(3,3,6)
+xlim([0  60])
+subplot(3,3,7)
+xlim([0  60])
+subplot(3,3,8)
+xlim([0  60])
+subplot(3,3,9)
+xlim([0  60])
+
+subplot(3,3,1)
+xlim([0  70])
+subplot(3,3,2)
+xlim([0  70])
+subplot(3,3,3)
+xlim([0  70])
+subplot(3,3,4)
+xlim([0  70])
+subplot(3,3,5)
+xlim([0  70])
+subplot(3,3,6)
+xlim([0  70])
+subplot(3,3,7)
+xlim([0  70])
+subplot(3,3,8)
+xlim([0  70])
+subplot(3,3,9)
+xlim([0  70])
+
+
+y axis -------------- 
+
+subplot(3,3,1)
+ylim([1e-10 1])
+subplot(3,3,2)
+ylim([1e-10 1])
+subplot(3,3,3)
+ylim([1e-10 1])
+subplot(3,3,4)
+ylim([1e-10 1])
+subplot(3,3,5)
+ylim([1e-10 1])
+subplot(3,3,6)
+ylim([1e-10 1])
+subplot(3,3,7)
+ylim([1e-10 1])
+subplot(3,3,8)
+ylim([1e-10 1])
+subplot(3,3,9)
+ylim([1e-10 1])
+
+subplot(3,3,1)
+ylim([1e-15 1])
+subplot(3,3,2)
+ylim([1e-15 1])
+subplot(3,3,3)
+ylim([1e-15 1])
+subplot(3,3,4)
+ylim([1e-15 1])
+subplot(3,3,5)
+ylim([1e-15 1])
+subplot(3,3,6)
+ylim([1e-15 1])
+subplot(3,3,7)
+ylim([1e-15 1])
+subplot(3,3,8)
+ylim([1e-15 1])
+subplot(3,3,9)
+ylim([1e-15 1])
+
+subplot(3,3,1)
+ylim([1e-20 1])
+subplot(3,3,2)
+ylim([1e-20 1])
+subplot(3,3,3)
+ylim([1e-20 1])
+subplot(3,3,4)
+ylim([1e-20 1])
+subplot(3,3,5)
+ylim([1e-20 1])
+subplot(3,3,6)
+ylim([1e-20 1])
+subplot(3,3,7)
+ylim([1e-20 1])
+subplot(3,3,8)
+ylim([1e-20 1])
+subplot(3,3,9)
+ylim([1e-20 1])
+
+
+SUBPLOT **** 3x3 Full k vs omega_DA with ncut data points !
+
+ncut = [15  15  15  20  20  20   2  2  2]
+ncut = [2  2  2  2  2  2   2  2  2]
+
+subplot(3,3,1)
+semilogy(xo(ncut(1):end), inheqnmb5e05(ncut(1):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(1):end), cdeqnmb5e05(ncut(1):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(1):end), caveqnmb5e05(ncut(1):end), 'r')
+semilogy(xo(ncut(1):end), lsceqnmb5e05(ncut(1):end), 'b', xo(ncut(1):GAP:FTP) ,lsceqnmb5e05(ncut(1):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(1):end), marceqnmb5e05(ncut(1):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,2)
+semilogy(xo(ncut(2):end), inheqnmb5e1(ncut(2):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(2):end), cdeqnmb5e1(ncut(2):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(2):end), caveqnmb5e1(ncut(2):end), 'r')
+semilogy(xo(ncut(2):end), lsceqnmb5e1(ncut(2):end), 'b', xo(ncut(2):GAP:FTP) ,lsceqnmb5e1(ncut(2):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(2):end), marceqnmb5e1(ncut(2):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,3)
+semilogy(xo(ncut(3):end), inheqnmb5e5(ncut(3):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(3):end), cdeqnmb5e5(ncut(3):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(3):end), caveqnmb5e5(ncut(3):end), 'r')
+semilogy(xo(ncut(3):end), lsceqnmb5e5(ncut(3):end), 'b', xo(ncut(3):GAP:FTP) ,lsceqnmb5e5(ncut(3):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(3):end), marceqnmb5e5(ncut(3):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,4)
+semilogy(xo(ncut(4):end), inheqnmb1e05(ncut(4):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(4):end), cdeqnmb1e05(ncut(4):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(4):end), caveqnmb1e05(ncut(4):end), 'r')
+semilogy(xo(ncut(4):end), lsceqnmb1e05(ncut(4):end), 'b', xo(ncut(4):GAP:FTP) ,lsceqnmb1e05(ncut(4):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(4):end), marceqnmb1e05(ncut(4):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,5)
+semilogy(xo(ncut(5):end), inheqnmb1e1(ncut(5):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(5):end), cdeqnmb1e1(ncut(5):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(5):end), caveqnmb1e1(ncut(5):end), 'r')
+semilogy(xo(ncut(5):end), lsceqnmb1e1(ncut(5):end), 'b', xo(ncut(5):GAP:FTP) ,lsceqnmb1e1(ncut(5):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(5):end), marceqnmb1e1(ncut(5):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,6)
+semilogy(xo(ncut(6):end), inheqnmb1e5(ncut(6):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(6):end), cdeqnmb1e5(ncut(6):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(6):end), caveqnmb1e5(ncut(6):end), 'r')
+semilogy(xo(ncut(6):end), lsceqnmb1e5(ncut(6):end), 'b', xo(ncut(6):GAP:FTP) ,lsceqnmb1e5(ncut(6):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(6):end), marceqnmb1e5(ncut(6):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,7)
+semilogy(xo(ncut(7):end), inheqnmb02e05(ncut(7):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(7):end), cdeqnmb02e05(ncut(7):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(7):end), caveqnmb02e05(ncut(7):end), 'r')
+semilogy(xo(ncut(7):end), lsceqnmb02e05(ncut(7):end), 'b', xo(ncut(7):GAP:FTP) ,lsceqnmb02e05(ncut(7):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(7):end), marceqnmb02e05(ncut(7):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,8)
+semilogy(xo(ncut(8):end), inheqnmb02e1(ncut(8):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(8):end), cdeqnmb02e1(ncut(8):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(8):end), caveqnmb02e1(ncut(8):end), 'r')
+semilogy(xo(ncut(8):end), lsceqnmb02e1(ncut(8):end), 'b', xo(ncut(8):GAP:FTP) ,lsceqnmb02e1(ncut(8):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(8):end), marceqnmb02e1(ncut(8):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,9)
+semilogy(xo(ncut(9):end), inheqnmb02e5(ncut(9):end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(ncut(9):end), cdeqnmb02e5(ncut(9):FTP), 'color',[0 0.75 0.75])
+semilogy(xo(ncut(9):end), caveqnmb02e5(ncut(9):end), 'r')
+semilogy(xo(ncut(9):end), lsceqnmb02e5(ncut(9):end), 'b', xo(ncut(9):GAP:FTP) ,lsceqnmb02e5(ncut(9):GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(ncut(9):end), marceqnmb02e5(ncut(9):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,4)
+ylabel('log (k/\omega_c) ','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+
+
+
+subplot(3,3,1)
+xlim([0  30])
+subplot(3,3,2)
+xlim([0  30])
+subplot(3,3,3)
+xlim([0  30])
+subplot(3,3,4)
+xlim([0  30])
+subplot(3,3,5)
+xlim([0  30])
+subplot(3,3,6)
+xlim([0  30])
+subplot(3,3,7)
+xlim([0  30])
+subplot(3,3,8)
+xlim([0  30])
+subplot(3,3,9)
+xlim([0  30])
+
+
+subplot(3,3,1)
+ylim([1e-40 1])
+subplot(3,3,2)
+ylim([1e-40 1])
+subplot(3,3,3)
+ylim([1e-40 1])
+subplot(3,3,4)
+ylim([1e-10 1])
+subplot(3,3,5)
+ylim([1e-10 1])
+subplot(3,3,6)
+ylim([1e-10 1])
+subplot(3,3,7)
+ylim([1e-6 1])
+subplot(3,3,8)
+ylim([1e-6 1])
+subplot(3,3,9)
+ylim([1e-6 1])
+
+
+
