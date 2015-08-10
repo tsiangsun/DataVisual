@@ -110,34 +110,53 @@ legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
 legend boxoff
 
 
->>>>>>> Figure 5 - Compare numerical with analytical LSC
+>>>>>>> Figure 5 - Compare numerical LSC with analytical LSC of Jeff(omega)
 Parameters LEN=1024, deltaT=0.3
 df = 0.00325521
 x = [0: 511]
 x = x * df * 2 * pi
 
+Parameters LEN=512, deltaT=0.2 check
 dfo = 0.00976562
 xo = [0: 255]
 xo = xo * dfo * 2 * pi
 
+Omega=1, b1e1
+NMC = 50000
+average 50 files
 
-lsc = importdata('/Users/xiangs/Dropbox/code/EFGR/Exact_EFGR_Jeff.dat') 
-nlsc = importdata('/Users/xiangs/Dropbox/code/EFGR/num_LSC_EFGR_Jeff_Omega0.2_b1e1_50000_AVG50.dat')
+lsc = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b1e1.dat') 
+nlsc = importdata('/Users/xiangs/Dropbox/code/EFGR/num_LSC_EFGR_Jeff_Omega1_b1e1_50000_AVG50.dat')
+nlsc1 = importdata('/Users/xiangs/Dropbox/code/EFGR/num_LSC_EFGR_Jeff_Omega1_b1e1_50000_1.dat')
 
-semilogy(xo, lsc, 'b', xo, nlsc,'r')
+semilogy(xo, lsc, 'k', xo, nlsc1, 'b', xo, nlsc(1:256),'r')
 
-nlsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/num_LSC_EFGR_nm_Omega0.2_b1e1_5000_AVG50.dat')
+ylabel('log (k/\omega_c) ','FontSize', 24)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
 
-
-
-
-
-
-
-
+xlim([0 13])
+ylim([1e-6  0.1])
+legend('exact', '5e4', '2.5e6')
 
 
 
+>>>>>>> Figure 6 - relative error of numerical LSC of Jeff(omega)
+Parameters LEN=512, deltaT=0.2 check
+dfo = 0.00976562
+xo = [0: 255]
+xo = xo * dfo * 2 * pi
+
+Omega=1, b1e1
+NMC = 50000
+average 50 files
+
+relerr = importdata('/Users/xiangs/Dropbox/code/EFGR/num_EFGR_Jeff_Omega1_b1e1_50000_Relative_ERR.dat') 
+conf = [ 0.25 0.5  0.75 1  1.25 1.5 1.75 2 2.25  2.5] 
+semilogy(conf, relerr)
+ylabel('log (error) ','FontSize', 24)
+xlabel('#Traj. x 10^6','FontSize',24)
+xlim([0.25 2.5])
+ylim([0.01 1])
 
 *************** subplot Full 3x3 *********************
 
@@ -497,6 +516,7 @@ ylabel('log (k \tau_c) ','FontSize', 24)
 subplot(3,3,8)
 xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
 
+
 subplot(3,3,1)
 xlim([0  15])
 subplot(3,3,2)
@@ -615,6 +635,25 @@ subplot(3,3,9)
 ylim([1e-10 1])
 
 subplot(3,3,1)
+ylim([1e-12 1])
+subplot(3,3,2)
+ylim([1e-12 1])
+subplot(3,3,3)
+ylim([1e-12 1])
+subplot(3,3,4)
+ylim([1e-12 1])
+subplot(3,3,5)
+ylim([1e-12 1])
+subplot(3,3,6)
+ylim([1e-12 1])
+subplot(3,3,7)
+ylim([1e-12 1])
+subplot(3,3,8)
+ylim([1e-12 1])
+subplot(3,3,9)
+ylim([1e-12 1])
+
+subplot(3,3,1)
 ylim([1e-15 1])
 subplot(3,3,2)
 ylim([1e-15 1])
@@ -655,7 +694,6 @@ ylim([1e-20 1])
 
 SUBPLOT **** 3x3 Full k vs omega_DA with ncut data points !
 
-ncut = [15  15  15  20  20  20   2  2  2]
 ncut = [2  2  2  2  2  2   2  2  2]
 
 subplot(3,3,1)
