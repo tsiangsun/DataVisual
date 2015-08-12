@@ -392,6 +392,26 @@ xlim([0  15])
 subplot(3,3,9)
 xlim([0  15])
 
+subplot(3,3,1)
+xlim([0  4])
+subplot(3,3,2)
+xlim([0  4])
+subplot(3,3,3)
+xlim([0  4])
+subplot(3,3,4)
+xlim([0  4])
+subplot(3,3,5)
+xlim([0  4])
+subplot(3,3,6)
+xlim([0  4])
+subplot(3,3,7)
+xlim([0  4])
+subplot(3,3,8)
+xlim([0  4])
+subplot(3,3,9)
+xlim([0  4])
+
+
 Y-axis --------------------->>
 
 subplot(3,3,1)
@@ -439,17 +459,17 @@ ylim([1e-6 1])
 subplot(3,3,3)
 ylim([1e-6 1])
 subplot(3,3,4)
-ylim([1e-6 1])
+ylim([1e-4 0.1])
 subplot(3,3,5)
-ylim([1e-6 1])
+ylim([1e-4 0.1])
 subplot(3,3,6)
-ylim([1e-6 1])
+ylim([1e-4 0.1])
 subplot(3,3,7)
-ylim([1e-6 1])
+ylim([1e-3 0.02])
 subplot(3,3,8)
-ylim([1e-6 1])
+ylim([1e-3 0.02])
 subplot(3,3,9)
-ylim([1e-6 1])
+ylim([1e-3 0.02])
 
 
 SUBPLOT ********* 3x3 Full k*tau_c vs omega_DA  *************
@@ -695,6 +715,7 @@ ylim([1e-20 1])
 SUBPLOT **** 3x3 Full k vs omega_DA with ncut data points !
 
 ncut = [2  2  2  2  2  2   2  2  2]
+ncut = [ 1 1 1 1 1 1 1 1 1]
 
 subplot(3,3,1)
 semilogy(xo(ncut(1):end), inheqnmb5e05(ncut(1):end), 'color',[0.75 0 0.75])
