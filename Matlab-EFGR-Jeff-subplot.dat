@@ -349,7 +349,7 @@ ylabel('log (k/\omega_c) ','FontSize', 24)
 subplot(3,3,8)
 xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
 
-legend('W-0', 'C-AV', 'C-D', 'W-AV','', 'Marcus')
+legend('W-0', '','C-AV', 'C-D', 'W-AV','', 'Marcus')
 
 
 X-axis ------------------>>
@@ -714,22 +714,39 @@ ylim([1e-20 1])
 
 SUBPLOT **** 3x3 Full k vs omega_DA with ncut data points !
 
+LEN = 1024
+DeltaT = 0.2
+ df = 0.00488281
+
+FTP = LEN/2
+GAP = int64(FTP/10)
+xo = [0: FTP-1]
+xo = xo * df * 2 * pi
+
+
 ncut = [2  2  2  2  2  2   2  2  2]
-ncut = [ 1 1 1 1 1 1 1 1 1]
+GAPS = [ GAP*0.25  GAP*0.5  GAP]
+
+GAPS = [ GAP  GAP  GAP]
+G2 = GAP/2.0
+ncutm = [ G2 G2  G2  G2  G2  G2  G2  G2  G2]
+
 
 subplot(3,3,1)
 semilogy(xo(ncut(1):end), inheqnmb5e05(ncut(1):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(1):GAPS(1):FTP), inheqnmb5e05(ncutm(2):GAPS(1): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(ncut(1):end), cdeqnmb5e05(ncut(1):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(1):end), caveqnmb5e05(ncut(1):end), 'r')
 semilogy(xo(ncut(1):end), lsceqnmb5e05(ncut(1):end), 'b', xo(ncut(1):GAP:FTP) ,lsceqnmb5e05(ncut(1):GAP:FTP),'bo','MarkerSize',6)
-semilogy(xo(ncut(1):end), marceqnmb5e05(ncut(1):end), 'color', 'g')
+semilogy(xo(ncut(1):end), marceqnmb5e05(ncut(1):end), 'g')
 hold off
 
 
 subplot(3,3,2)
 semilogy(xo(ncut(2):end), inheqnmb5e1(ncut(2):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(2):GAPS(1):FTP), inheqnmb5e1(ncutm(2):GAPS(1): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',7)
 semilogy(xo(ncut(2):end), cdeqnmb5e1(ncut(2):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(2):end), caveqnmb5e1(ncut(2):end), 'r')
 semilogy(xo(ncut(2):end), lsceqnmb5e1(ncut(2):end), 'b', xo(ncut(2):GAP:FTP) ,lsceqnmb5e1(ncut(2):GAP:FTP),'bo','MarkerSize',6)
@@ -740,6 +757,7 @@ hold off
 subplot(3,3,3)
 semilogy(xo(ncut(3):end), inheqnmb5e5(ncut(3):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(3):GAPS(1):FTP), inheqnmb5e5(ncutm(3):GAPS(1): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(ncut(3):end), cdeqnmb5e5(ncut(3):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(3):end), caveqnmb5e5(ncut(3):end), 'r')
 semilogy(xo(ncut(3):end), lsceqnmb5e5(ncut(3):end), 'b', xo(ncut(3):GAP:FTP) ,lsceqnmb5e5(ncut(3):GAP:FTP),'bo','MarkerSize',6)
@@ -750,6 +768,7 @@ hold off
 subplot(3,3,4)
 semilogy(xo(ncut(4):end), inheqnmb1e05(ncut(4):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(4):GAPS(2):FTP), inheqnmb1e05(ncutm(4):GAPS(2): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(ncut(4):end), cdeqnmb1e05(ncut(4):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(4):end), caveqnmb1e05(ncut(4):end), 'r')
 semilogy(xo(ncut(4):end), lsceqnmb1e05(ncut(4):end), 'b', xo(ncut(4):GAP:FTP) ,lsceqnmb1e05(ncut(4):GAP:FTP),'bo','MarkerSize',6)
@@ -760,6 +779,7 @@ hold off
 subplot(3,3,5)
 semilogy(xo(ncut(5):end), inheqnmb1e1(ncut(5):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(5):GAPS(2):FTP), inheqnmb1e1(ncutm(5):GAPS(2): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(ncut(5):end), cdeqnmb1e1(ncut(5):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(5):end), caveqnmb1e1(ncut(5):end), 'r')
 semilogy(xo(ncut(5):end), lsceqnmb1e1(ncut(5):end), 'b', xo(ncut(5):GAP:FTP) ,lsceqnmb1e1(ncut(5):GAP:FTP),'bo','MarkerSize',6)
@@ -770,6 +790,7 @@ hold off
 subplot(3,3,6)
 semilogy(xo(ncut(6):end), inheqnmb1e5(ncut(6):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(6):GAPS(2):FTP), inheqnmb1e5(ncutm(6):GAPS(2): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(ncut(6):end), cdeqnmb1e5(ncut(6):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(6):end), caveqnmb1e5(ncut(6):end), 'r')
 semilogy(xo(ncut(6):end), lsceqnmb1e5(ncut(6):end), 'b', xo(ncut(6):GAP:FTP) ,lsceqnmb1e5(ncut(6):GAP:FTP),'bo','MarkerSize',6)
@@ -780,6 +801,7 @@ hold off
 subplot(3,3,7)
 semilogy(xo(ncut(7):end), inheqnmb02e05(ncut(7):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(7):GAPS(3):FTP), inheqnmb02e05(ncutm(7):GAPS(3): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(ncut(7):end), cdeqnmb02e05(ncut(7):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(7):end), caveqnmb02e05(ncut(7):end), 'r')
 semilogy(xo(ncut(7):end), lsceqnmb02e05(ncut(7):end), 'b', xo(ncut(7):GAP:FTP) ,lsceqnmb02e05(ncut(7):GAP:FTP),'bo','MarkerSize',6)
@@ -790,6 +812,7 @@ hold off
 subplot(3,3,8)
 semilogy(xo(ncut(8):end), inheqnmb02e1(ncut(8):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(8):GAPS(3):FTP), inheqnmb02e1(ncutm(8):GAPS(3): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(ncut(8):end), cdeqnmb02e1(ncut(8):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(8):end), caveqnmb02e1(ncut(8):end), 'r')
 semilogy(xo(ncut(8):end), lsceqnmb02e1(ncut(8):end), 'b', xo(ncut(8):GAP:FTP) ,lsceqnmb02e1(ncut(8):GAP:FTP),'bo','MarkerSize',6)
@@ -800,6 +823,7 @@ hold off
 subplot(3,3,9)
 semilogy(xo(ncut(9):end), inheqnmb02e5(ncut(9):end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(ncutm(9):GAPS(3):FTP), inheqnmb02e5(ncutm(9):GAPS(3): FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(ncut(9):end), cdeqnmb02e5(ncut(9):FTP), 'color',[0 0.75 0.75])
 semilogy(xo(ncut(9):end), caveqnmb02e5(ncut(9):end), 'r')
 semilogy(xo(ncut(9):end), lsceqnmb02e5(ncut(9):end), 'b', xo(ncut(9):GAP:FTP) ,lsceqnmb02e5(ncut(9):GAP:FTP),'bo','MarkerSize',6)
@@ -815,31 +839,31 @@ xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
 
 
 subplot(3,3,1)
-xlim([0  30])
+xlim([0  15])
 subplot(3,3,2)
-xlim([0  30])
+xlim([0  15])
 subplot(3,3,3)
-xlim([0  30])
+xlim([0  15])
 subplot(3,3,4)
-xlim([0  30])
+xlim([0  15])
 subplot(3,3,5)
-xlim([0  30])
+xlim([0  15])
 subplot(3,3,6)
-xlim([0  30])
+xlim([0  15])
 subplot(3,3,7)
-xlim([0  30])
+xlim([0  15])
 subplot(3,3,8)
-xlim([0  30])
+xlim([0  15])
 subplot(3,3,9)
-xlim([0  30])
+xlim([0  15])
 
 
 subplot(3,3,1)
-ylim([1e-40 1])
+ylim([1e-10 1])
 subplot(3,3,2)
-ylim([1e-40 1])
+ylim([1e-10 1])
 subplot(3,3,3)
-ylim([1e-40 1])
+ylim([1e-10 1])
 subplot(3,3,4)
 ylim([1e-10 1])
 subplot(3,3,5)
@@ -847,11 +871,76 @@ ylim([1e-10 1])
 subplot(3,3,6)
 ylim([1e-10 1])
 subplot(3,3,7)
-ylim([1e-6 1])
+ylim([1e-10 1])
 subplot(3,3,8)
-ylim([1e-6 1])
+ylim([1e-10 1])
 subplot(3,3,9)
-ylim([1e-6 1])
+ylim([1e-10 1])
+
+
+TOC figure - Omega=0.2, y0=1 only showing lsc and marcus
+
+subplot(3,3,1)
+semilogy(xo(ncut(1):end), lsceqnmb5e05(ncut(1):end), 'b', xo(ncut(1):GAP:FTP) ,lsceqnmb5e05(ncut(1):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(1):end), marceqnmb5e05(ncut(1):end), 'g')
+hold off
+
+
+subplot(3,3,2)
+semilogy(xo(ncut(2):end), lsceqnmb5e1(ncut(2):end), 'b', xo(ncut(2):GAP:FTP) ,lsceqnmb5e1(ncut(2):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(2):end), marceqnmb5e1(ncut(2):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,3)
+semilogy(xo(ncut(3):end), lsceqnmb5e5(ncut(3):end), 'b', xo(ncut(3):GAP:FTP) ,lsceqnmb5e5(ncut(3):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(3):end), marceqnmb5e5(ncut(3):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,4)
+semilogy(xo(ncut(4):end), lsceqnmb1e05(ncut(4):end), 'b', xo(ncut(4):GAP:FTP) ,lsceqnmb1e05(ncut(4):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(4):end), marceqnmb1e05(ncut(4):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,5)
+semilogy(xo(ncut(5):end), lsceqnmb1e1(ncut(5):end), 'b', xo(ncut(5):GAP:FTP) ,lsceqnmb1e1(ncut(5):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(5):end), marceqnmb1e1(ncut(5):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,6)
+semilogy(xo(ncut(6):end), lsceqnmb1e5(ncut(6):end), 'b', xo(ncut(6):GAP:FTP) ,lsceqnmb1e5(ncut(6):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(6):end), marceqnmb1e5(ncut(6):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,7)
+semilogy(xo(ncut(7):end), lsceqnmb02e05(ncut(7):end), 'b', xo(ncut(7):GAP:FTP) ,lsceqnmb02e05(ncut(7):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(7):end), marceqnmb02e05(ncut(7):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,8)
+semilogy(xo(ncut(8):end), lsceqnmb02e1(ncut(8):end), 'b', xo(ncut(8):GAP:FTP) ,lsceqnmb02e1(ncut(8):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(8):end), marceqnmb02e1(ncut(8):end), 'color', 'g')
+hold off
+
+
+subplot(3,3,9)
+semilogy(xo(ncut(9):end), lsceqnmb02e5(ncut(9):end), 'b', xo(ncut(9):GAP:FTP) ,lsceqnmb02e5(ncut(9):GAP:FTP),'bo','MarkerSize',6)
+hold on
+semilogy(xo(ncut(9):end), marceqnmb02e5(ncut(9):end), 'color', 'g')
+hold off
 
 
 
