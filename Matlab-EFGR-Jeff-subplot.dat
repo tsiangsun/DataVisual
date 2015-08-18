@@ -158,6 +158,58 @@ xlabel('#Traj. x 10^6','FontSize',24)
 xlim([0.25 2.5])
 ylim([0.01 1])
 
+
+
+>>>>>>> Figure 7 - Real molecular parameters of Jeff(omega) (Hammes-Schiffer, Subotnik, Shi, Coker)
+
+In atomic unit:
+Er = 3.29 e-2 (a.u.)
+Omega = 13.5 e-4 (a.u.)
+eta = 1.2 e-3 (a.u.)
+kT = 9.5 e-4 (a.u.)
+Gamma_DA = 5e-5 (a.u.)
+
+In unit of omega_c:
+Er = 68.3 omega_c  -->  y_0  = 5.84
+Omega = 1 omega_c
+eta = 3.43 omega_c
+kT = 2.71 h omega_c  --> beta = 0.37
+Gamma_DA = 0.143 omega_c
+
+lsceqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b0.37e3.43.dat')
+caveqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b0.37e3.43.dat')
+cdeqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b0.37e3.43.dat')
+inheqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b0.37e3.43.dat')
+marceqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b0.37e3.43.dat')
+inh2eqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b0.37e3.43.dat')
+
+
+LEN = 2048
+DeltaT = 0.015
+df = 0.0325521
+
+FTP = LEN/2
+GAP = int64(FTP/20)
+xo = [0: FTP-1]
+xo = xo * df * 2 * pi
+
+semilogy(xo(1:end), inheqjeff(1:end), 'color',[0.75 0 0.75])
+hold on
+semilogy(xo(1:end), cdeqjeff(1:FTP), 'color',[0 0.75 0.75])
+semilogy(xo(1:end), caveqjeff(1:end), 'r')
+semilogy(xo(1:end), lsceqjeff(1:end), 'b', xo(1:GAP:FTP) ,lsceqjeff(1:GAP:FTP),'bo','MarkerSize',6)
+semilogy(xo(1:end), marceqjeff(1:end), 'color', 'g')
+hold off
+
+
+ylabel('log (k/\omega_c) ','FontSize', 30)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',30)
+
+xlim([0  200])
+ylim([1e-12  1])
+
+
+
 *************** subplot Full 3x3 *********************
 
 
