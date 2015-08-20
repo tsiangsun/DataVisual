@@ -182,19 +182,27 @@ cdeqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b0.37e3.43.d
 inheqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b0.37e3.43.dat')
 marceqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b0.37e3.43.dat')
 inh2eqjeff = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b0.37e3.43.dat')
+lsceqjefftre = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre.dat')
 
 
-LEN = 2048
-DeltaT = 0.015
-df = 0.0325521
+Figure - test time-domain sampling for Subotnik parameters
+
+n_omega = 10000
+omega_max = 300
+
+LEN= 1024, DT=0.004
+t = [-LEN/2 : LEN/2-1]
+t = t * DT
+plot(t, lsceqjefftre,'-s')
 
 FTP = LEN/2
-GAP = int64(FTP/20)
+GAP = int64(FTP/30)
 xo = [0: FTP-1]
 xo = xo * df * 2 * pi
 
 semilogy(xo(1:end), inheqjeff(1:end), 'color',[0.75 0 0.75])
 hold on
+semilogy( xo(GAP/2:GAP:FTP), inheqjeff(GAP/2:GAP:FTP),'s','color',[0.75 0 0.75], 'MarkerSize',6)
 semilogy(xo(1:end), cdeqjeff(1:FTP), 'color',[0 0.75 0.75])
 semilogy(xo(1:end), caveqjeff(1:end), 'r')
 semilogy(xo(1:end), lsceqjeff(1:end), 'b', xo(1:GAP:FTP) ,lsceqjeff(1:GAP:FTP),'bo','MarkerSize',6)
@@ -205,8 +213,8 @@ hold off
 ylabel('log (k/\omega_c) ','FontSize', 30)
 xlabel('\omega_{DA} / \omega_{c}','FontSize',30)
 
-xlim([0  200])
-ylim([1e-12  1])
+xlim([0  300])
+ylim([1e-30  1])
 
 
 
@@ -223,12 +231,11 @@ df = 0.00325521
 xo = [0: 511]
 xo = xo * df * 2 * pi
 
-LEN= 1024, DT=0.2
-df = 0.00488281
+LEN= 1024, DT=0.02  for Omega=0.2, y0=10
+df = 0.0488281
 xo = [0: 511]
 xo = xo * df * 2 * pi
 
-0.00651042
 
 
 parameters:  beta, 0.2, 1 , 5, eta= 0.5, 1, 5
@@ -244,6 +251,7 @@ cdeqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b5e0.5.da
 inheqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b5e0.5.dat')
 marceqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b5e0.5.dat')
 inh2eqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b5e0.5.dat')
+lsceqtreb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b5e0.5.dat')
 
 lsceqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b5e1.dat')
 caveqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b5e1.dat')
@@ -251,6 +259,7 @@ cdeqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b5e1.dat')
 inheqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b5e1.dat')
 marceqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b5e1.dat')
 inh2eqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b5e1.dat')
+lsceqtreb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b5e1.dat')
 
 lsceqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b5e5.dat')
 caveqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b5e5.dat')
@@ -258,6 +267,7 @@ cdeqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b5e5.dat')
 inheqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b5e5.dat')
 marceqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b5e5.dat')
 inh2eqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b5e5.dat')
+lsceqtreb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b5e5.dat')
 
 lsceqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b1e0.5.dat')
 caveqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b1e0.5.dat')
@@ -265,6 +275,7 @@ cdeqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b1e0.5.da
 inheqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b1e0.5.dat')
 marceqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b1e0.5.dat')
 inh2eqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b1e0.5.dat')
+lsceqtreb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b1e0.5.dat')
 
 lsceqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b1e1.dat')
 caveqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b1e1.dat')
@@ -272,6 +283,7 @@ cdeqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b1e1.dat')
 inheqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b1e1.dat')
 marceqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b1e1.dat')
 inh2eqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b1e1.dat')
+lsceqtreb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b1e1.dat')
 
 lsceqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b1e5.dat')
 caveqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b1e5.dat')
@@ -279,6 +291,7 @@ cdeqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b1e5.dat')
 inheqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b1e5.dat')
 marceqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b1e5.dat')
 inh2eqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b1e5.dat')
+lsceqtreb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b1e5.dat')
 
 lsceqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b0.2e0.5.dat')
 caveqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b0.2e0.5.dat')
@@ -286,6 +299,7 @@ cdeqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b0.2e0.5
 inheqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b0.2e0.5.dat')
 marceqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b0.2e0.5.dat')
 inh2eqnmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b0.2e0.5.dat')
+lsceqtreb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b0.2e0.5.dat')
 
 lsceqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b0.2e1.dat')
 caveqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b0.2e1.dat')
@@ -293,6 +307,7 @@ cdeqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b0.2e1.da
 inheqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b0.2e1.dat')
 marceqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b0.2e1.dat')
 inh2eqnmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b0.2e1.dat')
+lsceqtreb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b0.2e1.dat')
 
 lsceqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_b0.2e5.dat')
 caveqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_b0.2e5.dat')
@@ -300,7 +315,90 @@ cdeqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/CD_EFGR_Jeff_b0.2e5.da
 inheqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/MarcusLevich_EFGR_Jeff_b0.2e5.dat')
 marceqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Marcus_EFGR_Jeff_b0.2e5.dat')
 inh2eqnmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/W0_EFGR_Jeff_b0.2e5.dat')
+lsceqtreb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_tre_b0.2e5.dat')
 
+
+
+LEN= 1024, DT=0.2
+DT = 0.05
+t = [-LEN/2 : LEN/2-1]
+t = t * DT
+
+
+SUBPLOT **** 3x3 Full Re C(t) vs t
+
+subplot(3,3,1)
+plot(t, lsceqtreb5e05,'-s','MarkerSize',5)
+
+subplot(3,3,2)
+plot(t, lsceqtreb5e1,'-s','MarkerSize',5)
+
+subplot(3,3,3)
+plot(t, lsceqtreb5e5,'-s','MarkerSize',5)
+
+subplot(3,3,4)
+plot(t, lsceqtreb1e05,'-s','MarkerSize',5)
+
+subplot(3,3,5)
+plot(t, lsceqtreb1e1,'-s','MarkerSize',5)
+
+subplot(3,3,6)
+plot(t, lsceqtreb1e5,'-s','MarkerSize',5)
+
+subplot(3,3,7)
+plot(t, lsceqtreb02e05,'-s','MarkerSize',5)
+
+subplot(3,3,8)
+plot(t, lsceqtreb02e1,'-s','MarkerSize',5)
+
+subplot(3,3,9)
+plot(t, lsceqtreb02e5,'-s','MarkerSize',5)
+
+
+tmax = 10
+
+subplot(3,3,1)
+xlim([-1*tmax  tmax])
+subplot(3,3,2)
+xlim([-1*tmax  tmax])
+subplot(3,3,3)
+xlim([-1*tmax  tmax])
+subplot(3,3,4)
+xlim([-1*tmax  tmax])
+subplot(3,3,5)
+xlim([-1*tmax  tmax])
+subplot(3,3,6)
+xlim([-1*tmax  tmax])
+subplot(3,3,7)
+xlim([-1*tmax  tmax])
+subplot(3,3,8)
+xlim([-1*tmax  tmax])
+subplot(3,3,9)
+xlim([-1*tmax  tmax])
+
+subplot(3,3,1)
+ylim([-0.2 1])
+subplot(3,3,2)
+ylim([-0.2 1])
+subplot(3,3,3)
+ylim([-0.2 1])
+subplot(3,3,4)
+ylim([-0.2 1])
+subplot(3,3,5)
+ylim([-0.2 1])
+subplot(3,3,6)
+ylim([-0.2 1])
+subplot(3,3,7)
+ylim([-0.2 1])
+subplot(3,3,8)
+ylim([-0.2 1])
+subplot(3,3,9)
+ylim([-0.2 1])
+
+subplot(3,3,4)
+ylabel('Re C(t) ','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{c}t','FontSize',24)
 
 
 SUBPLOT **** 3x3 Full k vs omega_DA
@@ -647,6 +745,26 @@ subplot(3,3,9)
 xlim([0  30])
 
 subplot(3,3,1)
+xlim([0  40])
+subplot(3,3,2)
+xlim([0  40])
+subplot(3,3,3)
+xlim([0  40])
+subplot(3,3,4)
+xlim([0  40])
+subplot(3,3,5)
+xlim([0  40])
+subplot(3,3,6)
+xlim([0  40])
+subplot(3,3,7)
+xlim([0  40])
+subplot(3,3,8)
+xlim([0  40])
+subplot(3,3,9)
+xlim([0  40])
+
+
+subplot(3,3,1)
 xlim([0  60])
 subplot(3,3,2)
 xlim([0  60])
@@ -771,7 +889,7 @@ DeltaT = 0.2
  df = 0.00488281
 
 FTP = LEN/2
-GAP = int64(FTP/10)
+GAP = int64(FTP/20)
 xo = [0: FTP-1]
 xo = xo * df * 2 * pi
 
@@ -779,8 +897,8 @@ xo = xo * df * 2 * pi
 ncut = [2  2  2  2  2  2   2  2  2]
 GAPS = [ GAP*0.25  GAP*0.5  GAP]
 
-GAPS = [ GAP  GAP  GAP]
-G2 = GAP/2.0
+GAPS = [ GAP/2  GAP  GAP]
+G2 = GAP/2.0+1
 ncutm = [ G2 G2  G2  G2  G2  G2  G2  G2  G2]
 
 
@@ -930,7 +1048,9 @@ subplot(3,3,9)
 ylim([1e-10 1])
 
 
-TOC figure - Omega=0.2, y0=1 only showing lsc and marcus
+
+
+TOC figure ---->>>>  Omega=0.2, y0=1 only showing lsc and marcus
 
 subplot(3,3,1)
 semilogy(xo(ncut(1):end), lsceqnmb5e05(ncut(1):end), 'b', xo(ncut(1):GAP:FTP) ,lsceqnmb5e05(ncut(1):GAP:FTP),'bo','MarkerSize',6)
