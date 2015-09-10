@@ -1,24 +1,131 @@
 
 %%% ----------------------- NEFGR --------------------------------------
+
+
+
+Figure 1 ---- EFGR semilog k vs omega_DA
+n_omega=200  omega_max=15
+
+From output from EFGR_nm_lsc.cpp
+
+treeqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b5e0.5.dat')
+treeqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b5e1.dat')
+treeqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b5e5.dat')
+treeqnmb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b2e0.5.dat')
+treeqnmb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b2e1.dat')
+treeqnmb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b2e5.dat')
+treeqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b1e0.5.dat')
+treeqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b1e1.dat')
+treeqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_tre_b1e5.dat')
+
+bsdb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b5e0.5.dat')
+bsdb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b5e1.dat')
+bsdb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b5e5.dat')
+bsdb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b2e0.5.dat')
+bsdb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b2e1.dat')
+bsdb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b2e5.dat')
+bsdb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b1e0.5.dat')
+bsdb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b1e1.dat')
+bsdb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/Bath_SD_b1e5.dat')
+
+eqnmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b5e0.5.dat')
+eqnmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b5e1.dat')
+eqnmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b5e5.dat')
+eqnmb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b2e0.5.dat')
+eqnmb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b2e1.dat')
+eqnmb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b2e5.dat')
+eqnmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b1e0.5.dat')
+eqnmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b1e1.dat')
+eqnmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_b1e5.dat')
+
+test plot spectral density sampling range:
+plot(bsdb5e05)
+
+For equilibrium FGR setting up::
+
+LEN = 1024
+DeltaT = 0.1
 d_omega_DA = 0.0613592
-wda = [0 : 255]
-wda = wda * d_omega_DA
+t = [-LEN/2: LEN/2-1]
+t = t * DeltaT
+xo = [0: LEN/2-1]
+xo = xo * d_omega_DA
+
+
+test Plot of Re C(t) vs t for checking time sampling
+
+plot(t, treeqnmb5e05,'b-s')
+hold on
+plot(t, treeqnmb5e1,'b-s')
+plot(t, treeqnmb5e5, 'b-s')
+plot(t, treeqnmb2e05, 'c-s')
+plot(t, treeqnmb2e1,  'c-s')
+plot(t, treeqnmb2e5,  'c-s')
+plot(t, treeqnmb1e05, 'r-s')
+plot(t, treeqnmb1e1, 'r-s')
+plot(t, treeqnmb1e5,  'r-s')
+hold off
+
+
+real Plot of log keq vs omega_DA
+
+semilogy(xo, eqnmb5e05,'b')
+hold on
+semilogy(xo, eqnmb2e05, 'c')
+semilogy(xo, eqnmb1e05, 'r')
+semilogy(xo, eqnmb5e1,'b--',xo(1 : 5 : LEN/2) ,eqnmb5e1(1 : 5 : LEN/2),'bs','MarkerSize',6)
+semilogy(xo, eqnmb2e1,  'c--',xo(1 : 5 : LEN/2) ,eqnmb2e1(1 : 5 : LEN/2),'cs','MarkerSize',6)
+semilogy(xo, eqnmb1e1, 'r--',xo(1 : 5 : LEN/2) ,eqnmb1e1(1 : 5 : LEN/2),'rs','MarkerSize',6)
+semilogy(xo, eqnmb5e5, 'b:')
+semilogy(xo, eqnmb2e5,  'c:')
+semilogy(xo, eqnmb1e5,  'r:')
+hold off
+
+legend('T=0.2','T=0.5', 'T=1')
+
+xlim([0 10])
+ylim([1e-10 1])
+
+xlim([0 4])
+ylim([1e-4 0.1])
+
+ylabel('k^{eq}/\omega_c ','FontSize', 26)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',26)
+
+change matlab folder to /Users/xiangs/Dropbox/REPORT/figure
+and run the following script fix_lines.m
+fix_lines('EFGR_nm_b1-5e0.5-5.eps')
+
+
+Figure 2 ---- 
+
+For noneq FGR setting up::
 
 dtp = 0.2
-tp = [0:199]
+TPMAX = 200
+GAP = int64(TPMAX/20)
+INIT = 5
+tp = [0:TPMAX-1]
 tp = tp * dtp
 
+LEN = 1024
+DeltaT = 0.1
+d_omega_DA = 0.0613592
+t = [-LEN/2: LEN/2-1]
+t = t * DeltaT
+wda = [0: LEN/2-1]
+wda = wda * d_omega_DA
+
+
+
+Figure 3 ---- fix tp and scan omega_DA (old plot, obsolete)
+
 qmeb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_EFGR_b1e1_.dat')
-
-qmnetp5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1tp5.dat')
-qmnew1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w1.dat')
-pqmnew1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w1.dat')
-
-
-Figure 3 ---- fix tp and scan omega_DA
+qmnetp5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_b1e1_s1tp5.dat')
+qmnetp20 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_b1e1_s1tp20.dat')
 
 semilogy(wda, qmeb1e1, wda, qmnetp5)
-semilogy(wda, qmeb1e1, 'k' , wda, qmnetp5, 'r' , wda, qmnetp10, 'c',  wda, qmnetp20,'m', wda, qmnetp40,'b')
+semilogy(wda, qmeb1e1, 'r' , wda, qmnetp5, 'c' , wda, qmnetp20,'b')
 
 xlabel('\omega_{DA} / \omega_{c}','FontSize',40)
 ylabel('k(t^\prime) / \omega_{c}','FontSize', 40)
@@ -28,27 +135,55 @@ ylim([1e-6 1e-1])
 
 Figure 4 --- fix omega_DA and scan tp essential plot!!!!
 
+qmnew0 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w0.dat')
+pqmnew0 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w0.dat')
+qmnew05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w0.5.dat')
+pqmnew05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w0.5.dat')
+qmnew1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w1.dat')
+pqmnew1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w1.dat')
+qmnew15 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w1.5.dat')
+pqmnew15 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w1.5.dat')
+qmnew2 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w2.dat')
+pqmnew2 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w2.dat')
+qmnew3 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w3.dat')
+pqmnew3 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w3.dat')
+qmnew4 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w4.dat')
+pqmnew4 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w4.dat')
+
+
 plot(tp, qmnew0, tp, qmnew05, tp, qmnew1, tp, qmnew15, tp, qmnew2, tp, qmnew3, tp, qmnew4)
 
 semilogy(tp, qmnew0, tp, qmnew05, tp, qmnew1, tp, qmnew15, tp, qmnew2, tp, qmnew3, tp, qmnew4)
 
-xlabel('\omega_{c}t^\prime ','FontSize',40)
-ylabel('k(t^\prime) / \omega_{c}','FontSize', 40)
+xlabel('\omega_{c}t \prime ','FontSize',40)
+ylabel('k(t \prime) / \omega_{c}','FontSize', 40)
 legend('\omega_{DA}=0.5','\omega_{DA}=1', '\omega_{DA}=1.5', '\omega_{DA}=2', '\omega_{DA}=3' )
 xlim([0 25])
 
 
-Figure 5 & 6 --- compare noneq shifting s=1 vs s=2 
+Figure 5 & 6 --- compare noneq shifting s=1, s=5, s=10 
 
-semilogy(wda, qmnetp5, wda, qmnetp5s2, 'r')
+qmnew1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s1w1.dat')
+pqmnew1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w1.dat')
+qmnew1s3 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s3w1.dat')
+pqmnew1s3 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s3w1.dat')
+qmnew1s5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s5w1.dat')
+pqmnew1s5 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s5w1.dat')
+qmnew1s10 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b1e1_s10w1.dat')
+pqmnew1s10 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s10w1.dat')
 
-plot(tp, qmnew1, tp, qmnew1s2,'r', tp, qmnew1s2,'c')
-xlabel('\omega_{c} t','FontSize',40)
-ylabel('k(t)/\omega_c','FontSize', 40)
+plot(tp, qmnew1, 'r', tp, qmnew1s3,'b', tp, qmnew1s5,'m', tp, qmnew1s10,'c')
+xlabel('\omega_{c} t\prime','FontSize',30)
+ylabel('k(t\prime)/\omega_c','FontSize', 30)
 
-semilogy(tp, pqmnew1, tp, pqmnew1s2,'r', tp, pqmnew1s10, 'c')
-xlabel('\omega_{c} t','FontSize',40)
-ylabel('P(t)','FontSize', 40)
+ylim([-0.004 0.03])
+xlim([0 30])
+legend('s=1','s=3','s=5','s=10')
+legend boxoff
+
+semilogy(tp, pqmnew1, 'r', tp, pqmnew1s3,'b', tp, pqmnew1s5,'m', tp, pqmnew1s10, 'c')
+xlabel('\omega_{c} t','FontSize',30)
+ylabel('P(t)','FontSize', 30)
 
 
 Figure 7 - NEFGR plateau number compared with Eq FGR value
