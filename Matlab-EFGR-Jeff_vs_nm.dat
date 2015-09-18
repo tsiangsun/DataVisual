@@ -1,0 +1,121 @@
+
+=======================
+EFGR_Jeff.cpp - Ohmic bath spectral density using Jeff(omega)
+EFGR_Jeff_hist.cpp  -- histogram of Jeff(omega)
+EFGR_nm_lsc.cpp  --- exact normal mode for EFGR
+
+
+
+
+from output of EFGR_Jeff.cpp and EFGR_nm_lsc.cpp
+
+lsc_jeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.2_b1e1.dat') 
+lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.2_b1e1.dat') 
+lsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.2_b1e1.dat') 
+
+lsc_jeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b1e1.dat') 
+lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b1e1.dat') 
+lsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b1e1.dat') 
+
+lsc_jeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega1_b1e1.dat') 
+lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega1_b1e1.dat') 
+lsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega1_b1e1.dat') 
+
+lsc_jeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega2_b1e1.dat') 
+lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega2_b1e1.dat') 
+lsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega2_b1e1.dat') 
+
+
+
+
+Omega = 0.2, 0.5
+LEN = 1024
+deltaT = 0.2
+ df = 0.00488281
+
+
+Omega = 1
+LEN = 1024
+deltaT=0.1
+ df = 0.00976562
+
+Omega = 2
+LEN = 1024
+deltaT=0.05
+ df = 0.0195312
+
+
+d_omega_DA = 2 * pi * df
+FTP = LEN/2
+GAP = int64(FTP/20)
+xo = [0: FTP-1]
+xo = xo * d_omega_DA
+
+t = [-LEN/2: LEN/2-1]
+t = t * DeltaT
+
+
+example：
+
+semilogy(xo, lsceqnmb5e05, 'b', xo(2:GAP:FTP) ,lsceqnmb5e05(2:GAP:FTP),'bo','MarkerSize',6)
+
+
+
+
+>>>>>>>> Figure 1 - compare Jeff with exact numerical normal modes
+
+semilogy(xo, lsc_jeff,'b', xo, lsc_jeff2, 'c' , xo, lsc_nm, 'r', 'LineWidth',4)
+
+xlabel('\omega_{DA} / \omega_c','FontSize', 30)
+ylabel('k / \omega_c','FontSize', 30)
+xlim([ 0 15])
+ylim([1e-10  1])
+legend('J_{eff}(1)','J_{eff}(2)', 'exact')
+
+legend boxoff
+set(gca, 'TickLength', [0.02 0.02])
+
+
+
+>>>>>>> Figure 2 - compare Jeff at two limits with normal mode Jeff from histogram
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff(omega).dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff2(omega).dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_nm_hist.dat')
+
+bin = 0: 15/200:15-15/200
+w = 15/1000: 15/1000 : 15-15/1000
+
+bar(bin,jnm)
+hold on
+plot(w, jeff1, 'r', w, jeff2, 'g')
+hold off
+xlim([0 6])
+ylim([0  0.5])
+
+xlabel('\omega / \omega_{c}','FontSize',40)
+ylabel('J(\omega)','FontSize', 40)
+
+
+
+>>>>>>> Figure 3 - compare Jeff integral at two limits with exact normal mode
+
+dt = 0.2
+t= 0:511
+t= t - 256
+t= t * dt
+
+plot(t, nm_re1,'r', t, jeff_re1,'b', t, jeff2_re1, 'c')
+plot(t, nm_im1,'r', t, jeff_im1,'b', t, jeff2_im1, 'c')
+xlabel('\omega_c t')
+ylabel('Re')
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
+legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+legend boxoff
+
+
+
+
+
+
+
