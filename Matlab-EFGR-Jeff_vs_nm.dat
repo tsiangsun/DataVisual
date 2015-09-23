@@ -79,38 +79,156 @@ set(gca, 'TickLength', [0.02 0.02])
 
 >>>>>>> Figure 2 - compare Jeff at two limits with normal mode Jeff from histogram
 
-jeff1 = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff(omega).dat')
-jeff2 = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_eff2(omega).dat')
-jnm = importdata('/Users/xiangs/Dropbox/code/E_FGR/J_nm_hist.dat')
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.2_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.2_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.2_b1e1.dat')
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.5_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.5_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.5_b1e1.dat')
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega1_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega1_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega1_b1e1.dat')
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega2_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega2_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega2_b1e1.dat')
+
+
+
 
 bin = 0: 15/200:15-15/200
 w = 15/1000: 15/1000 : 15-15/1000
 
-bar(bin,jnm)
+
+fig = figure
+b = bar(bin,jnm, 'r')
+set(b, 'EdgeColor', 'r')
+set(b, 'FaceColor', 'none')
+
+set(b, 'LineWidth', 1)
 hold on
-plot(w, jeff1, 'r', w, jeff2, 'g')
+plot(w, jeff1, 'b', 'LineWidth', 3)
+plot(w, jeff2, 'c', 'LineWidth', 3)
 hold off
 xlim([0 6])
-ylim([0  0.5])
+ylim([0  0.05])
 
-xlabel('\omega / \omega_{c}','FontSize',40)
-ylabel('J(\omega)','FontSize', 40)
+xlabel('\omega / \omega_{c}','FontSize',30)
+ylabel('J(\omega)','FontSize', 30)
 
 
 
->>>>>>> Figure 3 - compare Jeff integral at two limits with exact normal mode
+ADD INSET ZOOM for Jeff(1) AND NM: add the following 
+ax = axes('position',[0.3 0.6 0.35 0.3], 'parent',gcf)
 
-dt = 0.2
-t= 0:511
-t= t - 256
-t= t * dt
+bx = bar(bin,jnm, 'r')
+set(bx, 'EdgeColor', 'r')
+set(bx, 'FaceColor', 'none')
 
-plot(t, nm_re1,'r', t, jeff_re1,'b', t, jeff2_re1, 'c')
-plot(t, nm_im1,'r', t, jeff_im1,'b', t, jeff2_im1, 'c')
+set(bx, 'LineWidth', 1)
+hold on
+plot(w, jeff1, 'b', 'LineWidth', 3)
+% plot(w, jeff2, 'c', 'LineWidth', 3)
+hold off
+xlim([0 2])
+% ylim([0  0.02])
+set(ax, 'LineWidth', 2)
+set(ax, 'FontSize', 20)
+set(ax, 'FontWeight', 'bold')
+
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
+
+
+>>>>>>> Figure 3 - compare Jeff integral in exponent at two limits with exact normal mode
+
+int_jeff1_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff_Omega0.2_b1e1.dat')
+int_jeff2_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff2_Omega0.2_b1e1.dat')
+int_nm_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_nm_Omega0.2_b1e1.dat')
+
+int_jeff1_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff_Omega0.5_b1e1.dat')
+int_jeff2_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff2_Omega0.5_b1e1.dat')
+int_nm_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_nm_Omega0.5_b1e1.dat')
+
+int_jeff1_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff_Omega1_b1e1.dat')
+int_jeff2_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff2_Omega1_b1e1.dat')
+int_nm_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_nm_Omega1_b1e1.dat')
+
+int_jeff1_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff_Omega2_b1e1.dat')
+int_jeff2_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff2_Omega2_b1e1.dat')
+int_nm_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_nm_Omega2_b1e1.dat')
+
+Omega = 0.2, 0.5
+LEN = 1024
+deltaT = 0.2
+ df = 0.00488281
+
+
+Omega = 1
+LEN = 1024
+deltaT=0.1
+ df = 0.00976562
+
+Omega = 2
+LEN = 1024
+deltaT=0.05
+ df = 0.0195312
+
+
+
+dt1 = 0.2
+t1= 0:1023
+t1= t1 - 512
+t1 = t1 * dt1
+
+dt2 = 0.1
+t2= 0:1023
+t2= t2 - 512
+t2 = t2 * dt2
+
+dt3 = 0.05
+t3= 0:1023
+t3= t3 - 512
+t3 = t3 * dt3
+
+
+plot(t, int_nm_w02(:,1) ,'r', t, int_jeff1_w02(:,1) ,'b', t, int_jeff2_w02(:,1), 'c')
+
+Re part of Integral:
+
+plot(t1, -int_nm_w02(:,1) ,'r', t1, -int_jeff1_w02(:,1) ,'b', t1, -int_jeff2_w02(:,1), 'c')
+plot(t1, -int_nm_w05(:,1) ,'r', t1, -int_jeff1_w05(:,1) ,'b', t1, -int_jeff2_w05(:,1), 'c')
+plot(t2, -int_nm_w1(:,1) ,'r', t2, -int_jeff1_w1(:,1) ,'b', t2, -int_jeff2_w1(:,1), 'c')
+plot(t3, -int_nm_w2(:,1) ,'r', t3, -int_jeff1_w2(:,1) ,'b', t3, -int_jeff2_w2(:,1), 'c')
+
+xlim([-10 10])
+ylim([-40  0])
 xlabel('\omega_c t')
 ylabel('Re')
 annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
 legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+
+legend boxoff
+
+
+
+Im Part of Integral:
+
+plot(t1, -int_nm_w02(:,2) ,'r', t1, -int_jeff1_w02(:,2) ,'b', t1, -int_jeff2_w02(:,2), 'c')
+plot(t1, -int_nm_w05(:,2) ,'r', t1, -int_jeff1_w05(:,2) ,'b', t1, -int_jeff2_w05(:,2), 'c')
+plot(t2, -int_nm_w1(:,2) ,'r', t2, -int_jeff1_w1(:,2) ,'b', t2, -int_jeff2_w1(:,2), 'c')
+plot(t3, -int_nm_w2(:,2) ,'r', t3, -int_jeff1_w2(:,2) ,'b', t3, -int_jeff2_w2(:,2), 'c')
+
+xlim([-50 50])
+
+xlim([-25 25])
+ylim([-5  5])
+xlabel('\omega_c t')
+ylabel('Im')
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
+legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+
 legend boxoff
 
 
