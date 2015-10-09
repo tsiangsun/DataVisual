@@ -7,24 +7,35 @@ EFGR_nm_lsc.cpp  --- exact normal mode for EFGR
 
 
 
+
+
+
+example：
+
+semilogy(xo, lsceqnmb5e05, 'r', xo(2:GAP:FTP) ,lsceqnmb5e05(2:GAP:FTP),'bo','MarkerSize',6)
+
+'color',[0.93 0.69 0.13]   orange color
+
+
+>>>>>>>> Figure 1 - EFGR rate with Jeffs and exact numerical normal modes
+
 from output of EFGR_Jeff.cpp and EFGR_nm_lsc.cpp
 
-lsc_jeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.2_b1e1.dat') 
-lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.2_b1e1.dat') 
-lsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.2_b1e1.dat') 
+lsc_jeff_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.2_b1e1.dat') 
+lsc_jeff2_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.2_b1e1.dat') 
+lsc_nm_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.2_b1e1.dat') 
 
-lsc_jeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b1e1.dat') 
-lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b1e1.dat') 
-lsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b1e1.dat') 
+lsc_jeff_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b1e1.dat') 
+lsc_jeff2_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b1e1.dat') 
+lsc_nm_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b1e1.dat') 
 
-lsc_jeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega1_b1e1.dat') 
-lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega1_b1e1.dat') 
-lsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega1_b1e1.dat') 
+lsc_jeff_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega1_b1e1.dat') 
+lsc_jeff2_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega1_b1e1.dat') 
+lsc_nm_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega1_b1e1.dat') 
 
-lsc_jeff = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega2_b1e1.dat') 
-lsc_jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega2_b1e1.dat') 
-lsc_nm = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega2_b1e1.dat') 
-
+lsc_jeff_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega2_b1e1.dat') 
+lsc_jeff2_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega2_b1e1.dat') 
+lsc_nm_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega2_b1e1.dat') 
 
 
 
@@ -32,18 +43,160 @@ Omega = 0.2, 0.5
 LEN = 1024
 deltaT = 0.2
  df = 0.00488281
-
+d_omega_DA = 2 * pi * df
+FTP = LEN/2
+GAP = int64(FTP/20)
+xo = [0: FTP-1]
+xo = xo * d_omega_DA
 
 Omega = 1
 LEN = 1024
 deltaT=0.1
  df = 0.00976562
+d_omega_DA = 2 * pi * df
+xo1 = [0: FTP-1]
+xo1 = xo1 * d_omega_DA
 
 Omega = 2
 LEN = 1024
 deltaT=0.05
  df = 0.0195312
+d_omega_DA = 2 * pi * df
+xo2 = [0: FTP-1]
+xo2 = xo2 * d_omega_DA
 
+
+t = [-LEN/2: LEN/2-1]
+t = t * DeltaT
+
+% semilogy(xo, lsc_jeff,'r', xo, lsc_jeff2, 'c' , xo, lsc_nm, 'k', 'LineWidth',4)
+
+subplot(2,2,1)
+semilogy(xo, lsc_nm_w02, 'k')
+hold on
+semilogy(xo, lsc_jeff_w02,'r')
+semilogy(xo, lsc_jeff2_w02, 'c')
+hold off
+
+subplot(2,2,2)
+semilogy(xo, lsc_nm_w05, 'k')
+hold on
+semilogy(xo, lsc_jeff_w05,'r')
+semilogy(xo, lsc_jeff2_w05, 'c')
+hold off
+
+
+subplot(2,2,3)
+semilogy(xo1, lsc_nm_w1, 'k')
+hold on
+semilogy(xo1, lsc_jeff_w1,'r')
+semilogy(xo1, lsc_jeff2_w1, 'c')
+hold off
+
+subplot(2,2,4)
+semilogy(xo2, lsc_nm_w2, 'k')
+hold on
+semilogy(xo2, lsc_jeff_w2,'r')
+semilogy(xo2, lsc_jeff2_w2, 'c')
+hold off
+
+
+subplot(2,2,1)
+set(gca, 'LineWidth', 3)
+set(gca, 'TickLength', [0.02 0.02])
+set(gca,'yTick', [1e-15  1e-10  1e-5 1])
+set(gca,'yTickLabel',{'-15', '-10',  '-5',  '0'})
+xlim([ 0 10])
+ylim([1e-15  1])
+ylabel('log (k/\omega_c)','FontSize', 24)
+
+subplot(2,2,2)
+set(gca, 'LineWidth', 3)
+set(gca, 'TickLength', [0.02 0.02])
+set(gca,'yTick', [1e-15  1e-10  1e-5 1])
+set(gca,'yTickLabel',{'-15', '-10',  '-5',  '0'})
+xlim([ 0 15])
+ylim([1e-15  1])
+
+subplot(2,2,3)
+set(gca, 'LineWidth', 3)
+set(gca, 'TickLength', [0.02 0.02])
+set(gca,'yTick', [1e-15  1e-10  1e-5 1])
+set(gca,'yTickLabel',{'-15', '-10',  '-5',  '0'})
+xlabel('\omega_{DA} / \omega_c','FontSize', 24)
+ylabel('log (k/\omega_c)','FontSize', 24)
+xlim([ 0 30])
+ylim([1e-15  1])
+
+subplot(2,2,4)
+set(gca, 'LineWidth', 3)
+set(gca, 'TickLength', [0.02 0.02])
+set(gca,'yTick', [1e-15  1e-10  1e-5 1])
+set(gca,'yTickLabel',{'-15', '-10',  '-5',  '0'})
+xlabel('\omega_{DA} / \omega_c','FontSize', 24)
+xlim([ 0 60])
+ylim([1e-15  1])
+legend('exact','J_{eff}(1)','J_{eff}(2)')
+
+annotation('textbox', 'String', '\bf \Omega = 0.2', 'FontSize', 30,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 0.5', 'FontSize', 30,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 30,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 2', 'FontSize', 30,'EdgeColor','none')
+
+
+xlabel('\omega_{DA} / \omega_c','FontSize', 30)
+ylabel('k / \omega_c','FontSize', 30)
+xlim([ 0 15])
+ylim([1e-10  1])
+legend('J_{eff}(1)','J_{eff}(2)', 'exact')
+
+legend boxoff
+
+set(gca, 'TickLength', [0.02 0.02])
+
+
+
+********* Subplot for Omega=0.5, beta =0.2, 1, 5 and eta = 0.5, 1, 5  [3 times 3 plot]
+
+lsc_jeff_b5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b5e0.5.dat') 
+lsc_jeff2_b5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b5e0.5.dat') 
+lsc_nm_b5e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b5e0.5.dat') 
+
+lsc_jeff_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b5e1.dat') 
+lsc_jeff2_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b5e1.dat') 
+lsc_nm_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b5e1.dat') 
+
+lsc_jeff_b5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b5e5.dat') 
+lsc_jeff2_b5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b5e5.dat') 
+lsc_nm_b5e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b5e5.dat') 
+
+lsc_jeff_b02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b0.2e0.5.dat') 
+lsc_jeff2_b02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b0.2e0.5.dat') 
+lsc_nm_b02e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b0.2e0.5.dat') 
+
+lsc_jeff_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b0.2e1.dat') 
+lsc_jeff2_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b0.2e1.dat') 
+lsc_nm_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b0.2e1.dat') 
+
+lsc_jeff_b02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b0.2e5.dat') 
+lsc_jeff2_b02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b0.2e5.dat') 
+lsc_nm_b02e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b0.2e5.dat') 
+
+lsc_jeff_b1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b1e0.5.dat') 
+lsc_jeff2_b1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b1e0.5.dat') 
+lsc_nm_b1e05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b1e0.5.dat') 
+
+lsc_jeff_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b1e1.dat') 
+lsc_jeff2_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b1e1.dat') 
+lsc_nm_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b1e1.dat') 
+
+lsc_jeff_b1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b1e5.dat') 
+lsc_jeff2_b1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b1e5.dat') 
+lsc_nm_b1e5 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b1e5.dat') 
+
+Omega=0.5
+deltaT = 0.2
+ df = 0.00488281
 
 d_omega_DA = 2 * pi * df
 FTP = LEN/2
@@ -54,30 +207,221 @@ xo = xo * d_omega_DA
 t = [-LEN/2: LEN/2-1]
 t = t * DeltaT
 
+figure
 
-example：
+subplot(3,3,1)
+semilogy(xo, lsc_nm_b5e05, 'k')
+hold on
+semilogy(xo, lsc_jeff_b5e05,'r')
+semilogy(xo, lsc_jeff2_b5e05, 'c')
+hold off
 
-semilogy(xo, lsceqnmb5e05, 'b', xo(2:GAP:FTP) ,lsceqnmb5e05(2:GAP:FTP),'bo','MarkerSize',6)
+
+subplot(3,3,2)
+semilogy(xo, lsc_nm_b5e1, 'k')
+hold on
+semilogy(xo, lsc_jeff_b5e1,'r')
+semilogy(xo, lsc_jeff2_b5e1, 'c')
+hold off
+
+subplot(3,3,3)
+semilogy(xo, lsc_nm_b5e5, 'k')
+hold on
+semilogy(xo, lsc_jeff_b5e5,'r')
+semilogy(xo, lsc_jeff2_b5e5, 'c')
+hold off
+
+subplot(3,3,4)
+semilogy(xo, lsc_nm_b1e05, 'k')
+hold on
+semilogy(xo, lsc_jeff_b1e05,'r')
+semilogy(xo, lsc_jeff2_b1e05, 'c')
+hold off
+
+subplot(3,3,5)
+semilogy(xo, lsc_nm_b1e1, 'k')
+hold on
+semilogy(xo, lsc_jeff_b1e1,'r')
+semilogy(xo, lsc_jeff2_b1e1, 'c')
+hold off
+
+subplot(3,3,6)
+semilogy(xo, lsc_nm_b1e5, 'k')
+hold on
+semilogy(xo, lsc_jeff_b1e5,'r')
+semilogy(xo, lsc_jeff2_b1e5, 'c')
+hold off
+
+subplot(3,3,7)
+semilogy(xo, lsc_nm_b02e05, 'k')
+hold on
+semilogy(xo, lsc_jeff_b02e05,'r')
+semilogy(xo, lsc_jeff2_b02e05, 'c')
+hold off
+
+subplot(3,3,8)
+semilogy(xo, lsc_nm_b02e1, 'k')
+hold on
+semilogy(xo, lsc_jeff_b02e1,'r')
+semilogy(xo, lsc_jeff2_b02e1, 'c')
+hold off
+
+
+subplot(3,3,9)
+semilogy(xo, lsc_nm_b02e5, 'k')
+hold on
+semilogy(xo, lsc_jeff_b02e5,'r')
+semilogy(xo, lsc_jeff2_b02e5, 'c')
+hold off
+
+subplot(3,3,1)
+xlim([0  15])
+subplot(3,3,2)
+xlim([0  15])
+subplot(3,3,3)
+xlim([0  15])
+subplot(3,3,4)
+xlim([0  15])
+subplot(3,3,5)
+xlim([0  15])
+subplot(3,3,6)
+xlim([0  15])
+subplot(3,3,7)
+xlim([0  15])
+subplot(3,3,8)
+xlim([0  15])
+subplot(3,3,9)
+xlim([0  15])
+
+subplot(3,3,1)
+ylim([1e-15 1])
+subplot(3,3,2)
+ylim([1e-15 1])
+subplot(3,3,3)
+ylim([1e-15 1])
+subplot(3,3,4)
+ylim([1e-15 1])
+subplot(3,3,5)
+ylim([1e-15 1])
+subplot(3,3,6)
+ylim([1e-15 1])
+subplot(3,3,7)
+ylim([1e-15 1])
+subplot(3,3,8)
+ylim([1e-15 1])
+subplot(3,3,9)
+ylim([1e-15 1])
+
+subplot(3,3,4)
+ylabel('k / \omega_c ','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+subplot(3,3,9)
+legend('exact', 'J_{eff}(1)','J_{eff}(2)','FontSize',18)
+
+annotation('textbox', 'String', '\bf \eta = 0.5', 'FontSize', 30,'EdgeColor','none')
+
+
+
+*** Linear plot
+
+subplot(3,3,1)
+plot(xo, lsc_nm_b5e05, 'k')
+hold on
+plot(xo, lsc_jeff_b5e05,'r')
+plot(xo, lsc_jeff2_b5e05, 'c')
+hold off
+
+
+subplot(3,3,2)
+plot(xo, lsc_nm_b5e1, 'k')
+hold on
+plot(xo, lsc_jeff_b5e1,'r')
+plot(xo, lsc_jeff2_b5e1, 'c')
+hold off
+
+subplot(3,3,3)
+plot(xo, lsc_nm_b5e5, 'k')
+hold on
+plot(xo, lsc_jeff_b5e5,'r')
+plot(xo, lsc_jeff2_b5e5, 'c')
+hold off
+
+subplot(3,3,4)
+plot(xo, lsc_nm_b1e05, 'k')
+hold on
+plot(xo, lsc_jeff_b1e05,'r')
+plot(xo, lsc_jeff2_b1e05, 'c')
+hold off
+
+subplot(3,3,5)
+plot(xo, lsc_nm_b1e1, 'k')
+hold on
+plot(xo, lsc_jeff_b1e1,'r')
+plot(xo, lsc_jeff2_b1e1, 'c')
+hold off
+
+subplot(3,3,6)
+plot(xo, lsc_nm_b1e5, 'k')
+hold on
+plot(xo, lsc_jeff_b1e5,'r')
+plot(xo, lsc_jeff2_b1e5, 'c')
+hold off
+
+subplot(3,3,7)
+plot(xo, lsc_nm_b02e05, 'k')
+hold on
+plot(xo, lsc_jeff_b02e05,'r')
+plot(xo, lsc_jeff2_b02e05, 'c')
+hold off
+
+subplot(3,3,8)
+plot(xo, lsc_nm_b02e1, 'k')
+hold on
+plot(xo, lsc_jeff_b02e1,'r')
+plot(xo, lsc_jeff2_b02e1, 'c')
+hold off
+
+
+subplot(3,3,9)
+plot(xo, lsc_nm_b02e5, 'k')
+hold on
+plot(xo, lsc_jeff_b02e5,'r')
+plot(xo, lsc_jeff2_b02e5, 'c')
+hold off
+
+subplot(3,3,1)
+ylim([0 0.07])
+subplot(3,3,2)
+ylim([0 0.07])
+subplot(3,3,3)
+ylim([0 0.07])
+subplot(3,3,4)
+ylim([0 0.03])
+subplot(3,3,5)
+ylim([0 0.03])
+subplot(3,3,6)
+ylim([0 0.03])
+subplot(3,3,7)
+ylim([0 0.015])
+subplot(3,3,8)
+ylim([0 0.015])
+subplot(3,3,9)
+ylim([0 0.015])
+
+******* END of subplot
 
 
 
 
->>>>>>>> Figure 1 - compare Jeff with exact numerical normal modes
-
-semilogy(xo, lsc_jeff,'b', xo, lsc_jeff2, 'c' , xo, lsc_nm, 'r', 'LineWidth',4)
-
-xlabel('\omega_{DA} / \omega_c','FontSize', 30)
-ylabel('k / \omega_c','FontSize', 30)
-xlim([ 0 15])
-ylim([1e-10  1])
-legend('J_{eff}(1)','J_{eff}(2)', 'exact')
-
-legend boxoff
-set(gca, 'TickLength', [0.02 0.02])
 
 
 
 >>>>>>> Figure 2 - compare Jeff at two limits with normal mode Jeff from histogram
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.005_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.005_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.005_b1e1.dat')
 
 jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.2_b1e1.dat')
 jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.2_b1e1.dat')
@@ -95,21 +439,25 @@ jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega2_b1e1.dat
 jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega2_b1e1.dat')
 jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega2_b1e1.dat')
 
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega100_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega100_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega100_b1e1.dat')
 
+MAXBIN=200
+bin = 0: 15/MAXBIN:15 - 15/MAXBIN
+w = 15/1000: 15/1000 : 15
 
-
-bin = 0: 15/200:15-15/200
-w = 15/1000: 15/1000 : 15-15/1000
-
+beta=5
+hyp = coth( beta * w /2)
 
 fig = figure
-b = bar(bin,jnm, 'r')
-set(b, 'EdgeColor', 'r')
+b = bar(bin,jnm, 'k')
+set(b, 'EdgeColor', 'k')
 set(b, 'FaceColor', 'none')
 
 set(b, 'LineWidth', 1)
 hold on
-plot(w, jeff1, 'b', 'LineWidth', 3)
+plot(w, jeff1, 'r', 'LineWidth', 3)
 plot(w, jeff2, 'c', 'LineWidth', 3)
 hold off
 xlim([0 6])
@@ -117,20 +465,35 @@ ylim([0  0.05])
 
 xlabel('\omega / \omega_{c}','FontSize',30)
 ylabel('J(\omega)','FontSize', 30)
+legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
 
+for Omega=0.005 
+MAXBIN=500
+bin = 0: 15/MAXBIN:15-15/MAXBIN
+w = 0: 0.001 : 1-0.001
+b = bar(bin,jnm, 'k')
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff1, 'r', 'LineWidth', 3)
+hold off
+xlim([0 1])
+ylim([0 1e-7])
+legend('exact', 'J_{eff}(1)')
 
 
 ADD INSET ZOOM for Jeff(1) AND NM: add the following 
 ax = axes('position',[0.3 0.6 0.35 0.3], 'parent',gcf)
 
-bx = bar(bin,jnm, 'r')
-set(bx, 'EdgeColor', 'r')
+bx = bar(bin,jnm, 'k')
+set(bx, 'EdgeColor', 'k')
 set(bx, 'FaceColor', 'none')
 
 set(bx, 'LineWidth', 1)
 hold on
-plot(w, jeff1, 'b', 'LineWidth', 3)
-% plot(w, jeff2, 'c', 'LineWidth', 3)
+plot(w, jeff1, 'r', 'LineWidth', 3)
+% plot(w, jeff2, 'c' , 'LineWidth', 3)
 hold off
 xlim([0 2])
 % ylim([0  0.02])
@@ -139,6 +502,76 @@ set(ax, 'FontSize', 20)
 set(ax, 'FontWeight', 'bold')
 
 annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
+
+
+% for Omega=100 extreme case:
+b = bar(bin,jnm/1570000, 'k')
+
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff2, 'c', 'LineWidth', 3)
+hold off 
+
+*********  plot of J(omega) * coth(beta* omega / 2)
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.5_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.5_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.5_b1e1.dat')
+
+MAXBIN=200
+bin = 0: 15/MAXBIN:15 - 15/MAXBIN
+w = 15/1000: 15/1000 : 15-15/1000
+
+coth_t02 = coth( 5 * w /2)
+coth_t1 = coth( 1 * w /2)
+coth_t5 = coth( 0.2 * w /2)
+
+subplot(3,1,1)
+title('$J(\omega) coth(\beta\hbar\omega/2)$','interpreter','latex')
+b = bar(bin,jnm' .* coth( 5 * bin /2) , 'k')
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff1' .* coth( 5 * w /2), 'r', 'LineWidth', 3)
+hold off
+xlim([0 3])
+ylim([0  0.5])
+
+subplot(3,1,2)
+b = bar(bin,jnm' .* coth( 1 * bin /2) , 'k')
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff1' .* coth( 1 * w /2), 'r', 'LineWidth', 3)
+hold off
+xlim([0 3])
+ylim([0  2.5])
+
+
+subplot(3,1,3)
+b = bar(bin,jnm' .* coth( 0.2 * bin /2) , 'k')
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff1' .* coth( 0.2 * w /2), 'r', 'LineWidth', 3)
+hold off
+xlabel('\omega / \omega_{c}','FontSize',30)
+xlim([0 3])
+ylim([0  12])
+
+
+xlabel('\omega / \omega_{c}','FontSize',30)
+title('J(\omega)*coth(\beta\hbar\omega/2))','FontSize', 30)
+legend('exact', 'J_{eff}(1)')
+
 
 
 >>>>>>> Figure 3 - compare Jeff integral in exponent at two limits with exact normal mode
@@ -193,45 +626,596 @@ t3= t3 - 512
 t3 = t3 * dt3
 
 
-plot(t, int_nm_w02(:,1) ,'r', t, int_jeff1_w02(:,1) ,'b', t, int_jeff2_w02(:,1), 'c')
+*** subplot of integrals 
 
-Re part of Integral:
+subplot(4,2,1)
+plot(t1, -int_nm_w02(:,1) ,'k', t1, -int_jeff1_w02(:,1) ,'r', t1, -int_jeff2_w02(:,1), 'c')
 
-plot(t1, -int_nm_w02(:,1) ,'r', t1, -int_jeff1_w02(:,1) ,'b', t1, -int_jeff2_w02(:,1), 'c')
-plot(t1, -int_nm_w05(:,1) ,'r', t1, -int_jeff1_w05(:,1) ,'b', t1, -int_jeff2_w05(:,1), 'c')
-plot(t2, -int_nm_w1(:,1) ,'r', t2, -int_jeff1_w1(:,1) ,'b', t2, -int_jeff2_w1(:,1), 'c')
-plot(t3, -int_nm_w2(:,1) ,'r', t3, -int_jeff1_w2(:,1) ,'b', t3, -int_jeff2_w2(:,1), 'c')
+subplot(4,2,2)
+plot(t1, -int_nm_w02(:,2) ,'k', t1, -int_jeff1_w02(:,2) ,'r', t1, -int_jeff2_w02(:,2), 'c')
 
-xlim([-10 10])
-ylim([-40  0])
-xlabel('\omega_c t')
-ylabel('Re')
-annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
-legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+subplot(4,2,3)
+plot(t1, -int_nm_w05(:,1) ,'k', t1, -int_jeff1_w05(:,1) ,'r', t1, -int_jeff2_w05(:,1), 'c')
 
-legend boxoff
+subplot(4,2,4)
+plot(t1, -int_nm_w05(:,2) ,'k', t1, -int_jeff1_w05(:,2) ,'r', t1, -int_jeff2_w05(:,2), 'c')
+
+subplot(4,2,5)
+plot(t2, -int_nm_w1(:,1) ,'k', t2, -int_jeff1_w1(:,1) ,'r', t2, -int_jeff2_w1(:,1), 'c')
+
+subplot(4,2,6)
+plot(t2, -int_nm_w1(:,2) ,'k', t2, -int_jeff1_w1(:,2) ,'r', t2, -int_jeff2_w1(:,2), 'c')
+
+subplot(4,2,7)
+plot(t3, -int_nm_w2(:,1) ,'k', t3, -int_jeff1_w2(:,1) ,'r', t3, -int_jeff2_w2(:,1), 'c')
+
+subplot(4,2,8)
+plot(t3, -int_nm_w2(:,2) ,'k', t3, -int_jeff1_w2(:,2) ,'r', t3, -int_jeff2_w2(:,2), 'c')
 
 
-
-Im Part of Integral:
-
-plot(t1, -int_nm_w02(:,2) ,'r', t1, -int_jeff1_w02(:,2) ,'b', t1, -int_jeff2_w02(:,2), 'c')
-plot(t1, -int_nm_w05(:,2) ,'r', t1, -int_jeff1_w05(:,2) ,'b', t1, -int_jeff2_w05(:,2), 'c')
-plot(t2, -int_nm_w1(:,2) ,'r', t2, -int_jeff1_w1(:,2) ,'b', t2, -int_jeff2_w1(:,2), 'c')
-plot(t3, -int_nm_w2(:,2) ,'r', t3, -int_jeff1_w2(:,2) ,'b', t3, -int_jeff2_w2(:,2), 'c')
-
-xlim([-50 50])
-
+subplot(4,2,1)
+title('Re A(t)')
 xlim([-25 25])
-ylim([-5  5])
-xlabel('\omega_c t')
-ylabel('Im')
-annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 36,'EdgeColor','none')
+ylim([ -50  0])
 legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+subplot(4,2,3)
+xlim([-4 4])
+ylim([ -10  0])
+subplot(4,2,5)
+xlim([-4 4])
+ylim([ -10  0])
+subplot(4,2,7)
+xlim([-4 4])
+ylim([ -10  0])
+xlabel('\omega_c t')
 
-legend boxoff
+
+subplot(4,2,2)
+title('Im A(t)')
+xlim([-4 4])
+ylim([ -5  5])
+subplot(4,2,4)
+xlim([-4 4])
+ylim([ -5  5])
+subplot(4,2,6)
+xlim([-4 4])
+ylim([ -5  5])
+subplot(4,2,8)
+xlim([-4 4])
+ylim([ -5  5])
+xlabel('\omega_c t')
 
 
+annotation('textbox', 'String', '\bf \Omega = 0.2', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 0.5', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 2', 'FontSize', 14,'EdgeColor','none')
+
+
+
+*** subplot of integrals for exact and Jeff1 only
+
+subplot(4,2,1)
+plot(t1, -int_nm_w02(:,1) ,'k', t1, -int_jeff1_w02(:,1) ,'r')
+
+subplot(4,2,2)
+plot(t1, -int_nm_w02(:,2) ,'k', t1, -int_jeff1_w02(:,2) ,'r')
+
+subplot(4,2,3)
+plot(t1, -int_nm_w05(:,1) ,'k', t1, -int_jeff1_w05(:,1) ,'r')
+
+subplot(4,2,4)
+plot(t1, -int_nm_w05(:,2) ,'k', t1, -int_jeff1_w05(:,2) ,'r')
+
+subplot(4,2,5)
+plot(t2, -int_nm_w1(:,1) ,'k', t2, -int_jeff1_w1(:,1) ,'r')
+
+subplot(4,2,6)
+plot(t2, -int_nm_w1(:,2) ,'k', t2, -int_jeff1_w1(:,2) ,'r')
+
+subplot(4,2,7)
+plot(t3, -int_nm_w2(:,1) ,'k', t3, -int_jeff1_w2(:,1) ,'r')
+
+subplot(4,2,8)
+plot(t3, -int_nm_w2(:,2) ,'k', t3, -int_jeff1_w2(:,2) ,'r')
+
+
+
+
+
+subplot(4,2,1)
+title('ln |C(t)|')
+xlim([-25 25])
+ylim([ -80  0])
+legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+subplot(4,2,3)
+xlim([-25 25])
+ylim([ -80  0])
+subplot(4,2,5)
+xlim([-25 25])
+ylim([ -80  0])
+subplot(4,2,7)
+xlim([-25 25])
+ylim([ -80  0])
+xlabel('\omega_c t')
+
+
+subplot(4,2,2)
+title('Phase of C(t)')
+xlim([-25 25])
+ylim([ -5  5])
+subplot(4,2,4)
+xlim([-25 25])
+ylim([ -5  5])
+subplot(4,2,6)
+xlim([-25 25])
+ylim([ -5  5])
+subplot(4,2,8)
+xlim([-25 25])
+ylim([ -5  5])
+xlabel('\omega_c t')
+
+
+
+annotation('textbox', 'String', '\bf \Omega = 0.2', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 0.5', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 2', 'FontSize', 14,'EdgeColor','none')
+
+
+
+
+>>>>>>> Figure 4 - compare C(t) using Jeff at two limits with exact normal mode
+
+c_jeff1_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_C(t)_Omega0.2_b1e1.dat')
+c_jeff2_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_C(t)_Omega0.2_b1e1.dat')
+c_nm_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_C(t)_Omega0.2_b1e1.dat')
+
+c_jeff1_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_C(t)_Omega0.5_b1e1.dat')
+c_jeff2_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_C(t)_Omega0.5_b1e1.dat')
+c_nm_w05 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_C(t)_Omega0.5_b1e1.dat')
+
+c_jeff1_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_C(t)_Omega1_b1e1.dat')
+c_jeff2_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_C(t)_Omega1_b1e1.dat')
+c_nm_w1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_C(t)_Omega1_b1e1.dat')
+
+c_jeff1_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_C(t)_Omega2_b1e1.dat')
+c_jeff2_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_C(t)_Omega2_b1e1.dat')
+c_nm_w2 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_C(t)_Omega2_b1e1.dat')
+
+
+*** subplot of integrals 
+
+subplot(4,2,1)
+plot(t1, c_nm_w02(:,1) ,'k', t1, c_jeff1_w02(:,1) ,'r', t1, c_jeff2_w02(:,1), 'c')
+
+subplot(4,2,2)
+plot(t1, c_nm_w02(:,2) ,'k', t1, c_jeff1_w02(:,2) ,'r', t1, c_jeff2_w02(:,2), 'c')
+
+subplot(4,2,3)
+plot(t1, c_nm_w05(:,1) ,'k', t1, c_jeff1_w05(:,1) ,'r', t1, c_jeff2_w05(:,1), 'c')
+
+subplot(4,2,4)
+plot(t1, c_nm_w05(:,2) ,'k', t1, c_jeff1_w05(:,2) ,'r', t1, c_jeff2_w05(:,2), 'c')
+
+subplot(4,2,5)
+plot(t2, c_nm_w1(:,1) ,'k', t2, c_jeff1_w1(:,1) ,'r', t2, c_jeff2_w1(:,1), 'c')
+
+subplot(4,2,6)
+plot(t2, c_nm_w1(:,2) ,'k', t2, c_jeff1_w1(:,2) ,'r', t2, c_jeff2_w1(:,2), 'c')
+
+subplot(4,2,7)
+plot(t3, c_nm_w2(:,1) ,'k', t3, c_jeff1_w2(:,1) ,'r', t3, c_jeff2_w2(:,1), 'c')
+
+subplot(4,2,8)
+plot(t3, c_nm_w2(:,2) ,'k', t3, c_jeff1_w2(:,2) ,'r', t3, c_jeff2_w2(:,2), 'c')
+
+
+subplot(4,2,1)
+title('Re C(t)')
+xlim([-4 4])
+ylim([ -0.5  1.5])
+legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+subplot(4,2,3)
+xlim([-4 4])
+ylim([ -0.5  1.5])
+subplot(4,2,5)
+xlim([-4 4])
+ylim([ -0.5  1.5])
+subplot(4,2,7)
+xlim([-4 4])
+ylim([ -0.5  1.5])
+xlabel('\omega_c t')
+
+
+subplot(4,2,2)
+title('Im C(t)')
+xlim([-4 4])
+ylim([ -1  1])
+subplot(4,2,4)
+xlim([-4 4])
+ylim([ -1  1])
+subplot(4,2,6)
+xlim([-4 4])
+ylim([ -1  1])
+subplot(4,2,8)
+xlim([-4 4])
+ylim([ -1  1])
+xlabel('\omega_c t')
+
+annotation('textbox', 'String', '\bf \Omega = 0.2', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 0.5', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 1', 'FontSize', 14,'EdgeColor','none')
+annotation('textbox', 'String', '\bf \Omega = 2', 'FontSize', 14,'EdgeColor','none')
+
+
+
+
+
+
+
+>>>>>>> Figure 5 - compare EFGR rate and time-domain C(t) using Jeff(1) with exact normal mode
+
+QM limit T=0 :
+
+lsc_jeff1_t0 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_T=0_Omega0.5_e1.dat') 
+lsc_jnm_t0  =  importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_T=0_Omega0.5_e1.dat')
+
+c_jeff1_t0 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_C(t)_T=0_Omega0.5_e1.dat')
+c_nm_t0 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_C(t)_T=0_Omega0.5_e1.dat')
+
+int_jeff1_t0 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff_T=0_Omega0.5_e1.dat')
+int_nm_t0 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_nm_T=0_Omega0.5_e1.dat')
+
+
+CL limit T=10 :
+
+lsc_jeff1_t10 =  importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b0.1e1.dat') 
+lsc_jnm_t10 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b0.1e1.dat')
+
+cav_jeff1_t10 =  importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_highT_Omega0.5_b0.1e1.dat') 
+cav_jnm_t10 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_nm_highT_Omega0.5_b0.1e1.dat')
+
+c_jeff1_t10 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Jeff_C(t)_highT_Omega0.5_b0.1e1.dat')
+c_nm_t10 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_nm_C(t)_highT_Omega0.5_b0.1e1.dat')
+
+int_jeff1_t10 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_Integral_Jeff_highT_Omega0.5_b0.1e1.dat')
+int_nm_t10 = importdata('/Users/xiangs/Dropbox/code/EFGR/CAV_EFGR_Integral_nm_highT_Omega0.5_b0.1e1.dat')
+
+
+Omega=0.5
+
+LEN = 1024
+deltaT = 0.005
+df = 0.195312
+d_omega_DA = 2 * pi * df
+FTP = LEN/2
+GAP = int64(FTP/20)
+xo = [0: FTP-1]
+xo = xo * d_omega_DA
+
+dt1 = 0.005
+t1= 0:1023
+t1= t1 - 512
+t1 = t1 * dt1
+
+dt2 = 0.2
+t2= 0:1023
+t2= t2 - 512
+t2 = t2 * dt2
+df2 =   0.00488281
+xo2 = [0: FTP-1]
+xo2 = xo2 * 2 * pi * df2
+
+
+subplot(3,2,1)
+semilogy(xo2, lsc_jnm_t0 , 'k', xo2, lsc_jeff1_t0, 'r')
+
+subplot(3,2,3)
+plot(t2, c_nm_t0(:,1) ,'k', t2, c_jeff1_t0(:,1) ,'r')
+
+subplot(3,2,5)
+plot(t2, c_nm_t0(:,2) ,'k', t2, c_jeff1_t0(:,2) ,'r')
+
+
+subplot(3,2,2)
+semilogy(xo, cav_jnm_t10 , 'k', xo, cav_jeff1_t10, 'r')
+semilogy(xo, lsc_jnm_t10 , 'k', xo, lsc_jeff1_t10, 'r')
+
+subplot(3,2,4)
+plot(t1, c_nm_t10(:,1) ,'k', t1, c_jeff1_t10(:,1) ,'r')
+
+subplot(3,2,6)
+plot(t1, c_nm_t10(:,2) ,'k', t1, c_jeff1_t10(:,2) ,'r')
+
+
+
+
+
+
+
+
+>>>>>>>>>> Figure 6 - FGR and time-domain C(t) using Jeff(1) and exact for eta=1, Omega=0.5, beta=0.2,1,5,25
+
+
+lsc_jeff_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b0.2e1.dat') 
+lsc_jeff2_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b0.2e1.dat') 
+lsc_nm_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b0.2e1.dat') 
+
+lsc_jeff_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b1e1.dat') 
+lsc_jeff2_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b1e1.dat') 
+lsc_nm_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b1e1.dat') 
+
+lsc_jeff_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b5e1.dat') 
+lsc_jeff2_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b5e1.dat') 
+lsc_nm_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b5e1.dat') 
+
+lsc_jeff_b20e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b20e1.dat') 
+lsc_jeff2_b20e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b20e1.dat') 
+lsc_nm_b20e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b20e1.dat') 
+
+int_jeff1_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff_Omega0.5_b0.2e1.dat')
+int_jeff2_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff2_Omega0.5_b0.2e1.dat')
+int_nm_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_nm_Omega0.5_b0.2e1.dat')
+
+int_jeff1_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff_Omega0.5_b1e1.dat')
+int_jeff2_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff2_Omega0.5_b1e1.dat')
+int_nm_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_nm_Omega0.5_b1e1.dat')
+
+int_jeff1_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff_Omega0.5_b5e1.dat')
+int_jeff2_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_Jeff2_Omega0.5_b5e1.dat')
+int_nm_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/EFGR_Integral_nm_Omega0.5_b5e1.dat')
+
+c_jeff1_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_C(t)_Omega0.5_b0.2e1.dat')
+c_jeff2_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_C(t)_Omega0.5_b0.2e1.dat')
+c_nm_b02e1= importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_C(t)_Omega0.5_b0.2e1.dat')
+
+c_jeff1_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_C(t)_Omega0.5_b1e1.dat')
+c_jeff2_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_C(t)_Omega0.5_b1e1.dat')
+c_nm_b1e1= importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_C(t)_Omega0.5_b1e1.dat')
+
+c_jeff1_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_C(t)_Omega0.5_b5e1.dat')
+c_jeff2_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_C(t)_Omega0.5_b5e1.dat')
+c_nm_b5e1= importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_C(t)_Omega0.5_b5e1.dat')
+
+
+Omega=0.5
+
+LEN = 1024
+deltaT = 0.2
+df = 0.00488281
+d_omega_DA = 0.0306796
+FTP = LEN/2
+GAP = int64(FTP/20)
+xo = [0: FTP-1]
+xo = xo * d_omega_DA
+
+dt1 = 0.2
+t1= 0:1023
+t1= t1 - 512
+t1 = t1 * dt1
+
+
+subplot(3,3,1)
+semilogy(xo, lsc_nm_b5e1 , 'k', xo, lsc_jeff_b5e1, 'r')
+
+subplot(3,3,2)
+plot(t1, -int_nm_b5e1(:,1) ,'k', t1, -int_jeff1_b5e1(:,1) ,'r')
+
+subplot(3,3,3)
+plot(t1, -int_nm_b5e1(:,2) ,'k', t1, -int_jeff1_b5e1(:,2) ,'r')
+
+
+subplot(3,3,4)
+semilogy(xo, lsc_nm_b1e1 , 'k', xo, lsc_jeff_b1e1, 'r')
+
+subplot(3,3,5)
+plot(t1, -int_nm_b1e1(:,1) ,'k', t1, -int_jeff1_b1e1(:,1) ,'r')
+
+subplot(3,3,6)
+plot(t1, -int_nm_b1e1(:,2) ,'k', t1, -int_jeff1_b1e1(:,2) ,'r')
+
+
+subplot(3,3,7)
+semilogy(xo, lsc_nm_b02e1 , 'k', xo, lsc_jeff_b02e1, 'r')
+
+subplot(3,3,8)
+plot(t1, -int_nm_b02e1(:,1) ,'k', t1, -int_jeff1_b02e1(:,1) ,'r')
+
+subplot(3,3,9)
+plot(t1, -int_nm_b02e1(:,2) ,'k', t1, -int_jeff1_b02e1(:,2) ,'r')
+
+
+subplot(3,3,1)
+title('k / \omega_c')
+xlim([0 15])
+ylim([ 1e-15  1])
+subplot(3,3,4)
+xlim([0 15])
+ylim([ 1e-15  1])
+subplot(3,3,7)
+xlim([0 15])
+ylim([ 1e-15  1])
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+
+
+subplot(3,3,2)
+title('ln |C(t)|')
+xlim([-25 25])
+ylim([ -20  0])
+legend('exact', 'J_{eff}(1)')
+subplot(3,3,5)
+xlim([-25 25])
+ylim([ -80  0])
+subplot(3, 3,8)
+xlim([-25 25])
+ylim([ -300  0])
+xlabel('\omega_c t')
+
+
+subplot(3,3,3)
+title('Phase of C(t)')
+xlim([-25 25])
+ylim([ -5  5])
+subplot(3,3,6)
+xlim([-25 25])
+ylim([ -5  5])
+subplot(3,3,9)
+xlim([-25 25])
+ylim([ -5  5])
+xlabel('\omega_c t')
+
+
+
+annotation('textbox', 'String', '\bf k_BT = 0.2', 'FontSize', 24,'EdgeColor','none')
+annotation('textbox', 'String', '\bf k_BT = 1', 'FontSize', 24,'EdgeColor','none')
+annotation('textbox', 'String', '\bf k_BT = 5', 'FontSize', 24,'EdgeColor','none')
+
+
+
+**** only plot FGR 
+
+lsc_jeff_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b0.2e1.dat') 
+lsc_jeff2_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b0.2e1.dat') 
+lsc_nm_b02e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b0.2e1.dat') 
+
+lsc_jeff_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b1e1.dat') 
+lsc_jeff2_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b1e1.dat') 
+lsc_nm_b1e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b1e1.dat') 
+
+lsc_jeff_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b5e1.dat') 
+lsc_jeff2_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b5e1.dat') 
+lsc_nm_b5e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b5e1.dat') 
+
+lsc_jeff_b20e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b20e1.dat') 
+lsc_jeff2_b20e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b20e1.dat') 
+lsc_nm_b20e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b20e1.dat') 
+
+lsc_jeff_b005e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.5_b0.05e1.dat') 
+lsc_jeff2_b005e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.5_b0.05e1.dat') 
+lsc_nm_b005e1 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.5_b0.05e1.dat') 
+
+subplot(2,2,1)
+semilogy(xo, lsc_nm_b20e1 , 'k', xo, lsc_jeff_b20e1, 'r')
+subplot(2,2,2)
+semilogy(xo, lsc_nm_b5e1 , 'k', xo, lsc_jeff_b5e1, 'r')
+subplot(2,2,3)
+semilogy(xo, lsc_nm_b1e1 , 'k', xo, lsc_jeff_b1e1, 'r')
+subplot(2,2,4)
+semilogy(xo, lsc_nm_b02e1 , 'k', xo, lsc_jeff_b02e1, 'r')
+
+subplot(2,2,1)
+ylabel('log(k/\omega_c)','FontSize',24)
+xlim([0 15])
+ylim([ 1e-15  1])
+subplot(2,2,3)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+ylabel('log(k/\omega_c)','FontSize',24)
+xlim([0 15])
+ylim([ 1e-15  1])
+subplot(2,2,2)
+xlim([0 15])
+ylim([ 1e-15  1])
+subplot(2,2,4)
+xlim([0 15])
+ylim([ 1e-15  1])
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+
+annotation('textbox', 'String', '\bf k_BT = 0.05', 'FontSize', 24,'EdgeColor','none')
+annotation('textbox', 'String', '\bf k_BT = 0.2', 'FontSize', 24,'EdgeColor','none')
+annotation('textbox', 'String', '\bf k_BT = 1', 'FontSize', 24,'EdgeColor','none')
+annotation('textbox', 'String', '\bf k_BT = 5', 'FontSize', 24,'EdgeColor','none')
+
+
+COMBINATION plot of FGR for different temp (beta=0.2,1,5) and J(omega)*coth 
+
+*********  plot of J(omega) * coth(beta* omega / 2)
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.5_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.5_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.5_b1e1.dat')
+
+MAXBIN=200
+bin = 0: 15/MAXBIN:15 - 15/MAXBIN
+w = 15/1000: 15/1000 : 15-15/1000
+
+
+subplot(3,2,1)
+title('log(k/\omega_c)','FontSize',30)
+semilogy(xo, lsc_nm_b5e1 , 'k', xo, lsc_jeff_b5e1, 'r', 'LineWidth', 3)
+set(gca, 'LineWidth', 2); 
+set(gca,'FontSize', 20);
+set(gca,'FontWeight', 'bold');
+xlim([0 15])
+ylim([ 1e-15  1])
+subplot(3,2,3)
+semilogy(xo, lsc_nm_b1e1 , 'k', xo, lsc_jeff_b1e1, 'r', 'LineWidth', 3)
+set(gca, 'LineWidth', 2); 
+set(gca,'FontSize', 20);
+set(gca,'FontWeight', 'bold');
+xlim([0 15])
+ylim([ 1e-15  1])
+subplot(3,2,5)
+semilogy(xo, lsc_nm_b02e1 , 'k', xo, lsc_jeff_b02e1, 'r', 'LineWidth', 3)
+set(gca, 'LineWidth', 2); 
+set(gca,'FontSize', 20);
+set(gca,'FontWeight', 'bold');
+xlim([0 15])
+ylim([ 1e-15  1])
+xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
+legend('exact', 'J_{eff}(1)')
+
+
+subplot(3,2,2)
+title('$J(\omega) \coth(\beta\hbar\omega/2)$','interpreter','latex')
+b = bar(bin,jnm' .* coth( 5 * bin /2) , 'k')
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+set(gca, 'LineWidth', 2); 
+set(gca,'FontSize', 20);
+set(gca,'FontWeight', 'bold');
+
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff1' .* coth( 5 * w /2), 'r', 'LineWidth', 3)
+hold off
+xlim([0 3])
+ylim([0  0.5])
+
+subplot(3,2,4)
+b = bar(bin,jnm' .* coth( 1 * bin /2) , 'k')
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+set(gca, 'LineWidth', 2); 
+set(gca,'FontSize', 20);
+set(gca,'FontWeight', 'bold');
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff1' .* coth( 1 * w /2), 'r', 'LineWidth', 3)
+hold off
+xlim([0 3])
+ylim([0  2.5])
+
+
+subplot(3,2,6)
+b = bar(bin,jnm' .* coth( 0.2 * bin /2) , 'k')
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+set(gca, 'LineWidth', 2); 
+set(gca,'FontSize', 20);
+set(gca,'FontWeight', 'bold');
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff1' .* coth( 0.2 * w /2), 'r', 'LineWidth', 3)
+hold off
+xlabel('\omega / \omega_{c}','FontSize',30)
+xlim([0 3])
+ylim([0  12])
+
+
+annotation('textbox', 'String', '\bf k_BT = 0.2', 'FontSize', 24,'EdgeColor','none')
+annotation('textbox', 'String', '\bf k_BT = 1', 'FontSize', 24,'EdgeColor','none')
+annotation('textbox', 'String', '\bf k_BT = 5', 'FontSize', 24,'EdgeColor','none')
 
 
 
