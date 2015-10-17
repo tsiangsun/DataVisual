@@ -21,6 +21,7 @@ semilogy(xo, lsceqnmb5e05, 'r', xo(2:GAP:FTP) ,lsceqnmb5e05(2:GAP:FTP),'bo','Mar
 
 from output of EFGR_Jeff.cpp and EFGR_nm_lsc.cpp
 
+
 lsc_jeff_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.2_b1e1.dat') 
 lsc_jeff2_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.2_b1e1.dat') 
 lsc_nm_w02 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.2_b1e1.dat') 
@@ -154,6 +155,74 @@ legend boxoff
 
 set(gca, 'TickLength', [0.02 0.02])
 
+
+
+********* single plot for small Omega *********
+
+lsc_jeff_w01 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.1_b1e1.dat') 
+lsc_jeff2_w01 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.1_b1e1.dat') 
+lsc_nm_w01 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.1_b1e1.dat') 
+
+lsc_jeff_w005 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.05_b1e1.dat') 
+lsc_jeff2_w005 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.05_b1e1.dat') 
+lsc_nm_w005 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.05_b1e1.dat') 
+
+
+lsc_jeff2_w001 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff2_Omega0.01_b1e1.dat') 
+lsc_nm_w001 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_nm_Omega0.01_b1e1.dat') 
+lsc_jeff_w001 = importdata('/Users/xiangs/Dropbox/code/EFGR/QMLSC_EFGR_Jeff_Omega0.01_b1e1.dat') 
+
+Omega=0.1:
+
+LEN = 1024
+deltaT = 0.2
+ df = 0.00488281
+d_omega_DA = 2 * pi * df
+FTP = LEN/2
+GAP = int64(FTP/20)
+xo = [0: FTP-1]
+xo = xo * d_omega_DA
+
+semilogy(xo, lsc_nm_w01, 'k', xo, lsc_jeff_w01,'r')
+
+
+Omega=0.05:
+LEN = 1024
+deltaT = 0.3
+ df = 0.00325521
+d_omega_DA = 2 * pi * df
+FTP = LEN/2
+GAP = int64(FTP/20)
+xo = [0: FTP-1]
+xo = xo * d_omega_DA
+
+semilogy(xo, lsc_nm_w005, 'k', xo, lsc_jeff_w005,'r')
+
+Omega=0.01:
+LEN = 1024
+deltaT = 2
+d_omega_DA = 0.00306796
+FTP = LEN/2
+xo = [0: FTP-1]
+xo = xo * d_omega_DA
+
+LENP = 2048
+dfp = 0.000244141
+xop = [0: LENP/2-1]
+xop = xop * 2 * pi * dfp
+
+
+semilogy(xo, lsc_nm_w001, 'k', xop, lsc_jeff_w001,'r')
+
+
+
+xlabel('\omega_{DA} / \omega_c','FontSize', 30)
+ylabel('log(k/\omega_c)','FontSize', 30)
+xlim([ 0 6])
+ylim([1e-14  1])
+legend('exact','J_{eff}(1)')
+
+legend boxoff
 
 
 ********* Subplot for Omega=0.5, beta =0.2, 1, 5 and eta = 0.5, 1, 5  [3 times 3 plot]
@@ -423,6 +492,19 @@ jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.005_b1e1
 jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.005_b1e1.dat')
 jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.005_b1e1.dat')
 
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.01_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.01_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.01_b1e1.dat')
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.05_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.05_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.05_b1e1.dat')
+
+jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.1_b1e1.dat')
+jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.1_b1e1.dat')
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.1_b1e1.dat')
+
+
 jeff1 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff(omega)_Omega0.2_b1e1.dat')
 jeff2 = importdata('/Users/xiangs/Dropbox/code/EFGR/J_eff2(omega)_Omega0.2_b1e1.dat')
 jnm = importdata('/Users/xiangs/Dropbox/code/EFGR/J_nm_hist_Omega0.2_b1e1.dat')
@@ -447,6 +529,12 @@ MAXBIN=200
 bin = 0: 15/MAXBIN:15 - 15/MAXBIN
 w = 15/1000: 15/1000 : 15
 
+Omega=0.05
+MAXBIN=500
+nomega=2000
+bin = 0: 15/MAXBIN:15 - 15/MAXBIN
+w = 0: 15/nomega: 15-15/nomega
+
 beta=5
 hyp = coth( beta * w /2)
 
@@ -458,7 +546,7 @@ set(b, 'FaceColor', 'none')
 set(b, 'LineWidth', 1)
 hold on
 plot(w, jeff1, 'r', 'LineWidth', 3)
-plot(w, jeff2, 'c', 'LineWidth', 3)
+%plot(w, jeff2, 'c', 'LineWidth', 3)
 hold off
 xlim([0 6])
 ylim([0  0.05])
@@ -466,6 +554,7 @@ ylim([0  0.05])
 xlabel('\omega / \omega_{c}','FontSize',30)
 ylabel('J(\omega)','FontSize', 30)
 legend('exact', 'J_{eff}(1)', 'J_{eff}(2)')
+legend('exact', 'J_{eff}(1)')
 
 for Omega=0.005 
 MAXBIN=500
@@ -480,6 +569,25 @@ plot(w, jeff1, 'r', 'LineWidth', 3)
 hold off
 xlim([0 1])
 ylim([0 1e-7])
+legend('exact', 'J_{eff}(1)')
+
+for Omega=0.01
+MAXBIN=400
+MAXOMEGA=2
+nomega=3000
+bin = 0: MAXOMEGA/MAXBIN:   MAXOMEGA- MAXOMEGA/MAXBIN
+w = 0: 0.001 : 0.001*(nomega-1)
+
+b = bar(bin,jnm, 'k')
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+
+set(b, 'LineWidth', 1)
+hold on
+plot(w, jeff1, 'r', 'LineWidth', 3)
+hold off
+xlim([0 0.3])
+ylim([0 0.5e-5])
 legend('exact', 'J_{eff}(1)')
 
 
