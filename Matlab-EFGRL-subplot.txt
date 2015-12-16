@@ -2,7 +2,7 @@ SUBPLOT for EFGRL
 
 New EFGRL.cpp with approximations, Omega = 0.5
 
-Case(1):  beta = 0.2, 1 ,5, 2  eta = 0.5, 1 ,5
+Case(1):  beta = 0.2, 1 ,5, 2  eta = 0.5, 1 , 2, 5
 
 
 INPUT DATA ******
@@ -25,14 +25,15 @@ cdlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e1.dat')
 inhlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e1.dat')
 marlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e1.dat')
 
-qmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e5.dat')
-qmlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e5.dat')
-lsclb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e5.dat')
-lscpwlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b0.2e5.dat')
-cavlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e5.dat')
-cdlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e5.dat')
-inhlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e5.dat')
-marlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e5.dat')
+qmb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e2.dat')
+qmlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e2.dat')
+lsclb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e2.dat')
+lscpwlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b0.2e2.dat')
+cavlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e2.dat')
+cdlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e2.dat')
+inhlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e2.dat')
+marlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e2.dat')
+
 
 
 qmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e0.5.dat')
@@ -53,14 +54,15 @@ cdlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e1.dat')
 inhlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e1.dat')
 marlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e1.dat')
 
-qmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e5.dat')
-qmlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e5.dat')
-lsclb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e5.dat')
-lscpwlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b1e5.dat')
-cavlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e5.dat')
-cdlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e5.dat')
-inhlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e5.dat')
-marlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e5.dat')
+qmb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e2.dat')
+qmlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e2.dat')
+lsclb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e2.dat')
+lscpwlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b1e2.dat')
+cavlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e2.dat')
+cdlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e2.dat')
+inhlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e2.dat')
+marlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e2.dat')
+
 
 
 qmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e0.5.dat')
@@ -81,15 +83,19 @@ cdlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e1.dat')
 inhlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e1.dat')
 marlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e1.dat')
 
-qmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e5.dat')
-qmlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e5.dat')
-lsclb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e5.dat')
-lscpwlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b5e5.dat')
-cavlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e5.dat')
-cdlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e5.dat')
-inhlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e5.dat')
-marlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e5.dat')
+qmb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e2.dat')
+qmlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e2.dat')
+lsclb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e2.dat')
+lscpwlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b5e2.dat')
+cavlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e2.dat')
+cdlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e2.dat')
+inhlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e2.dat')
+marlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e2.dat')
 
+
+
+
+************** extra data ****************
 
 qmb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b2e0.5.dat')
 qmlb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b2e0.5.dat')
@@ -121,6 +127,47 @@ marlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b2e5.dat')
 
 
 
+qmb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b2e2.dat')
+qmlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b2e2.dat')
+lsclb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b2e2.dat')
+lscpwlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b2e2.dat')
+cavlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b2e2.dat')
+cdlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b2e2.dat')
+inhlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b2e2.dat')
+marlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b2e2.dat')
+
+
+
+
+qmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e5.dat')
+qmlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e5.dat')
+lsclb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e5.dat')
+lscpwlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b0.2e5.dat')
+cavlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e5.dat')
+cdlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e5.dat')
+inhlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e5.dat')
+marlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e5.dat')
+
+qmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e5.dat')
+qmlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e5.dat')
+lsclb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e5.dat')
+lscpwlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b1e5.dat')
+cavlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e5.dat')
+cdlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e5.dat')
+inhlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e5.dat')
+marlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e5.dat')
+
+qmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e5.dat')
+qmlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e5.dat')
+lsclb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e5.dat')
+lscpwlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b5e5.dat')
+cavlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e5.dat')
+cdlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e5.dat')
+inhlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e5.dat')
+marlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e5.dat')
+
+
+
 
 
 
@@ -131,12 +178,12 @@ Plotting *******
 
 
 
-LEN = 512
+LEN = 1024
 deltaT = 0.2
- df = 0.00976562
+ df = 0.00488281
 d_omega_DA = 2 * pi * df
 FTP = LEN/2
-GAP = int64(FTP/20)
+GAP = int64(FTP/10)
 xo = [0: FTP-1]
 xo = xo * d_omega_DA
 
@@ -147,7 +194,7 @@ semilogy( xo, qmlb1e1, xo, lsclb1e1, xo, cavlb1e1 , xo, cdlb1e1, xo, inhlb1e1, x
 semilogy(xo, inhlb1e1, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb1e1, 'g')
-semilogy(xo, cdlb1e1,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb1e1,  'color','c')
 semilogy(xo, cavlb1e1, 'r')
 semilogy(xo, lsclb1e1, 'b', xo(2:GAP:FTP) ,lsclb1e1(2:GAP:FTP),'bo','MarkerSize',7)
 semilogy(xo, qmlb1e1, 'color',[0.93 0.69 0.13])
@@ -157,138 +204,213 @@ hold off
 
 FIGURE 1 - SUBPLOT *********** 3x3 Full k(omega) vs omega_DA 
 ----------------
+
 Case(1):  beta = 0.2, 1 ,5,  eta = 0.5, 1 ,5
+
+For W-0 Approximation density of symbols:
+
+DIV = [4 2 1]
+
+DIV = [2 1 1]
+
+DIV = [1 1 1]
 
 subplot(3,3,1)
 semilogy(xo, inhlb5e05, 'color',[0.75 0 0.75])
 hold on
+semilogy(xo(GAP:GAP/DIV(1):FTP), inhlb5e05(GAP:GAP/DIV(1):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
 semilogy(xo, marlb5e05, 'g')
-semilogy(xo, cdlb5e05,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb5e05,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb5e05(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
 semilogy(xo, cavlb5e05, 'r')
-semilogy(xo, lsclb5e05, 'b', xo(2:GAP:FTP) ,lsclb5e05(2:GAP:FTP),'bo','MarkerSize',7)
+semilogy(xo, lscpwlb5e05, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb5e05(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb5e05, 'b', xo(2:GAP:FTP) ,lsclb5e05(2:GAP:FTP),'bo','MarkerSize',8)
 semilogy(xo, qmlb5e05, 'color',[0.93 0.69 0.13])
 hold off
 
 subplot(3,3,2)
 semilogy(xo, inhlb5e1, 'color',[0.75 0 0.75])
 hold on
+semilogy(xo(GAP:GAP/DIV(1):FTP), inhlb5e1(GAP:GAP/DIV(1):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
 semilogy(xo, marlb5e1, 'g')
-semilogy(xo, cdlb5e1,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb5e1,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb5e1(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
 semilogy(xo, cavlb5e1, 'r')
-semilogy(xo, lsclb5e1, 'b', xo(2:GAP:FTP) ,lsclb5e1(2:GAP:FTP),'bo','MarkerSize',7)
+semilogy(xo, lscpwlb5e1, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb5e1(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb5e1, 'b', xo(2:GAP:FTP) ,lsclb5e1(2:GAP:FTP),'bo','MarkerSize',8)
 semilogy(xo, qmlb5e1, 'color',[0.93 0.69 0.13])
 hold off
 
 subplot(3,3,3)
-semilogy(xo, inhlb5e5, 'color',[0.75 0 0.75])
+semilogy(xo, inhlb5e2, 'color',[0.75 0 0.75])
 hold on
-semilogy(xo, marlb5e5, 'g')
-semilogy(xo, cdlb5e5,  'color',[0 0.75 0.75])
-semilogy(xo, cavlb5e5, 'r')
-semilogy(xo, lsclb5e5, 'b', xo(2:GAP:FTP) ,lsclb5e5(2:GAP:FTP),'bo','MarkerSize',7)
-semilogy(xo, qmlb5e5, 'color',[0.93 0.69 0.13])
+semilogy(xo(GAP:GAP/DIV(1):FTP), inhlb5e2(GAP:GAP/DIV(1):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
+semilogy(xo, marlb5e2, 'g')
+semilogy(xo, cdlb5e2,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb5e2(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
+semilogy(xo, cavlb5e2, 'r')
+semilogy(xo, lscpwlb5e2, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb5e2(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb5e2, 'b', xo(2:GAP:FTP) ,lsclb5e2(2:GAP:FTP),'bo','MarkerSize',8)
+semilogy(xo, qmlb5e2, 'color',[0.93 0.69 0.13])
 hold off
 
 subplot(3,3,4)
 semilogy(xo, inhlb1e05, 'color',[0.75 0 0.75])
 hold on
+semilogy(xo(GAP:GAP/DIV(2):FTP), inhlb1e05(GAP:GAP/DIV(2):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
 semilogy(xo, marlb1e05, 'g')
-semilogy(xo, cdlb1e05,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb1e05,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb1e05(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
 semilogy(xo, cavlb1e05, 'r')
-semilogy(xo, lsclb1e05, 'b', xo(2:GAP:FTP) ,lsclb1e05(2:GAP:FTP),'bo','MarkerSize',7)
+semilogy(xo, lscpwlb1e05, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb1e05(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb1e05, 'b', xo(2:GAP:FTP) ,lsclb1e05(2:GAP:FTP),'bo','MarkerSize',8)
 semilogy(xo, qmlb1e05, 'color',[0.93 0.69 0.13])
 hold off
 
 subplot(3,3,5)
 semilogy(xo, inhlb1e1, 'color',[0.75 0 0.75])
 hold on
+semilogy(xo(GAP:GAP/DIV(2):FTP), inhlb1e1(GAP:GAP/DIV(2):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
 semilogy(xo, marlb1e1, 'g')
-semilogy(xo, cdlb1e1,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb1e1,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb1e1(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
 semilogy(xo, cavlb1e1, 'r')
-semilogy(xo, lsclb1e1, 'b', xo(2:GAP:FTP) ,lsclb1e1(2:GAP:FTP),'bo','MarkerSize',7)
+semilogy(xo, lscpwlb1e1, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb1e1(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb1e1, 'b', xo(2:GAP:FTP) ,lsclb1e1(2:GAP:FTP),'bo','MarkerSize',8)
 semilogy(xo, qmlb1e1, 'color',[0.93 0.69 0.13])
 hold off
 
 subplot(3,3,6)
-semilogy(xo, inhlb1e5, 'color',[0.75 0 0.75])
+semilogy(xo, inhlb1e2, 'color',[0.75 0 0.75])
 hold on
-semilogy(xo, marlb1e5, 'g')
-semilogy(xo, cdlb1e5,  'color',[0 0.75 0.75])
-semilogy(xo, cavlb1e5, 'r')
-semilogy(xo, lsclb1e5, 'b', xo(2:GAP:FTP) ,lsclb1e5(2:GAP:FTP),'bo','MarkerSize',7)
-semilogy(xo, qmlb1e5, 'color',[0.93 0.69 0.13])
+semilogy(xo(GAP:GAP/DIV(2):FTP), inhlb1e2(GAP:GAP/DIV(2):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
+semilogy(xo, marlb1e2, 'g')
+semilogy(xo, cdlb1e2,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb1e2(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
+semilogy(xo, cavlb1e2, 'r')
+semilogy(xo, lscpwlb1e2, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb1e2(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb1e2, 'b', xo(2:GAP:FTP) ,lsclb1e2(2:GAP:FTP),'bo','MarkerSize',8)
+semilogy(xo, qmlb1e2, 'color',[0.93 0.69 0.13])
 hold off
 
 subplot(3,3,7)
 semilogy(xo, inhlb02e05, 'color',[0.75 0 0.75])
 hold on
+semilogy(xo(GAP:GAP/DIV(3):FTP), inhlb02e05(GAP:GAP/DIV(3):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
 semilogy(xo, marlb02e05, 'g')
-semilogy(xo, cdlb02e05,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb02e05,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb02e05(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
 semilogy(xo, cavlb02e05, 'r')
-semilogy(xo, lsclb02e05, 'b', xo(2:GAP:FTP) ,lsclb02e05(2:GAP:FTP),'bo','MarkerSize',7)
+semilogy(xo, lscpwlb02e05, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb02e05(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb02e05, 'b', xo(2:GAP:FTP) ,lsclb02e05(2:GAP:FTP),'bo','MarkerSize',8)
 semilogy(xo, qmlb02e05, 'color',[0.93 0.69 0.13])
 hold off
 
 subplot(3,3,8)
 semilogy(xo, inhlb02e1, 'color',[0.75 0 0.75])
 hold on
+semilogy(xo(2*GAP:GAP/DIV(3):FTP), inhlb02e1(2*GAP:GAP/DIV(3):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
 semilogy(xo, marlb02e1, 'g')
-semilogy(xo, cdlb02e1,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb02e1,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb02e1(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
 semilogy(xo, cavlb02e1, 'r')
-semilogy(xo, lsclb02e1, 'b', xo(2:GAP:FTP) ,lsclb02e1(2:GAP:FTP),'bo','MarkerSize',7)
+semilogy(xo, lscpwlb02e1, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb02e1(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb02e1, 'b', xo(2:GAP:FTP) ,lsclb02e1(2:GAP:FTP),'bo','MarkerSize',8)
 semilogy(xo, qmlb02e1, 'color',[0.93 0.69 0.13])
 hold off
 
 subplot(3,3,9)
-semilogy(xo, inhlb02e5, 'color',[0.75 0 0.75])
+semilogy(xo, inhlb02e2, 'color',[0.75 0 0.75])
 hold on
-semilogy(xo, marlb02e5, 'g')
-semilogy(xo, cdlb02e5,  'color',[0 0.75 0.75])
-semilogy(xo, cavlb02e5, 'r')
-semilogy(xo, lsclb02e5, 'b', xo(2:GAP:FTP) ,lsclb02e5(2:GAP:FTP),'bo','MarkerSize',7)
-semilogy(xo, qmlb02e5, 'color',[0.93 0.69 0.13])
+semilogy(xo(2*GAP:GAP/DIV(3):FTP), inhlb02e2(2*GAP:GAP/DIV(3):FTP), 's', 'MarkerSize',8,  'MarkerEdgeColor',[0.75 0 0.75],'MarkerFaceColor',[0.75 0 0.75])
+semilogy(xo, marlb02e2, 'g')
+semilogy(xo, cdlb02e2,  'color','c')
+semilogy(xo(GAP/2:GAP:FTP), cdlb02e2(GAP/2:GAP:FTP), '^', 'MarkerSize',8,  'MarkerEdgeColor','c','MarkerFaceColor','c')
+semilogy(xo, cavlb02e2, 'r')
+semilogy(xo, lscpwlb02e2, 'color', [0.5 0.5 0.5] )
+semilogy(xo(GAP/2:GAP:FTP), lscpwlb02e2(GAP/2:GAP:FTP), '+', 'MarkerSize',8, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5] )
+semilogy(xo, lsclb02e2, 'b', xo(2:GAP:FTP) ,lsclb02e2(2:GAP:FTP),'bo','MarkerSize',8)
+semilogy(xo, qmlb02e2, 'color',[0.93 0.69 0.13])
 hold off
 
 
+xmax = 15 
 
 subplot(3,3,1)
-xlim([0 8])
+xlim([0 xmax])
 subplot(3,3,2)
-xlim([0 8])
+xlim([0 xmax])
 subplot(3,3,3)
-xlim([0 8])
+xlim([0 xmax])
 subplot(3,3,4)
-xlim([0 8])
+xlim([0 xmax])
 subplot(3,3,5)
-xlim([0 8])
+xlim([0 xmax])
 subplot(3,3,6)
-xlim([0 8])
+xlim([0 xmax])
 subplot(3,3,7)
-xlim([0 8])
+xlim([0 xmax])
 subplot(3,3,8)
-xlim([0 8])
+xlim([0 xmax])
 subplot(3,3,9)
-xlim([0 8])
+xlim([0 xmax])
 
+ymin = 1e-15
+ymax=100
 
 subplot(3,3,1)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 subplot(3,3,2)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 subplot(3,3,3)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 subplot(3,3,4)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 subplot(3,3,5)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 subplot(3,3,6)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 subplot(3,3,7)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 subplot(3,3,8)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 subplot(3,3,9)
-ylim([1e-8 1])
+ylim([ymin ymax])
+set(gca, 'TickLength', [0.02 0.02]);
+set(gca,'yTick', [1e-10, 1e-5, 1])
+set(gca,'yTickLabel',{'-10','-5', '0'})
 
 
 subplot(3,3,4)
@@ -329,7 +451,7 @@ subplot(4,3,1)
 semilogy(xo1, inhlb5e05, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo1, marlb5e05, 'g')
-semilogy(xo1, cdlb5e05,  'color',[0 0.75 0.75])
+semilogy(xo1, cdlb5e05,  'color','c')
 semilogy(xo1, cavlb5e05, 'r')
 semilogy(xo, lscpwlb5e05, 'k')
 semilogy(xo1, lsclb5e05, 'b', xo1(2:GAP1:FTP1) ,lsclb5e05(2:GAP1:FTP1),'bo','MarkerSize',7)
@@ -340,7 +462,7 @@ subplot(4,3,1)
 semilogy(xo, inhlb5e05, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb5e05, 'g')
-semilogy(xo, cdlb5e05,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb5e05,  'color','c')
 semilogy(xo, cavlb5e05, 'r')
 semilogy(xo, lscpwlb5e05, 'k')
 semilogy(xo, lsclb5e05, 'b', xo(2:GAP:FTP) ,lsclb5e05(2:GAP:FTP),'bo','MarkerSize',7)
@@ -351,7 +473,7 @@ subplot(4,3,2)
 semilogy(xo, inhlb5e1, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb5e1, 'g')
-semilogy(xo, cdlb5e1,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb5e1,  'color','c')
 semilogy(xo, cavlb5e1, 'r')
 semilogy(xo, lscpwlb5e1, 'k')
 semilogy(xo, lsclb5e1, 'b', xo(2:GAP:FTP) ,lsclb5e1(2:GAP:FTP),'bo','MarkerSize',7)
@@ -362,7 +484,7 @@ subplot(4,3,3)
 semilogy(xo, inhlb5e5, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb5e5, 'g')
-semilogy(xo, cdlb5e5,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb5e5,  'color','c')
 semilogy(xo, cavlb5e5, 'r')
 semilogy(xo, lscpwlb5e5, 'k')
 semilogy(xo, lsclb5e5, 'b', xo(2:GAP:FTP) ,lsclb5e5(2:GAP:FTP),'bo','MarkerSize',7)
@@ -373,7 +495,7 @@ subplot(4,3,4)
 semilogy(xo, inhlb2e05, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb2e05, 'g')
-semilogy(xo, cdlb2e05,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb2e05,  'color','c')
 semilogy(xo, cavlb2e05, 'r')
 semilogy(xo, lscpwlb2e05, 'k')
 semilogy(xo, lsclb2e05, 'b', xo(2:GAP:FTP) ,lsclb2e05(2:GAP:FTP),'bo','MarkerSize',7)
@@ -384,7 +506,7 @@ subplot(4,3,5)
 semilogy(xo, inhlb2e1, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb2e1, 'g')
-semilogy(xo, cdlb2e1,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb2e1,  'color','c')
 semilogy(xo, cavlb2e1, 'r')
 semilogy(xo, lscpwlb2e1, 'k')
 semilogy(xo, lsclb2e1, 'b', xo(2:GAP:FTP) ,lsclb2e1(2:GAP:FTP),'bo','MarkerSize',7)
@@ -395,7 +517,7 @@ subplot(4,3,6)
 semilogy(xo, inhlb2e5, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb2e5, 'g')
-semilogy(xo, cdlb2e5,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb2e5,  'color','c')
 semilogy(xo, cavlb2e5, 'r')
 semilogy(xo, lscpwlb2e5, 'k')
 semilogy(xo, lsclb2e5, 'b', xo(2:GAP:FTP) ,lsclb2e5(2:GAP:FTP),'bo','MarkerSize',7)
@@ -406,7 +528,7 @@ subplot(4,3,7)
 semilogy(xo, inhlb1e05, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb1e05, 'g')
-semilogy(xo, cdlb1e05,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb1e05,  'color','c')
 semilogy(xo, cavlb1e05, 'r')
 semilogy(xo, lscpwlb1e05, 'k')
 semilogy(xo, lsclb1e05, 'b', xo(2:GAP:FTP) ,lsclb1e05(2:GAP:FTP),'bo','MarkerSize',7)
@@ -417,7 +539,7 @@ subplot(4,3,8)
 semilogy(xo, inhlb1e1, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb1e1, 'g')
-semilogy(xo, cdlb1e1,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb1e1,  'color','c')
 semilogy(xo, cavlb1e1, 'r')
 semilogy(xo, lscpwlb1e1, 'k')
 semilogy(xo, lsclb1e1, 'b', xo(2:GAP:FTP) ,lsclb1e1(2:GAP:FTP),'bo','MarkerSize',7)
@@ -428,7 +550,7 @@ subplot(4,3,9)
 semilogy(xo, inhlb1e5, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb1e5, 'g')
-semilogy(xo, cdlb1e5,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb1e5,  'color','c')
 semilogy(xo, cavlb1e5, 'r')
 semilogy(xo, lscpwlb1e5, 'k')
 semilogy(xo, lsclb1e5, 'b', xo(2:GAP:FTP) ,lsclb1e5(2:GAP:FTP),'bo','MarkerSize',7)
@@ -439,7 +561,7 @@ subplot(4,3,10)
 semilogy(xo, inhlb02e05, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb02e05, 'g')
-semilogy(xo, cdlb02e05,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb02e05,  'color','c')
 semilogy(xo, cavlb02e05, 'r')
 semilogy(xo, lscpwlb02e05, 'k')
 semilogy(xo, lsclb02e05, 'b', xo(2:GAP:FTP) ,lsclb02e05(2:GAP:FTP),'bo','MarkerSize',7)
@@ -450,7 +572,7 @@ subplot(4,3,11)
 semilogy(xo, inhlb02e1, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb02e1, 'g')
-semilogy(xo, cdlb02e1,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb02e1,  'color','c')
 semilogy(xo, cavlb02e1, 'r')
 semilogy(xo, lscpwlb02e1, 'k')
 semilogy(xo, lsclb02e1, 'b', xo(2:GAP:FTP) ,lsclb02e1(2:GAP:FTP),'bo','MarkerSize',7)
@@ -461,7 +583,7 @@ subplot(4,3,12)
 semilogy(xo, inhlb02e5, 'color',[0.75 0 0.75])
 hold on
 semilogy(xo, marlb02e5, 'g')
-semilogy(xo, cdlb02e5,  'color',[0 0.75 0.75])
+semilogy(xo, cdlb02e5,  'color','c')
 semilogy(xo, cavlb02e5, 'r')
 semilogy(xo, lscpwlb02e5, 'k')
 semilogy(xo, lsclb02e5, 'b', xo(2:GAP:FTP) ,lsclb02e5(2:GAP:FTP),'bo','MarkerSize',7)
@@ -538,33 +660,46 @@ legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', '' ,'Exact')
 
 omega_DA = 2 corresponds to index
 
-wda_ind = 67  
+wda_ind = 66  
+
+omega_DA = 0 corresponds to index 
+
+wda_ind = 1
 
 keqb5e05 = [ inhlb5e05(wda_ind)  marlb5e05(wda_ind) cdlb5e05(wda_ind) cavlb5e05(wda_ind)  lscpwlb5e05(wda_ind) lsclb5e05(wda_ind)  qmlb5e05(wda_ind) ]
 
 keqb5e1 = [ inhlb5e1(wda_ind)  marlb5e1(wda_ind) cdlb5e1(wda_ind) cavlb5e1(wda_ind) lscpwlb5e1(wda_ind)  lsclb5e1(wda_ind)  qmlb5e1(wda_ind) ]
 
+keqb5e2 = [ inhlb5e2(wda_ind)  marlb5e2(wda_ind) cdlb5e2(wda_ind) cavlb5e2(wda_ind) lscpwlb5e2(wda_ind) lsclb5e2(wda_ind)  qmlb5e2(wda_ind) ]
+
 keqb5e5 = [ inhlb5e5(wda_ind)  marlb5e5(wda_ind) cdlb5e5(wda_ind) cavlb5e5(wda_ind) lscpwlb5e5(wda_ind) lsclb5e5(wda_ind)  qmlb5e5(wda_ind) ]
+
 
 keqb2e05 = [ inhlb2e05(wda_ind)  marlb2e05(wda_ind) cdlb2e05(wda_ind) cavlb2e05(wda_ind) lscpwlb2e05(wda_ind) lsclb2e05(wda_ind)  qmlb2e05(wda_ind) ]
 
 keqb2e1 = [ inhlb2e1(wda_ind)  marlb2e1(wda_ind) cdlb2e1(wda_ind) cavlb2e1(wda_ind) lscpwlb2e1(wda_ind) lsclb2e1(wda_ind)  qmlb2e1(wda_ind) ]
 
+keqb2e2 = [ inhlb2e2(wda_ind)  marlb2e2(wda_ind) cdlb2e2(wda_ind) cavlb2e2(wda_ind) lscpwlb2e2(wda_ind) lsclb2e2(wda_ind)  qmlb2e2(wda_ind) ]
+
 keqb2e5 = [ inhlb2e5(wda_ind)  marlb2e5(wda_ind) cdlb2e5(wda_ind) cavlb2e5(wda_ind) lscpwlb2e5(wda_ind) lsclb2e5(wda_ind)  qmlb2e5(wda_ind) ]
+
 
 keqb1e05 = [ inhlb1e05(wda_ind)  marlb1e05(wda_ind) cdlb1e05(wda_ind) cavlb1e05(wda_ind) lscpwlb1e05(wda_ind) lsclb1e05(wda_ind)  qmlb1e05(wda_ind) ]
 
 keqb1e1 = [ inhlb1e1(wda_ind)  marlb1e1(wda_ind) cdlb1e1(wda_ind) cavlb1e1(wda_ind) lscpwlb1e1(wda_ind) lsclb1e1(wda_ind)  qmlb1e1(wda_ind) ]
 
-keqb1e5 = [ inhlb1e5(wda_ind)  marlb1e5(wda_ind) cdlb1e5(wda_ind) cavlb1e5(wda_ind)  lscpwlb1e5(wda_ind) lsclb1e5(wda_ind)  qmlb1e5(wda_ind) ]
+keqb1e2 = [ inhlb1e2(wda_ind)  marlb1e2(wda_ind) cdlb1e2(wda_ind) cavlb1e2(wda_ind)  lscpwlb1e2(wda_ind) lsclb1e2(wda_ind)  qmlb1e2(wda_ind) ]
+
+keqb1e2 = [ inhlb1e2(wda_ind)  marlb1e2(wda_ind) cdlb1e2(wda_ind) cavlb1e2(wda_ind)  lscpwlb1e2(wda_ind) lsclb1e2(wda_ind)  qmlb1e2(wda_ind) ]
+
 
 keqb02e05 = [ inhlb02e05(wda_ind)  marlb02e05(wda_ind) cdlb02e05(wda_ind) cavlb02e05(wda_ind) lscpwlb02e05(wda_ind) lsclb02e05(wda_ind)  qmlb02e05(wda_ind) ]
 
 keqb02e1 = [ inhlb02e1(wda_ind)  marlb02e1(wda_ind) cdlb02e1(wda_ind) cavlb02e1(wda_ind) lscpwlb02e1(wda_ind) lsclb02e1(wda_ind) qmlb02e1(wda_ind) ]
 
+keqb02e2 = [ inhlb02e2(wda_ind)  marlb02e2(wda_ind) cdlb02e2(wda_ind) cavlb02e2(wda_ind) lscpwlb02e2(wda_ind) lsclb02e2(wda_ind) qmlb02e2(wda_ind) ]
+
 keqb02e5 = [ inhlb02e5(wda_ind)  marlb02e5(wda_ind) cdlb02e5(wda_ind) cavlb02e5(wda_ind) lscpwlb02e5(wda_ind) lsclb02e5(wda_ind) qmlb02e5(wda_ind) ]
-
-
 
 
 
