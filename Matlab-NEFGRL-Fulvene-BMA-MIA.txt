@@ -1,0 +1,292 @@
+%%% ----------------------- NEFGRL BMA --------------------------------
+
+
+exact0K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_BMA_0K.dat')
+lsc0K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_BMA_0K.dat')
+cav0K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_BMA_0K.dat')
+cd0K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_BMA_0K.dat')
+inh0K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_BMA_0K.dat')
+marcus0K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_BMA_0K.dat')
+
+exact100K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_BMA_100K.dat')
+lsc100K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_BMA_100K.dat')
+cav100K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_BMA_100K.dat')
+cd100K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_BMA_100K.dat')
+inh100K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_BMA_100K.dat')
+marcus100K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_BMA_100K.dat')
+
+exact300K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_BMA_300K.dat')
+lsc300K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_BMA_300K.dat')
+cav300K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_BMA_300K.dat')
+cd300K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_BMA_300K.dat')
+inh300K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_BMA_300K.dat')
+marcus300K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_BMA_300K.dat')
+
+exact2000K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_BMA_2000K.dat')
+lsc2000K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_BMA_2000K.dat')
+cav2000K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_BMA_2000K.dat')
+cd2000K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_BMA_2000K.dat')
+inh2000K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_BMA_2000K.dat')
+marcus2000K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_BMA_2000K.dat')
+
+
+tp = linspace(0,150.25,150.25/0.25)
+
+tp = linspace(0,50,50/0.25)
+
+plot(tp, inh2000K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus2000K ,'g')
+plot(tp,cd2000K, 'color',[0 0.75 0.75])
+plot(tp,cav2000K,'r')
+plot(tp,lsc2000K,'b')
+plot(tp,exact2000K ,'color',[0.93 0.69 0.13])
+hold off
+
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=2000K')
+
+
+legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', 'exact')
+	
+xlim([0 150])
+
+
+ylim([0.65 1])
+
+
+
+%%% subplot 2 x 2 different temperature
+
+
+tp = linspace(0,50,50/0.25) % Ful_vene
+
+tp = linspace(0,150.25,150.25/0.25)  % B_M_A or M_I_A
+
+
+
+subplot(2,2,1)
+plot(tp, inh0K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus0K ,'g')
+plot(tp,cd0K, 'color',[0 0.75 0.75])
+plot(tp,cav0K,'r')
+plot(tp,lsc0K,'b')
+plot(tp,exact0K ,'color',[0.93 0.69 0.13])
+hold off
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=0K')
+
+subplot(2,2,2)
+plot(tp, inh100K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus100K ,'g')
+plot(tp,cd100K, 'color',[0 0.75 0.75])
+plot(tp,cav100K,'r')
+plot(tp,lsc100K,'b')
+plot(tp,exact100K ,'color',[0.93 0.69 0.13])
+hold off
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=100K')
+
+subplot(2,2,3)
+plot(tp, inh300K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus300K ,'g')
+plot(tp,cd300K, 'color',[0 0.75 0.75])
+plot(tp,cav300K,'r')
+plot(tp,lsc300K,'b')
+plot(tp,exact300K ,'color',[0.93 0.69 0.13])
+hold off
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=300K')
+
+subplot(2,2,4)
+plot(tp, inh2000K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus2000K ,'g')
+plot(tp,cd2000K, 'color',[0 0.75 0.75])
+plot(tp,cav2000K,'r')
+plot(tp,lsc2000K,'b')
+plot(tp,exact2000K ,'color',[0.93 0.69 0.13])
+hold off
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=2000K')
+
+
+legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', 'exact')
+
+
+
+
+
+subplot(2,2,1)
+xlim([0 50])
+ylim([ 0  1])
+subplot(2,2,2)
+xlim([0 50])
+ylim([ 0  1])
+subplot(2,2,3)
+xlim([0 50])
+ylim([ 0  1])
+subplot(2,2,4)
+xlim([0 50])
+ylim([ 0  1])
+
+
+subplot(2,2,1)
+xlim([0 150])
+ylim([0.85  1])
+subplot(2,2,2)
+xlim([0 150])
+ylim([0.85  1])
+subplot(2,2,3)
+xlim([0 150])
+ylim([0.85  1])
+subplot(2,2,4)
+xlim([0 150])
+ylim([0.7  1])
+
+
+subplot(2,2,1)
+xlim([0 150])
+ylim([0.6  1])
+subplot(2,2,2)
+xlim([0 150])
+ylim([0.6  1])
+subplot(2,2,3)
+xlim([0 150])
+ylim([0.4  1])
+subplot(2,2,4)
+xlim([0 150])
+ylim([0  1])
+
+
+
+
+% trick for shiftting plateau value of k -- B M A only (not working)
+
+klsc0K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_BMA_0K.dat')
+klsc100K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_BMA_100K.dat')
+klsc300K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_BMA_300K.dat')
+klsc2000K = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_BMA_2000K.dat')
+
+
+fs2au = 41.341105
+
+
+wid = 1
+sft = 30
+steplike= (1+tanh((tp-sft)/wid))/2
+
+dtp = 0.25  % in fs
+dtp_au = dtp * fs2au 
+TPMAX = 150.25 / dtp   % in a.u.
+GAP = int64(TPMAX/10)
+INIT = 5
+tp = [0:TPMAX-1]
+tp = tp * dtp
+
+temp = [0 100 500 2000]
+
+keq_exact = [0.0089e-5  0.0106e-4  0.0559e-4  0.5429e-4]
+keq_pw = [0.2970e-5  0.2328e-4  0.1623e-4  0.666e-4]
+
+
+
+kmod0K = klsc0K + (keq_exact(1) - keq_pw(1)) * steplike'
+pmod0K = kmod0K
+for i = 1:1:(TPMAX)
+	pmod0K(i) = exp( -1 * sum(kmod0K(1:i)) * dtp_au);
+end
+
+
+kmod100K = klsc100K + (keq_exact(2) - keq_pw(2)) * steplike'
+pmod100K = kmod100K
+for i = 1:1:(TPMAX)
+	pmod100K(i) = exp( -1 * sum(kmod100K(1:i)) * dtp_au);
+end
+
+kmod300K = klsc300K + (keq_exact(3) - keq_pw(3)) * steplike'
+pmod300K = kmod300K
+for i = 1:1:(TPMAX)
+	pmod300K(i) = exp( -1 * sum(kmod300K(1:i)) * dtp_au);
+end
+
+kmod2000K = klsc2000K + (keq_exact(4) - keq_pw(4)) * steplike'
+pmod2000K = kmod2000K
+for i = 1:1:(TPMAX)
+	pmod2000K(i) = exp( -1 * sum(kmod2000K(1:i)) * dtp_au);
+end
+
+
+
+
+subplot(2,2,1)
+plot(tp, inh0K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus0K ,'g')
+plot(tp,cd0K, 'color',[0 0.75 0.75])
+plot(tp,cav0K,'r')
+plot(tp,lsc0K,'b')
+plot(tp, pmod0K, 'color',[0.5 0.5 0.5])
+plot(tp,exact0K ,'color',[0.93 0.69 0.13])
+hold off
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=0K')
+
+subplot(2,2,2)
+plot(tp, inh100K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus100K ,'g')
+plot(tp,cd100K, 'color',[0 0.75 0.75])
+plot(tp,cav100K,'r')
+plot(tp,lsc100K,'b')
+plot(tp, pmod100K, 'color',[0.5 0.5 0.5])
+plot(tp,exact100K ,'color',[0.93 0.69 0.13])
+hold off
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=100K')
+
+subplot(2,2,3)
+plot(tp, inh300K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus300K ,'g')
+plot(tp,cd300K, 'color',[0 0.75 0.75])
+plot(tp,cav300K,'r')
+plot(tp,lsc300K,'b')
+plot(tp, pmod300K, 'color',[0.5 0.5 0.5])
+plot(tp,exact300K ,'color',[0.93 0.69 0.13])
+hold off
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=300K')
+
+subplot(2,2,4)
+plot(tp, inh2000K,'color',[0.75 0 0.75])
+hold on
+plot(tp,marcus2000K ,'g')
+plot(tp,cd2000K, 'color',[0 0.75 0.75])
+plot(tp,cav2000K,'r')
+plot(tp,lsc2000K,'b')
+plot(tp, pmod2000K, 'color',[0.5 0.5 0.5])
+plot(tp,exact2000K ,'color',[0.93 0.69 0.13])
+hold off
+ylabel('P(t)')
+xlabel('t / fs')
+title('T=2000K')
+
+
+
+
+
+
+
+

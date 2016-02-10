@@ -1,0 +1,254 @@
+%%% ----------------------- EFGRL BMA --------------------------------
+
+
+qml300K = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_BMA_300K.dat')
+lscl300K = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_BMA_300K.dat')
+lscpwl300K = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_BMA_300K.dat')
+cavl300K = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_BMA_300K.dat')
+cdl300K = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_BMA_300K.dat')
+inhl300K = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_BMA_300K.dat')
+marl300K = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_BMA_300K.dat')
+
+
+N= 1024
+
+DeltaT = 0.04 % Ful_vene
+DeltaT = 0.15 % B_M_A
+DeltaT = 0.18 % M_I_A
+%in fss
+% fs to a.u. hartree
+dx = 1/DeltaT/N * 0.15983
+x = 0:N/2-1
+x = x * dx
+GAP = int64(N/2/70)
+
+
+Figure 1 - one plot for EFGRL as function of omega_DA
+
+semilogy(x, inhl300K,'color',[0.75 0 0.75])
+hold on
+semilogy(x,marl300K ,'g')
+semilogy(x,cdl300K, 'color',[0 0.75 0.75])
+semilogy(x,cavl300K,'r')
+semilogy(x,lscl300K,'b', x(2:GAP:N/2), lscl0K(2:GAP:N/2), 'bo', 'MarkerSize', 9)
+semilogy(x, lscpwl300K, 'color', [0.5 0.5 0.5])
+semilogy(x,qml300K ,'color',[0.93 0.69 0.13])
+hold off
+
+ylabel('k (a.u.)')
+xlabel('-\Delta E (a.u.)')
+title('BMA @ T=0K')
+
+
+legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', '', 'PW-AV', 'exact')
+	
+xlim([0 0.3])  % Ful_vene
+ylim([1e-10 1])
+
+xlim([0 0.12]) % B_M_A
+ylim([1e-10 1e-3])
+
+xlim([0 0.12])  % M_I_A
+ylim([1e-7 1e-3])
+
+
+Figure 2 - scatter plot for temperature-depend of approximations
+% get k value of DeltaE
+for M I A:
+ind = 30
+
+for Ful vene:
+ind = 26
+
+for B M A：
+ind = 1
+
+keqlBMA100K = [qml100K(ind) lscl100K(ind) lscpwl100K(ind) cavl100K(ind) cdl100K(ind) inhl100K(ind)  marl100K(ind)]
+keqlBMA200K = [qml200K(ind) lscl200K(ind) lscpwl200K(ind) cavl200K(ind) cdl200K(ind) inhl200K(ind)  marl200K(ind)]
+keqlBMA300K = [qml300K(ind) lscl300K(ind) lscpwl300K(ind) cavl300K(ind) cdl300K(ind) inhl300K(ind)  marl300K(ind)]
+keqlBMA500K = [qml500K(ind) lscl500K(ind) lscpwl500K(ind) cavl500K(ind) cdl500K(ind) inhl500K(ind)  marl500K(ind)]
+keqlBMA1000K = [qml1000K(ind) lscl1000K(ind) lscpwl1000K(ind) cavl1000K(ind) cdl1000K(ind) inhl1000K(ind)  marl1000K(ind)]
+keqlBMA1500K = [qml1500K(ind) lscl1500K(ind) lscpwl1500K(ind) cavl1500K(ind) cdl1500K(ind) inhl1500K(ind)  marl1500K(ind)]
+keqlBMA2000K = [qml2000K(ind) lscl2000K(ind) lscpwl2000K(ind) cavl2000K(ind) cdl2000K(ind) inhl2000K(ind)  marl2000K(ind)]
+keqlBMA3000K = [qml3000K(ind) lscl3000K(ind) lscpwl3000K(ind) cavl3000K(ind) cdl3000K(ind) inhl3000K(ind)  marl3000K(ind)]
+keqlBMA4000K = [qml4000K(ind) lscl4000K(ind) lscpwl4000K(ind) cavl4000K(ind) cdl4000K(ind) inhl4000K(ind)  marl4000K(ind)]
+
+
+
+Temp = [200 300 500 1000 1500 2000 3000 4000]
+Tinv = 1./Temp
+
+
+plot(Tinv, [keqlBMA200K(6)  keqlBMA300K(6) keqlBMA500K(6) keqlBMA1000K(6) keqlBMA1500K(6) keqlBMA2000K(6) keqlBMA3000K(6) keqlBMA4000K(6)], 's-','color',[0.75 0 0.75], 'MarkerSize', 9)
+hold on
+plot(Tinv, [keqlBMA200K(4)  keqlBMA300K(4) keqlBMA500K(4) keqlBMA1000K(4) keqlBMA1500K(4) keqlBMA2000K(4) keqlBMA3000K(4) keqlBMA4000K(4)], 'rd-', 'MarkerSize', 9)
+plot(Tinv, [keqlBMA200K(5)  keqlBMA300K(5) keqlBMA500K(5) keqlBMA1000K(5) keqlBMA1500K(5) keqlBMA2000K(5) keqlBMA3000K(5) keqlBMA4000K(5)], '^-','color',[0 0.75 0.75], 'MarkerSize', 9)
+plot(Tinv, [keqlBMA200K(7)  keqlBMA300K(7) keqlBMA500K(7) keqlBMA1000K(7) keqlBMA1500K(7) keqlBMA2000K(7) keqlBMA3000K(7) keqlBMA4000K(7)], 'gv-', 'MarkerSize', 9)
+plot(Tinv, [keqlBMA200K(3)  keqlBMA300K(3) keqlBMA500K(3) keqlBMA1000K(3) keqlBMA1500K(3) keqlBMA2000K(3) keqlBMA3000K(3) keqlBMA4000K(3)], '+-','color',[0.5 0.5 0.5], 'MarkerSize', 9)
+plot(Tinv, [keqlBMA200K(2)  keqlBMA300K(2) keqlBMA500K(2) keqlBMA1000K(2) keqlBMA1500K(2) keqlBMA2000K(2) keqlBMA3000K(2) keqlBMA4000K(2)], 'bo-', 'MarkerSize', 13)
+plot(Tinv, [keqlBMA200K(1)  keqlBMA300K(1) keqlBMA500K(1) keqlBMA1000K(1) keqlBMA1500K(1) keqlBMA2000K(1) keqlBMA3000K(1) keqlBMA4000K(1)], 'x-','color',[0.93 0.69 0.13], 'MarkerSize', 9)
+hold off
+
+ylabel('log k (a.u.)')
+xlabel('1/T (K^{-1})')
+title('BMA')
+
+legend('W-0', 'C-AV', 'C-D', 'Marcus', 'PW-AV', 'W-AV', 'exact')
+ylim([0 0.8e-3])
+
+
+% take 100K out
+
+Temp = [300 500 1000 1500 2000 3000 4000]
+Tinv = 1./Temp
+
+plot(Tinv, log10([ keqlBMA300K(6) keqlBMA500K(6) keqlBMA1000K(6) keqlBMA1500K(6) keqlBMA2000K(6) keqlBMA3000K(6) keqlBMA4000K(6)]), 's-','color',[0.75 0 0.75], 'MarkerSize', 9)
+hold on
+plot(Tinv, log10([ keqlBMA300K(4) keqlBMA500K(4) keqlBMA1000K(4) keqlBMA1500K(4) keqlBMA2000K(4) keqlBMA3000K(4) keqlBMA4000K(4)]), 'rd-', 'MarkerSize', 9)
+plot(Tinv, log10([keqlBMA300K(5) keqlBMA500K(5) keqlBMA1000K(5) keqlBMA1500K(5) keqlBMA2000K(5) keqlBMA3000K(5) keqlBMA4000K(5)]), '^-','color',[0 0.75 0.75], 'MarkerSize', 9)
+plot(Tinv, log10([ keqlBMA300K(7) keqlBMA500K(7) keqlBMA1000K(7) keqlBMA1500K(7) keqlBMA2000K(7) keqlBMA3000K(7) keqlBMA4000K(7)]), 'gv-', 'MarkerSize', 9)
+plot(Tinv, log10([  keqlBMA300K(3) keqlBMA500K(3) keqlBMA1000K(3) keqlBMA1500K(3) keqlBMA2000K(3) keqlBMA3000K(3) keqlBMA4000K(3)]), '+-','color',[0.5 0.5 0.5], 'MarkerSize', 9)
+plot(Tinv, log10([  keqlBMA300K(2) keqlBMA500K(2) keqlBMA1000K(2) keqlBMA1500K(2) keqlBMA2000K(2) keqlBMA3000K(2) keqlBMA4000K(2)]), 'bo-', 'MarkerSize', 13)
+plot(Tinv, log10([  keqlBMA300K(1) keqlBMA500K(1) keqlBMA1000K(1) keqlBMA1500K(1) keqlBMA2000K(1) keqlBMA3000K(1) keqlBMA4000K(1)]), 'x-','color',[0.93 0.69 0.13], 'MarkerSize', 9)
+hold off
+
+
+
+% time-domain C(t)
+
+tre500K = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_BMA_500K.dat')
+tim500K = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tim_BMA_500K.dat')
+
+tred500K = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_damp_BMA_500K.dat')
+timd500K = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tim_damp_BMA_500K.dat')
+
+
+t = -N/2: N/2-1
+t = t * DeltaT
+
+subplot(2,1,1)
+plot(t, tre500K, 'r', t, tred500K, 'b--')
+xlabel('t / fs ','FontSize',30)
+ylabel('Re C(t)','FontSize', 30)
+xlim([-N/2*DeltaT N/2*DeltaT])
+ylim([-0.5e-6 1.5e-6])
+legend('original', 'damped')
+subplot(2,1,2)
+plot(t, tim500K, 'r', t,timd500K, 'b--')
+xlabel('t / fs ','FontSize',30)
+ylabel('Im C(t)','FontSize', 30)
+xlim([-N/2*DeltaT  N/2*DeltaT])
+ylim([-1.1e-6 1.1e-6])
+
+
+
+
+%%% plot spectral density
+
+jnm = importdata('/Users/xiangs/Dropbox/code/EFGRL/J_nm_hist_BMA_500K.dat')
+
+omega_max_hist = 0.0176114
+MAXBIN = 78
+
+omega_max_hist = 0.0176619
+MAXBIN = 96
+
+omega_max_hist = 0.017571
+MAXBIN = 30
+
+bin = 0 : omega_max_hist/MAXBIN : omega_max_hist - omega_max_hist/MAXBIN
+
+b = bar(bin,jnm, 'k')
+
+set(b, 'EdgeColor', 'k')
+set(b, 'FaceColor', 'none')
+set(b, 'LineWidth', 1.5) 
+
+xlabel('\omega (a.u.) ','FontSize',30)
+ylabel('J(\omega)','FontSize', 30)
+title('BMA')
+
+xlim([0 omega_max_hist])
+
+ylim([0 0.3])
+
+DE = 0.0249822 % for M I A
+DE = 0.0989124 % for Ful Vene
+DE = 0.00041  % for B M A
+
+
+
+
+
+% ----------- subplot of EFGRL of BMA --------------
+
+subplot(3,1,1)
+b = bar(bin,jnm, 'b')
+
+set(b, 'EdgeColor', 'b')
+set(b, 'FaceColor', 'none')
+set(b, 'LineWidth', 1.5) 
+
+xlabel('\omega (a.u.) ','FontSize',30)
+ylabel('J(\omega)','FontSize', 30)
+title('BMA','FontSize',40)
+xlim([0 omega_max_hist])
+ylim([0 0.28])
+
+subplot(3,1,2)
+
+plot(x, log10(inhl500K),'color',[0.75 0 0.75])
+hold on
+plot(x,log10(marl500K) ,'g')
+plot(x,log10(cdl500K), 'color',[0 0.75 0.75])
+plot(x,log10(cavl500K),'r')
+plot(x,log10(lscl500K),'b')
+pb = log10(lscl500K)
+plot(x(2:GAP:N/2), pb(2:GAP:N/2), 'bo', 'MarkerSize', 8 )
+plot(x, log10(lscpwl500K), 'color', [0.5 0.5 0.5])
+plot(x,log10(qml500K) ,'color',[0.93 0.69 0.13])
+line([DE DE], ylim, 'LineStyle', '--')
+hold off
+
+ylabel('log k (a.u.)','FontSize',30)
+xlabel('-\Delta E (a.u.)','FontSize',30)
+legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', '', 'PW-AV', 'exact')
+
+xlim([0.006 0.07])  % M_I_A
+ylim([-7 -3])
+
+xlim([0.06 0.25])  % Ful_vene
+ylim([-6.5 -1])
+
+xlim([0.0 0.1])  % B M A
+ylim([-6.5 -3.5])
+
+subplot(3,1,3)
+
+Temp = [300 500 1000 1500 2000 3000 4000]
+Tinv = 1./Temp
+
+plot(Tinv, log10([ keqlBMA300K(6) keqlBMA500K(6) keqlBMA1000K(6) keqlBMA1500K(6) keqlBMA2000K(6) keqlBMA3000K(6) keqlBMA4000K(6)]), 's-','color',[0.75 0 0.75], 'MarkerSize', 9)
+hold on
+plot(Tinv, log10([ keqlBMA300K(4) keqlBMA500K(4) keqlBMA1000K(4) keqlBMA1500K(4) keqlBMA2000K(4) keqlBMA3000K(4) keqlBMA4000K(4)]), 'rd-', 'MarkerSize', 9)
+plot(Tinv, log10([keqlBMA300K(5) keqlBMA500K(5) keqlBMA1000K(5) keqlBMA1500K(5) keqlBMA2000K(5) keqlBMA3000K(5) keqlBMA4000K(5)]), '^-','color',[0 0.75 0.75], 'MarkerSize', 9)
+plot(Tinv, log10([ keqlBMA300K(7) keqlBMA500K(7) keqlBMA1000K(7) keqlBMA1500K(7) keqlBMA2000K(7) keqlBMA3000K(7) keqlBMA4000K(7)]), 'gv-', 'MarkerSize', 9)
+plot(Tinv, log10([  keqlBMA300K(3) keqlBMA500K(3) keqlBMA1000K(3) keqlBMA1500K(3) keqlBMA2000K(3) keqlBMA3000K(3) keqlBMA4000K(3)]), '+-','color',[0.5 0.5 0.5], 'MarkerSize', 9)
+plot(Tinv, log10([  keqlBMA300K(2) keqlBMA500K(2) keqlBMA1000K(2) keqlBMA1500K(2) keqlBMA2000K(2) keqlBMA3000K(2) keqlBMA4000K(2)]), 'bo-', 'MarkerSize', 13)
+plot(Tinv, log10([  keqlBMA300K(1) keqlBMA500K(1) keqlBMA1000K(1) keqlBMA1500K(1) keqlBMA2000K(1) keqlBMA3000K(1) keqlBMA4000K(1)]), 'x-','color',[0.93 0.69 0.13], 'MarkerSize', 9)
+hold off
+
+ylabel('log k (a.u.)','FontSize',30)
+xlabel('1/T (K^{-1})','FontSize',30)
+legend('W-0', 'C-AV', 'C-D', 'Marcus', 'PW-AV', 'W-AV', 'exact')
+
+
+
+
+
+
+
+
+
+
+
