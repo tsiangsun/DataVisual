@@ -81,7 +81,11 @@ semilogy(xo, eqnmb2e5,  'c:')
 semilogy(xo, eqnmb1e5,  'r:')
 hold off
 
-legend('T=0.2','T=0.5', 'T=1')
+OR only for eta=1
+semilogy(xo, eqnmb5e1,'b', xo, eqnmb2e1, 'c', xo, eqnmb1e1,'r')
+
+
+legend('k_BT=0.2','k_BT=0.5', 'k_BT=1')
 
 xlim([0 10])
 ylim([1e-10 1])
@@ -480,6 +484,55 @@ ylabel('P(t) ','FontSize', 30)
 xlim([0 20])
 ylim([0.96 1])
 legend('analytical', 'numerical')
+
+
+
+Figure 17 - Comparison of numerical LSC k(t') with error bars  and analytical result
+
+ Omega=0.5, s=1, b=5, e=0.5 for omega_DA = 0 or 2
+
+
+new0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e0.5_s1w0.dat')
+pnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e0.5_s1w0.dat')
+
+new2b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e0.5_s1w2.dat')
+pnew2b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e0.5_s1w2.dat')
+
+
+nlsc_new0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/num_LSC_NEFGR_k_b5e0.5_s1w0_10000_AVG10.dat')
+nlscerr_new0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/num_LSC_NEFGR_k_b5e0.5_s1w0_10000_ERR10.dat')
+nlsc_pnew0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/num_LSC_NEFGR_P_b5e0.5_s1w0_10000_AVG10.dat')
+nlscbunch_new0b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/num_LSC_NEFGR_k_b5e0.5_s1w0_10000_BUNCH1.dat')
+
+nlsc_new2b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/num_LSC_NEFGR_k_b5e0.5_s1w2_10000_AVG10.dat')
+nlscerr_new2b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/num_LSC_NEFGR_k_b5e0.5_s1w2_10000_ERR10.dat')
+nlsc_pnew2b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/num_LSC_NEFGR_P_b5e0.5_s1w2_10000_AVG10.dat')
+nlscbunch_new2b5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGR/num_LSC_NEFGR_k_b5e0.5_s1w2_10000_BUNCH1.dat')
+
+
+dtp = 0.2
+TPMAX = 200   400
+GAP = int64(TPMAX/20)
+INIT = 5
+tp = [0:TPMAX-1]
+tp = tp * dtp
+
+
+
+subplot for omega_DA = 0
+
+errorbar ( tp(1:100), nlsc_new0b5e05, nlscerr_new0b5e05, 'r')
+
+plot(tp(1:100), new0b5e05(1:100), tp(1:100), nlsc_new0b5e05, 'r' , tp(1:100), nlscbunch_new0b5e05, 'g' )
+
+
+
+subplot for omega_DA = 2
+
+errorbar ( tp(1:100), nlsc_new2b5e05, nlscerr_new2b5e05, 'r')
+hold on
+plot(tp(1:100), new2b5e05(1:100), tp(1:100), nlscbunch_new2b5e05, 'g' )
+hold off
 
 
 
