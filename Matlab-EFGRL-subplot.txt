@@ -167,11 +167,21 @@ inhlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e5.dat')
 marlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e5.dat')
 
 
-
-
-
-
-
+**************** time domain Re C(t) *******************
+LEN = 1024
+deltaT = 0.2
+FTP = LEN/2
+t = 0 : LEN-1
+t = (t - FTP) * deltaT
+treqmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b0.2e0.5.dat')
+treqmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b0.2e1.dat')
+treqmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b0.2e5.dat')
+treqmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b1e0.5.dat')
+treqmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b1e1.dat')
+treqmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b1e5.dat')
+treqmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b5e0.5.dat')
+treqmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b5e1.dat')
+treqmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_tre_b5e5.dat')
 
 
 Plotting *******
@@ -187,6 +197,34 @@ GAP = int64(FTP/10)
 xo = [0: FTP-1]
 xo = xo * d_omega_DA
 
+
+FIGURE 0 - ******************* compare the Non-Condon with Condon (effective) ****************
+Omega = 0.5
+y0 = 1
+yeq= 2 * y0
+% crossing point for all omega_{DA}
+yc = yeq * 0.5 - xo / (yeq*Omega*Omega)
+gamma = 0.1
+gamma_c = 0.1
+gamma_0 = gamma * yc
+
+
+qmcb1e1 = qmb1e1 / (gamma_c * gamma_c) .* (gamma_0.* gamma_0)'
+
+ 
+semilogy( xo, qmlb1e1, xo, qmcb1e1)
+
+xlim([0 10])
+ylim([1e-10 1])
+ylabel('log(k/\omega_{c})','FontSize', 30)
+xlabel('\omega_{DA} / \omega_{c}','FontSize',30)
+
+legend('Non-Condon','Condon contribution')
+legend boxoff
+
+
+
+=============================================================================================
 
 semilogy( xo, qmlb1e1, xo, lsclb1e1, xo, cavlb1e1 , xo, cdlb1e1, xo, inhlb1e1, xo, marlb1e1)
 
