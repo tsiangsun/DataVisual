@@ -125,8 +125,6 @@ inhlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b2e5.dat')
 marlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b2e5.dat')
 
 
-
-
 qmb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b2e2.dat')
 qmlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b2e2.dat')
 lsclb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b2e2.dat')
@@ -456,7 +454,7 @@ ylabel('log(k/\omega_{c})','FontSize', 24)
 subplot(3,3,8)
 xlabel('\omega_{DA} / \omega_{c}','FontSize',24)
 
-legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', ,'Exact')
+legend('W-0', 'Marcus', 'C-D', 'C-AV', 'W-AV', '','Exact')
 
 
 

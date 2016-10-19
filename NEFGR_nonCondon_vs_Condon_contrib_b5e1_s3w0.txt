@@ -1,0 +1,138 @@
+
+% input for NEFGR Condon Gamma_DA = 0.1
+
+new0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_NEFGR_b5e1_s3w0.dat')
+cavnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_NEFGR_b5e1_s3w0.dat')
+cdnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_NEFGR_b5e1_s3w0.dat')
+inhnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_NEFGR_b5e1_s3w0.dat')
+marcnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_NEFGR_b5e1_s3w0.dat')
+pnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s3w0.dat')
+cavpnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CAV_P_NEFGR_b5e1_s3w0.dat')
+cdpnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/CD_P_NEFGR_b5e1_s3w0.dat')
+inhpnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/W0_P_NEFGR_b5e1_s3w0.dat')
+marcpnew0b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/Marcus_P_NEFGR_b5e1_s3w0.dat')
+
+
+% input for NEFGRL Non-Condon gamma =0.1
+
+nelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b5e1_s3w0.dat')
+lscnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b5e1_s3w0.dat')
+cavnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b5e1_s3w0.dat')
+cdnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b5e1_s3w0.dat')
+inhnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b5e1_s3w0.dat')
+marcnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b5e1_s3w0.dat')
+pnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b5e1_s3w0.dat')
+lscpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b5e1_s3w0.dat')
+cavpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b5e1_s3w0.dat')
+cdpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b5e1_s3w0.dat')
+inhpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b5e1_s3w0.dat')
+marcpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b5e1_s3w0.dat')
+
+
+================
+
+dtp = 0.2
+TPMAX = 200
+GAP = int64(TPMAX/10)
+INIT = 5
+tp = [0:TPMAX-1]
+tp = tp * dtp
+
+%% For omega_{DA} = 0
+
+steplike= (1+tanh((tp-3)/0.8))/2
+
+kmodb5e1 = lscnelb5e1 + (keqb5e1(6) - keqb5e1(5)) * steplike'
+pmodb5e1 = kmodb5e1
+for i = 1:1:(TPMAX)
+	pmodb5e1(i) = exp( -1 * sum(kmodb5e1(1:i)) * dtp);
+end
+
+
+
+%%%%% SUBPLOT %%%%%%%%
+
+
+mtp=20
+
+tn = 101
+
+
+subplot(2,2,1)
+plot(tp, inhpnelb5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcpnelb5e1, 'g')
+plot(tp, cdpnelb5e1,  'color',[0 0.75 0.75])
+plot(tp, cavpnelb5e1, 'r')
+plot(tp, lscpnelb5e1, 'b') %, tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb5e1(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+%   plot(tp, pmodb5e1, 'color',[0.5 0 0])
+%   plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb5e1(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb5e1, 'color',[0.93 0.69 0.13])
+hold off
+ylim([0.5 1])
+xlim([0 mtp])
+ylabel('P_D(t) ','FontSize', 24)
+xlabel('\omega_{c} t','FontSize',24)
+title('Non-Condon')
+
+
+
+subplot(2,2,2)
+plot(tp(1:tn), marcpnew0b5e1, 'g')
+hold on
+plot(tp(1:tn), inhpnew0b5e1, 'color',[0.75 0 0.75])
+plot(tp(1:tn), cdpnew0b5e1,  'color',[0 0.75 0.75])
+plot(tp(1:tn), cavpnew0b5e1, 'r')
+plot(tp(1:tn), pnew0b5e1, 'color',[0.93 0.69 0.13]) %, tp(INIT : GAP/2 : tn) ,pnew0b5e1(INIT : GAP/2 : tn),'bo','MarkerSize',7)
+hold off
+ylim([0.5 1])
+xlim([0 mtp])
+ylabel('P_D(t) ','FontSize', 24)
+xlabel('\omega_{c} t','FontSize',24)
+title('Condon Contribution')
+
+
+
+
+
+
+subplot(2,2,3)
+plot(tp, inhnelb5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp, marcnelb5e1, 'g')
+plot(tp, cdnelb5e1,  'color',[0 0.75 0.75])
+plot(tp, cavnelb5e1, 'r')
+%   plot(tp, kmodb5e1, 'color', [0.5 0 0])
+%  plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb5e1(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+% plot(tp, lscnelb5e1, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb5e1(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, lscnelb5e1, 'b')
+plot(tp, nelb5e1, 'color',[0.93 0.69 0.13])
+hold off
+
+xlim([0 mtp])
+ylim([0 0.07])
+
+ylabel('k(t^\prime) ','FontSize', 24)
+xlabel('\omega_{c} t\prime','FontSize',24)
+
+
+
+subplot(2,2,4)
+plot(tp(1:tn), marcnew0b5e1, 'g')
+hold on
+plot(tp(1:tn), inhnew0b5e1, 'color',[0.75 0 0.75])
+plot(tp(1:tn), cdnew0b5e1,  'color',[0 0.75 0.75])
+plot(tp(1:tn), cavnew0b5e1, 'r')
+plot(tp(1:tn), new0b5e1, 'color',[0.93 0.69 0.13]) % , tp(INIT : GAP/2 : tn) ,new0b5e1(INIT : GAP/2 : tn),'bo','MarkerSize',7)
+hold off
+xlim([0 mtp])
+ylim([0 0.07])
+ylabel('k(t^\prime) ','FontSize', 24)
+xlabel('\omega_{c} t\prime','FontSize',24)
+
+
+
+
+
+
+

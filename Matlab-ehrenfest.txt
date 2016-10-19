@@ -1,0 +1,204 @@
+SUBPLOT for Ehrefest methods
+
+GOA model with Omega = 0.5
+
+ beta = 1,2,5  eta = 1
+
+
+*************** Ehrenfest original input *****************
+
+
+
+
+omega_DA = 0
+
+
+
+mfpdb1g01w0s1 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w0s1_10000.dat')
+mfpdb1g01w0sm1 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w0s-1_10000.dat')
+mfpdb1g01w0s3 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w0s3_10000.dat')
+mfpdb1g01w0s5 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w0s5_10000.dat')
+
+
+
+omega_DA = 2
+
+mfpdb1g01w2s11 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w2s1_10000_1.dat')
+
+mfpdb1g01w2s1 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w2s1_10000.dat')
+mfpdb1g01w2sm1 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w2s-1_10000.dat')
+mfpdb1g01w2s3 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w2s3_10000.dat')
+mfpdb1g01w2s5 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w2s5_10000.dat')
+
+
+
+compare with Alex
+
+mfpdb1g01w2s1alex = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/mf_w2_b1_g0.1_s1_pop_D.out')
+
+shpdb1g01w2s1alex = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/sh_w2_b1_g0.1_s1_pop_D.out')
+
+
+
+
+
+Total energy:
+
+mfew2s1 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/total_energy_Ehr_b1g0.1_w2s1_1000_0.dat')
+
+
+*************** NEFGR Condon inout *****************
+
+omega_DA = 0
+
+new0s1b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s1w0.dat')
+new0s1b2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b2e1_s1w0.dat')
+new0s1b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w0.dat')
+
+new0sm1b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s-1w0.dat')
+new0sm1b2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b2e1_s-1w0.dat')
+new0sm1b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s-1w0.dat')
+
+new0s3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s3w0.dat')
+new0s3b2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b2e1_s3w0.dat')
+new0s3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s3w0.dat')
+
+new0s5b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s5w0.dat')
+new0s5b2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b2e1_s5w0.dat')
+new0s5b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s5w0.dat')
+
+
+omega_DA = 2
+
+pnew2s1b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s1w2.dat')
+pnew2s1b2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b2e1_s1w2.dat')
+pnew2s1b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s1w2.dat')
+
+pnew2sm1b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s-1w2.dat')
+pnew2sm1b2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b2e1_s-1w2.dat')
+pnew2sm1b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s-1w2.dat')
+
+pnew2s3b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s3w2.dat')
+pnew2s3b2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b2e1_s3w2.dat')
+pnew2s3b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s3w2.dat')
+
+pnew2s5b5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b5e1_s5w2.dat')
+pnew2s5b2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b2e1_s5w2.dat')
+pnew2s5b1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGR/QMLSC_P_NEFGR_b1e1_s5w2.dat')
+
+
+
+************* FIGURE 1 - Plotting Ehrenfest original  *****************
+
+LEN = 1000
+deltaT = 0.01
+t = 0 : LEN-1
+t = t * deltaT
+
+plot(t, mfpdb1g01w2s1,  t, mfpdb1g01w2sm1, t, mfpdb1g01w2s3, t, mfpdb1g01w2s5)
+
+xlabel('\omega_{c} t','FontSize',30)
+ylabel('P_D(t)','FontSize', 30)
+xlim([0 10])
+% ylim([0.8 1])
+legend('s=1','s=-1', 's=3', 's=5')
+title('Ehrenfest, \omega_{DA}=2')
+
+
+
+*********** FIGURE 2 - Plotting Ehrenfest original vs NEFGR *****************
+
+dtp = 0.2
+TPMAX = 100
+GAP = int64(TPMAX/10)
+INIT = 5
+tp = [0:TPMAX]
+tp = tp * dtp
+
+
+LEN = 10000
+deltaT = 0.001
+t = 0 : LEN-1
+t = t * deltaT
+
+
+
+% plot(tp, pnew0b2e1, 'b', tp(INIT : GAP : TPMAX) ,pnew0b2e1(INIT : GAP : TPMAX),'bo','MarkerSize',6)
+%hold on
+
+
+plot(tp, pnew2s1b1e1, 'b', t, mfpdb1g01w2s1, 'r')
+
+xlabel('\omega_{c} t','FontSize',30)
+ylabel('P_D(t)','FontSize', 30)
+xlim([0 10])
+ylim([0.9 1])
+legend('NE-FGR','Ehrenfest')
+title('\omega_{DA}=2,s=1')
+
+
+
+
+*********** FIGURE 3 - Plotting Ehrenfest original vs Alex's MF and SH *****************
+
+dtp = 0.2
+TPMAX = 100
+GAP = int64(TPMAX/10)
+INIT = 5
+tp = [0:TPMAX]
+tp = tp * dtp
+
+
+
+plot(tp, pnew2s1b1e1, 'b', t, mfpdb1g01w2s1, 'r')
+hold on
+plot(mfpdb1g01w2s1alex(:,1), mfpdb1g01w2s1alex(:,2),'g')
+plot(shpdb1g01w2s1alex(:,1), shpdb1g01w2s1alex(:,2),'c--')
+hold off
+
+xlabel('\omega_{c} t','FontSize',30)
+ylabel('P_D(t)','FontSize', 30)
+xlim([0 10])
+ylim([0.9 1])
+legend('NE-FGR','Ehrenfest', 'mf Alex', 'sh Alex')
+
+
+
+
+
+*********** FIGURE 4 - check convergence of Ehrenfest original *****************
+
+mfpdb1g01w2s12 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w2s1_10000_2.dat') % dt=0.001 traj=10,000
+
+mfpdb1g01w2s1 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w2s1_10000.dat') % dt=0.01 traj=10,000
+
+mfpdb1g01w2s10 = importdata('/Users/xiangs/Dropbox/code/Ehrenfest_orig/PopD_Ehr_b1g0.1_w2s1_100000.dat') % dt=0.01 traj=100,000
+
+
+LEN = 1000
+deltaT = 0.01
+t = 0 : LEN-1
+t = t * deltaT
+
+LENs = 10000
+deltaTs = 0.001
+ts = 0 : LENs - 1
+ts = ts * deltaTs
+
+plot(t, mfpdb1g01w2s1 , 'b', t, mfpdb1g01w2s10, 'r', ts, mfpdb1g01w2s12, 'c')
+
+xlabel('\omega_{c} t','FontSize',30)
+ylabel('P_D(t)','FontSize', 30)
+xlim([0 10])
+ylim([0.92 1])
+legend('dt=0.01 traj 10,000','dt=0.01 traj 100,000', 'dt=0.001 traj 10,000')
+
+
+
+
+
+
+
+
+
+

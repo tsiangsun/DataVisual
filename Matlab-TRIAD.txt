@@ -1,0 +1,473 @@
+Matlab PLOT for EFGR of Triad molecules
+
+dt = 1 % in fs
+LEN = 200
+
+t = 0: LEN-1
+t = t * dt
+
+% in a.u. 
+
+uav = 0.0950374
+sigma2av = 0.0977662
+
+% kcal -> eV
+kcal2eV = 0.0433634
+
+
+************ FIGURE 1 - Correlation function of energy gap fluctuation C_DE(t) = <dU(0) dU(t) > / <dU^2>
+
+ucorr = importdata('/Users/xiangs/Dropbox/code/TRIAD/U_Corr_PISTR->CT2.dat')
+
+plot(t, (ucorr - uav*uav)/sigma2av, 'b')
+
+ylabel('C_{\Delta E}(t) ','FontSize', 24)
+xlabel('t (fs)','FontSize',24)
+
+
+************ FIGURE 2 - C(t) re 
+
+cre = importdata('/Users/xiangs/Dropbox/code/TRIAD/C(t)_re_CD_PISTR->CT2.dat')
+
+plot(t, cre, 'b')
+
+
+
+
+
+
+
+
+************* FIGURE 3 - histogram of  P.E. distibution
+
+
+
+
+hist(e2t1,50)
+xlabel('P.E. (eV)')
+ylabel('Distribution of P.E.')
+
+title('P.E. of \pi-\pi^* on traj of \pi-\pi^*')
+title('P.E. of CT1 on traj of \pi-\pi^*')
+
+subplot(3,1,1)
+plot(t, eptp, 'b', t, e1tp, 'r')
+legend('E_{PI} on traj PI', 'E_{CT1} on traj PI')
+ylabel('P.E. (kcal/mol)')
+xlabel('t / fs')
+title('Scenario 1')
+
+subplot(3,1,2)
+plot(t, eptp, 'b', t, e2tp, 'r')
+legend('E_{PI} on traj PI', 'E_{CT2} on traj PI')
+ylabel('P.E. (kcal/mol)')
+xlabel('t / fs')
+title('Scenario 2')
+
+subplot(3,1,3)
+plot(t, e1t1, 'b', t, e2t1, 'r')
+legend('E_{CT1} on traj CT1', 'E_{CT2} on traj CT1')
+ylabel('P.E. (kcal/mol)')
+xlabel('t / fs')
+title('Scenario 3')
+
+
+
+subplot(3,1,1)
+xlim([1000 1500])
+subplot(3,1,2)
+xlim([1000 1500])
+subplot(3,1,3)
+xlim([1000 1500])
+
+
+----------- rigid triad : distribution of P.E. ------------
+
+in kcal/mol
+
+eptp = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRIAD_BENT_E_PI_TRAJ_PI_2.dat')
+e1tp = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRIAD_BENT_E_CT1_TRAJ_PI_2.dat')
+e2tp = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRIAD_BENT_E_CT2_TRAJ_PI_2.dat')
+e1t1 = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRIAD_BENT_E_CT1_TRAJ_CT1_2.dat')
+e2t1 = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRIAD_BENT_E_CT2_TRAJ_CT1_2.dat')
+e2t2 = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRIAD_BENT_E_CT2_TRAJ_CT2_2.dat')
+
+
+eptp = importdata('/Users/xiangs/Dropbox/code/TRIAD/RigidTriad_FlexTHF/TRIAD_BENT_E_PI_TRAJ_PI_4.dat')
+e1tp = importdata('/Users/xiangs/Dropbox/code/TRIAD/RigidTriad_FlexTHF/TRIAD_BENT_E_CT1_TRAJ_PI_4.dat')
+e2tp = importdata('/Users/xiangs/Dropbox/code/TRIAD/RigidTriad_FlexTHF/TRIAD_BENT_E_CT2_TRAJ_PI_4.dat')
+e1t1 = importdata('/Users/xiangs/Dropbox/code/TRIAD/RigidTriad_FlexTHF/TRIAD_BENT_E_CT1_TRAJ_CT1_4.dat')
+e2t1 = importdata('/Users/xiangs/Dropbox/code/TRIAD/RigidTriad_FlexTHF/TRIAD_BENT_E_CT2_TRAJ_CT1_4.dat')
+e2t2 = importdata('/Users/xiangs/Dropbox/code/TRIAD/RigidTriad_FlexTHF/TRIAD_BENT_E_CT2_TRAJ_CT2_4.dat')
+
+
+
+kcal2eV = 0.0433634
+
+eptp = eptp * kcal2eV
+e1tp = e1tp * kcal2eV
+e2tp = e2tp * kcal2eV
+e1t1 = e1t1 * kcal2eV
+e2t1 = e2t1 * kcal2eV
+e2t2 = e2t2 * kcal2eV
+
+
+
+nbins = 50
+
+
+subplot(3,2,1)
+hist(eptp,nbins)
+title('P.E. of \pi-\pi^* on traj of \pi-\pi^*')
+xlabel('P.E. (eV)')
+ylabel('Distribution')
+
+subplot(3,2,3)
+hist(e1tp,nbins)
+title('P.E. of CT1 on traj of \pi-\pi^*')
+xlabel('P.E. (eV)')
+ylabel('Distribution')
+
+subplot(3,2,5)
+hist(e2tp,nbins)
+title('P.E. of CT2 on traj of \pi-\pi^*')
+xlabel('P.E. (eV)')
+ylabel('Distribution')
+
+subplot(3,2,2)
+hist(e1t1,nbins)
+title('P.E. of CT1 on traj of CT1')
+xlabel('P.E. (eV)')
+ylabel('Distribution')
+
+subplot(3,2,4)
+hist(e2t1,nbins)
+title('P.E. of CT2 on traj of CT1')
+xlabel('P.E. (eV)')
+ylabel('Distribution')
+
+subplot(3,2,6)
+hist(e2t2,nbins)
+title('P.E. of CT2 on traj of CT2')
+xlabel('P.E. (eV)')
+ylabel('Distribution')
+
+
+
+
+annotation('textbox', 'String', '\bf Flexible triad + Flexible solvent', 'FontSize', 24, 'EdgeColor','none')
+
+Flexible triad + Flexible solvent
+
+subplot(3,2,1)
+ylim([0 350])
+xlim([3030 3090])
+subplot(3,2,2)
+ylim([0 350])
+xlim([3030 3090])
+subplot(3,2,3)
+ylim([0 350])
+xlim([3030 3090])
+subplot(3,2,4)
+ylim([0 350])
+xlim([3030 3090])
+subplot(3,2,5)
+ylim([0 350])
+xlim([3030 3090])
+subplot(3,2,6)
+ylim([0 350])
+xlim([3030 3090])
+
+Rigid triad + Flex solvent
+
+subplot(3,2,1)
+ylim([0 350])
+xlim([3030 3080])
+subplot(3,2,2)
+ylim([0 350])
+xlim([3030 3080])
+subplot(3,2,3)
+ylim([0 350])
+xlim([3030 3080])
+subplot(3,2,4)
+ylim([0 350])
+xlim([3030 3080])
+subplot(3,2,5)
+ylim([0 350])
+xlim([3030 3080])
+subplot(3,2,6)
+ylim([0 350])
+xlim([3030 3080])
+
+
+
+
+
+************* FIGURE 4 - histogram of UDA distibution
+
+% UDA01 = importdata('/Users/xiangs/Dropbox/code/TRIAD/UDA_TRAJ_eV_PI->CT1.dat')
+% UDA02 = importdata('/Users/xiangs/Dropbox/code/TRIAD/UDA_TRAJ_eV_PI->CT2.dat')
+% UDA12 = importdata('/Users/xiangs/Dropbox/code/TRIAD/UDA_TRAJ_eV_CT1->CT2.dat')
+
+------ from raw data use the following:
+
+E_shift = [0.830284     -2.18684     -1.4569 ]   % eV
+
+UDA01 = eptp - e1tp + E_shift(1) - E_shift(2)
+
+UDA02 = eptp - e2tp + E_shift(1) - E_shift(3)
+
+UDA12 = e1t1 - e2t1 + E_shift(2) - E_shift(3)
+
+
+nbins = 50;
+bound = 1;
+bins = linspace(-bound,bound,nbins);
+
+subplot(3,1,1)
+hist(UDA01, nbins)
+title('Scenario 1: \pi-\pi^* -> CT1')
+
+subplot(3,1,2)
+hist(UDA02, nbins)
+ylabel('Distribution of U_{DA}')
+title('Scenario 2: \pi-\pi^* -> CT2')
+
+subplot(3,1,3)
+hist(UDA12, nbins)
+title('Scenario 3: CT1 -> CT2')
+xlabel('U_{DA} / eV')
+
+rigid triad
+subplot(3,1,1)
+xlim([-0.5  1])
+subplot(3,1,2)
+xlim([-1.2  0.3])
+subplot(3,1,3)
+xlim([-2  -0.5])
+
+
+flex triad
+subplot(3,1,1)
+xlim([-10  10])
+subplot(3,1,2)
+xlim([-10  10])
+subplot(3,1,3)
+xlim([-10  10])
+
+
+
+
+----------
+y1 = hist(UDA01, bins)
+y2 = hist(UDA02, bins)
+y3 = hist(UDA12, bins)
+
+bar(y1.', 'b');
+hold on
+bar(y2.' , 'r');
+bar(y3.' , 'c');
+hold off
+
+
+
+
+
+
+
+
+
+************* FIGURE 5 - Correlation function of dV dV ********************
+
+dt = 1 % in fs
+LEN = 200
+
+t = 0: LEN-1
+t = t * dt
+
+
+DD1 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVD_dVD_PI->CT1.dat')
+AA1 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVA_dVA_PI->CT1.dat')
+DA1 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVD_dVA_PI->CT1.dat')
+DD2 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVD_dVD_PI->CT2.dat')
+AA2 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVA_dVA_PI->CT2.dat')
+DA2 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVD_dVA_PI->CT2.dat')
+DD3 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVD_dVD_CT1->CT2.dat')
+AA3 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVA_dVA_CT1->CT2.dat')
+DA3 = importdata('/Users/xiangs/Dropbox/code/TRIAD/Corr_dVD_dVA_CT1->CT2.dat')
+
+
+subplot(3,1,1)
+plot(t, DD1, t, AA1, t, DA1)
+legend('<dVD(0)*dVD(t)>',  '<dVA(0)*dVA(t)>', '<dVD(0)*dVA(t)>')
+ylabel('TCF (kcal^2/mol^2)')
+xlabel('t / fs')
+title('\pi-\pi^* -> CT1')
+
+subplot(3,1,2)
+plot(t, DD2, t, AA2, t, DA2)
+legend('<dVD(0)*dVD(t)>',  '<dVA(0)*dVA(t)>', '<dVD(0)*dVA(t)>')
+ylabel('TCF (kcal^2/mol^2)')
+xlabel('t / fs')
+title('\pi-\pi^* -> CT2')
+
+subplot(3,1,3)
+plot(t, DD3, t, AA3, t, DA3)
+legend('<dVD(0)*dVD(t)>',  '<dVA(0)*dVA(t)>', '<dVD(0)*dVA(t)>')
+ylabel('TCF (kcal^2/mol^2)')
+xlabel('t / fs')
+title('CT1 -> CT2')
+
+
+
+************* FIGURE 6 - C-0 approx: Prob of wda=0 extropolation ********************
+
+for CT1 -> CT2
+wda from -3 to 1, 400 bins
+
+prob = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRAJECTORIES/Prob_UDA_eV_CT1->CT2.dat')
+
+x = linspace(-3, 1-0.001, 400)
+
+semilogy(x, prob)
+
+xlabel('U_{DA} (eV)')
+ylabel('Prob(U_{DA})')
+title('CT1 -> CT2')
+
+
+
+
+************* FIGURE 7 - C-0 / C-D approx: FFT wda=<UDA> extropolation ****************
+For C-0 approx. 
+
+LEN = 512
+DeltaT = 1 % fs
+hbar_eVs = 6.58212e-16
+hbar_eVfs = 6.58212e-1
+
+Gamma_DA = 8.6e-5  % CT1 -> CT2
+
+domega = 0.0122718  % eV
+
+UDA_avg = -1.42727 % eV for traj 4 - 98
+
+UDA_avg = -1.42968 % eV for traj 104 - 198
+
+index = 336 - LEN/2
+
+omega = linspace(-LEN/2*domega,(LEN/2-1)*domega, LEN) 
+
+ftc0re = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRAJECTORIES/FFT_C0_re_CT1->CT2_4-98.dat')
+ftc0re = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRAJECTORIES/FFT_C0_re_CT1->CT2_104-198.dat')
+
+
+CUT = LEN/4 + 10
+
+cuty = ftc0re(LEN/2 - CUT : LEN/2 + CUT ) 
+cutx = omega(LEN/2 - CUT : LEN/2 + CUT ) 
+
+semilogy(omega, ftc0re)
+hold on 
+semilogy(cutx, cuty, 'r')
+hold off
+
+
+type:  cftool  % in Matlab for Curve Fitting Tool
+
+choose omega and ftc0re as x, y data for Gaussian 1 fit, y = a1 * exp(-((x-b1)/c1)^2), resulting
+
+% for traj 4-98
+a1 = 5.927
+b1 = -0.002029
+c1 = 0.5991
+
+% for traj 104-198
+a1 = 5.861
+b1 = 0.00107
+c1 = 0.6095
+
+
+semilogy(omega, ftc0re)
+hold on 
+y = a1*exp(-((omega-b1)/c1).^2)
+semilogy(omega, y, 'r')
+
+hold off
+
+CFFT = a1*exp(-((UDA_avg-b1)/c1).^2)
+
+kC0 = CFFT * LEN * DeltaT * Gamma_DA^2 / hbar_eVs / hbar_eVfs
+
+1.805e+8   % traj 4 - 98
+
+
+
+
+Similar for C-D approx.
+
+LEN = 512
+DeltaT = 1 % fs
+
+ftcdre = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRAJECTORIES/FFT_CD_re_CT1->CT2_4-98.dat')
+ftcdre = importdata('/Users/xiangs/Dropbox/code/TRIAD/FlexTriad_FlexTHF/TRAJECTORIES/FFT_CD_re_CT1->CT2_104-198.dat')
+
+
+CUT = LEN/4 + 10
+
+cuty = ftcdre(LEN/2 - CUT : LEN/2 + CUT ) 
+cutx = omega(LEN/2 - CUT : LEN/2 + CUT ) 
+
+semilogy(omega, ftcdre)
+hold on 
+semilogy(cutx, cuty, 'r')
+hold off
+
+type: cftool for Gaussian 1 fitting
+
+% for traj 4-98
+ a1 =     0.01158  
+ b1 =   -0.002021 
+ c1 =      0.5991
+
+% for traj 104-198
+ a1 =     0.01146 
+ b1 =     0.00117  
+ c1 =      0.6085
+
+semilogy(omega, ftcdre)
+hold on 
+y = a1*exp(-((omega-b1)/c1).^2)
+semilogy(omega, y, 'r')
+hold off
+
+UDA_avg = -1.42727 % eV
+CFFT = a1*exp(-((UDA_avg-b1)/c1).^2)
+kCD = CFFT * LEN * DeltaT * Gamma_DA^2 / hbar_eVs / hbar_eVfs
+
+
+3.5264e+05
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

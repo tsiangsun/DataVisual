@@ -1,0 +1,1029 @@
+
+%%% ---------------- NEFGRL GOA model: new adding symbols to overlaping lines ------------------------
+
+
+************ NEW input set: beta=1, 2, 5, eta=0.5, 1, 2 at omega_{DA}=2 or 0 ********************
+
+
+nelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b1e0.5_s5w2.dat')
+lscnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b1e0.5_s5w2.dat')
+cavnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b1e0.5_s5w2.dat')
+cdnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b1e0.5_s5w2.dat')
+inhnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b1e0.5_s5w2.dat')
+marcnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b1e0.5_s5w2.dat')
+pnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b1e0.5_s5w2.dat')
+lscpnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b1e0.5_s5w2.dat')
+cavpnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b1e0.5_s5w2.dat')
+cdpnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b1e0.5_s5w2.dat')
+inhpnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b1e0.5_s5w2.dat')
+marcpnelb1e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b1e0.5_s5w2.dat')
+
+nelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b1e1_s5w2.dat')
+lscnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b1e1_s5w2.dat')
+cavnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b1e1_s5w2.dat')
+cdnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b1e1_s5w2.dat')
+inhnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b1e1_s5w2.dat')
+marcnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b1e1_s5w2.dat')
+pnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b1e1_s5w2.dat')
+lscpnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b1e1_s5w2.dat')
+cavpnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b1e1_s5w2.dat')
+cdpnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b1e1_s5w2.dat')
+inhpnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b1e1_s5w2.dat')
+marcpnelb1e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b1e1_s5w2.dat')
+
+nelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b1e2_s5w2.dat')
+lscnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b1e2_s5w2.dat')
+cavnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b1e2_s5w2.dat')
+cdnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b1e2_s5w2.dat')
+inhnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b1e2_s5w2.dat')
+marcnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b1e2_s5w2.dat')
+pnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b1e2_s5w2.dat')
+lscpnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b1e2_s5w2.dat')
+cavpnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b1e2_s5w2.dat')
+cdpnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b1e2_s5w2.dat')
+inhpnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b1e2_s5w2.dat')
+marcpnelb1e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b1e2_s5w2.dat')
+
+nelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b2e0.5_s5w2.dat')
+lscnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b2e0.5_s5w2.dat')
+cavnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b2e0.5_s5w2.dat')
+cdnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b2e0.5_s5w2.dat')
+inhnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b2e0.5_s5w2.dat')
+marcnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b2e0.5_s5w2.dat')
+pnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b2e0.5_s5w2.dat')
+lscpnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b2e0.5_s5w2.dat')
+cavpnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b2e0.5_s5w2.dat')
+cdpnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b2e0.5_s5w2.dat')
+inhpnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b2e0.5_s5w2.dat')
+marcpnelb2e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b2e0.5_s5w2.dat')
+
+nelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b2e1_s5w2.dat')
+lscnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b2e1_s5w2.dat')
+cavnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b2e1_s5w2.dat')
+cdnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b2e1_s5w2.dat')
+inhnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b2e1_s5w2.dat')
+marcnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b2e1_s5w2.dat')
+pnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b2e1_s5w2.dat')
+lscpnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b2e1_s5w2.dat')
+cavpnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b2e1_s5w2.dat')
+cdpnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b2e1_s5w2.dat')
+inhpnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b2e1_s5w2.dat')
+marcpnelb2e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b2e1_s5w2.dat')
+
+nelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b2e2_s5w2.dat')
+lscnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b2e2_s5w2.dat')
+cavnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b2e2_s5w2.dat')
+cdnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b2e2_s5w2.dat')
+inhnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b2e2_s5w2.dat')
+marcnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b2e2_s5w2.dat')
+pnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b2e2_s5w2.dat')
+lscpnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b2e2_s5w2.dat')
+cavpnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b2e2_s5w2.dat')
+cdpnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b2e2_s5w2.dat')
+inhpnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b2e2_s5w2.dat')
+marcpnelb2e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b2e2_s5w2.dat')
+
+nelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b5e0.5_s5w2.dat')
+lscnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b5e0.5_s5w2.dat')
+cavnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b5e0.5_s5w2.dat')
+cdnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b5e0.5_s5w2.dat')
+inhnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b5e0.5_s5w2.dat')
+marcnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b5e0.5_s5w2.dat')
+pnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b5e0.5_s5w2.dat')
+lscpnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b5e0.5_s5w2.dat')
+cavpnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b5e0.5_s5w2.dat')
+cdpnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b5e0.5_s5w2.dat')
+inhpnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b5e0.5_s5w2.dat')
+marcpnelb5e05 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b5e0.5_s5w2.dat')
+
+nelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b5e1_s5w2.dat')
+lscnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b5e1_s5w2.dat')
+cavnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b5e1_s5w2.dat')
+cdnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b5e1_s5w2.dat')
+inhnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b5e1_s5w2.dat')
+marcnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b5e1_s5w2.dat')
+pnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b5e1_s5w2.dat')
+lscpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b5e1_s5w2.dat')
+cavpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b5e1_s5w2.dat')
+cdpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b5e1_s5w2.dat')
+inhpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b5e1_s5w2.dat')
+marcpnelb5e1 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b5e1_s5w2.dat')
+
+nelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_k_NEFGRL_b5e2_s5w2.dat')
+lscnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_k_NEFGRL_b5e2_s5w2.dat')
+cavnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_k_NEFGRL_b5e2_s5w2.dat')
+cdnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_k_NEFGRL_b5e2_s5w2.dat')
+inhnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_k_NEFGRL_b5e2_s5w2.dat')
+marcnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_k_NEFGRL_b5e2_s5w2.dat')
+pnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Exact_P_NEFGRL_b5e2_s5w2.dat')
+lscpnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/LSC_P_NEFGRL_b5e2_s5w2.dat')
+cavpnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CAV_P_NEFGRL_b5e2_s5w2.dat')
+cdpnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/CD_P_NEFGRL_b5e2_s5w2.dat')
+inhpnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/inh_P_NEFGRL_b5e2_s5w2.dat')
+marcpnelb5e2 = importdata('/Users/xiangs/Dropbox/code/NEFGRL/Marcus_P_NEFGRL_b5e2_s5w2.dat')
+
+
+
+
+
+======== the keq of EFGRL of Omega = 0.5 case (update when omega_DA changes) =========
+
+qmb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e0.5.dat')
+qmlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e0.5.dat')
+lsclb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e0.5.dat')
+lscpwlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b0.2e0.5.dat')
+cavlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e0.5.dat')
+cdlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e0.5.dat')
+inhlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e0.5.dat')
+marlb02e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e0.5.dat')
+
+qmb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e1.dat')
+qmlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e1.dat')
+lsclb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e1.dat')
+lscpwlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b0.2e1.dat')
+cavlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e1.dat')
+cdlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e1.dat')
+inhlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e1.dat')
+marlb02e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e1.dat')
+
+qmb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e2.dat')
+qmlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e2.dat')
+lsclb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e2.dat')
+lscpwlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b0.2e2.dat')
+cavlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e2.dat')
+cdlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e2.dat')
+inhlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e2.dat')
+marlb02e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e2.dat')
+
+
+
+qmb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e0.5.dat')
+qmlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e0.5.dat')
+lsclb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e0.5.dat')
+lscpwlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b1e0.5.dat')
+cavlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e0.5.dat')
+cdlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e0.5.dat')
+inhlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e0.5.dat')
+marlb1e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e0.5.dat')
+
+qmb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e1.dat')
+qmlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e1.dat')
+lsclb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e1.dat')
+lscpwlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b1e1.dat')
+cavlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e1.dat')
+cdlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e1.dat')
+inhlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e1.dat')
+marlb1e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e1.dat')
+
+qmb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e2.dat')
+qmlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e2.dat')
+lsclb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e2.dat')
+lscpwlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b1e2.dat')
+cavlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e2.dat')
+cdlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e2.dat')
+inhlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e2.dat')
+marlb1e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e2.dat')
+
+
+
+qmb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e0.5.dat')
+qmlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e0.5.dat')
+lsclb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e0.5.dat')
+lscpwlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b5e0.5.dat')
+cavlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e0.5.dat')
+cdlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e0.5.dat')
+inhlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e0.5.dat')
+marlb5e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e0.5.dat')
+
+qmb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e1.dat')
+qmlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e1.dat')
+lsclb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e1.dat')
+lscpwlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b5e1.dat')
+cavlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e1.dat')
+cdlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e1.dat')
+inhlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e1.dat')
+marlb5e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e1.dat')
+
+qmb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e2.dat')
+qmlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e2.dat')
+lsclb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e2.dat')
+lscpwlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b5e2.dat')
+cavlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e2.dat')
+cdlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e2.dat')
+inhlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e2.dat')
+marlb5e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e2.dat')
+
+
+qmb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b2e0.5.dat')
+qmlb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b2e0.5.dat')
+lsclb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b2e0.5.dat')
+lscpwlb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b2e0.5.dat')
+cavlb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b2e0.5.dat')
+cdlb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b2e0.5.dat')
+inhlb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b2e0.5.dat')
+marlb2e05 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b2e0.5.dat')
+
+qmb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b2e1.dat')
+qmlb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b2e1.dat')
+lsclb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b2e1.dat')
+lscpwlb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b2e1.dat')
+cavlb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b2e1.dat')
+cdlb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b2e1.dat')
+inhlb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b2e1.dat')
+marlb2e1 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b2e1.dat')
+
+qmb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b2e5.dat')
+qmlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b2e5.dat')
+lsclb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b2e5.dat')
+lscpwlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b2e5.dat')
+cavlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b2e5.dat')
+cdlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b2e5.dat')
+inhlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b2e5.dat')
+marlb2e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b2e5.dat')
+
+
+qmb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b2e2.dat')
+qmlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b2e2.dat')
+lsclb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b2e2.dat')
+lscpwlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b2e2.dat')
+cavlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b2e2.dat')
+cdlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b2e2.dat')
+inhlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b2e2.dat')
+marlb2e2 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b2e2.dat')
+
+
+qmb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b0.2e5.dat')
+qmlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b0.2e5.dat')
+lsclb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b0.2e5.dat')
+lscpwlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b0.2e5.dat')
+cavlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b0.2e5.dat')
+cdlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b0.2e5.dat')
+inhlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b0.2e5.dat')
+marlb02e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b0.2e5.dat')
+
+qmb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b1e5.dat')
+qmlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b1e5.dat')
+lsclb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b1e5.dat')
+lscpwlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b1e5.dat')
+cavlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b1e5.dat')
+cdlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b1e5.dat')
+inhlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b1e5.dat')
+marlb1e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b1e5.dat')
+
+qmb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGR_b5e5.dat')
+qmlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Exact_EFGRL_b5e5.dat')
+lsclb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSC_EFGRL_b5e5.dat')
+lscpwlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/LSCPW_EFGRL_b5e5.dat')
+cavlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CAV_EFGRL_b5e5.dat')
+cdlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/CD_EFGRL_b5e5.dat')
+inhlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/W0_EFGRL_b5e5.dat')
+marlb5e5 = importdata('/Users/xiangs/Dropbox/code/EFGRL/Marcus_EFGRL_b5e5.dat')
+
+
+==========================
+
+omega_DA = 2 corresponds to index
+
+wda_ind = 66  
+
+omega_DA = 0 corresponds to index 
+
+wda_ind = 1
+
+
+keqb5e05 = [ inhlb5e05(wda_ind)  marlb5e05(wda_ind) cdlb5e05(wda_ind) cavlb5e05(wda_ind)  lscpwlb5e05(wda_ind) lsclb5e05(wda_ind)  qmlb5e05(wda_ind) ]
+
+keqb5e1 = [ inhlb5e1(wda_ind)  marlb5e1(wda_ind) cdlb5e1(wda_ind) cavlb5e1(wda_ind) lscpwlb5e1(wda_ind)  lsclb5e1(wda_ind)  qmlb5e1(wda_ind) ]
+
+keqb5e2 = [ inhlb5e2(wda_ind)  marlb5e2(wda_ind) cdlb5e2(wda_ind) cavlb5e2(wda_ind) lscpwlb5e2(wda_ind) lsclb5e2(wda_ind)  qmlb5e2(wda_ind) ]
+
+keqb5e5 = [ inhlb5e5(wda_ind)  marlb5e5(wda_ind) cdlb5e5(wda_ind) cavlb5e5(wda_ind) lscpwlb5e5(wda_ind) lsclb5e5(wda_ind)  qmlb5e5(wda_ind) ]
+
+
+keqb2e05 = [ inhlb2e05(wda_ind)  marlb2e05(wda_ind) cdlb2e05(wda_ind) cavlb2e05(wda_ind) lscpwlb2e05(wda_ind) lsclb2e05(wda_ind)  qmlb2e05(wda_ind) ]
+
+keqb2e1 = [ inhlb2e1(wda_ind)  marlb2e1(wda_ind) cdlb2e1(wda_ind) cavlb2e1(wda_ind) lscpwlb2e1(wda_ind) lsclb2e1(wda_ind)  qmlb2e1(wda_ind) ]
+
+keqb2e2 = [ inhlb2e2(wda_ind)  marlb2e2(wda_ind) cdlb2e2(wda_ind) cavlb2e2(wda_ind) lscpwlb2e2(wda_ind) lsclb2e2(wda_ind)  qmlb2e2(wda_ind) ]
+
+keqb2e5 = [ inhlb2e5(wda_ind)  marlb2e5(wda_ind) cdlb2e5(wda_ind) cavlb2e5(wda_ind) lscpwlb2e5(wda_ind) lsclb2e5(wda_ind)  qmlb2e5(wda_ind) ]
+
+
+keqb1e05 = [ inhlb1e05(wda_ind)  marlb1e05(wda_ind) cdlb1e05(wda_ind) cavlb1e05(wda_ind) lscpwlb1e05(wda_ind) lsclb1e05(wda_ind)  qmlb1e05(wda_ind) ]
+
+keqb1e1 = [ inhlb1e1(wda_ind)  marlb1e1(wda_ind) cdlb1e1(wda_ind) cavlb1e1(wda_ind) lscpwlb1e1(wda_ind) lsclb1e1(wda_ind)  qmlb1e1(wda_ind) ]
+
+keqb1e2 = [ inhlb1e2(wda_ind)  marlb1e2(wda_ind) cdlb1e2(wda_ind) cavlb1e2(wda_ind)  lscpwlb1e2(wda_ind) lsclb1e2(wda_ind)  qmlb1e2(wda_ind) ]
+
+keqb1e2 = [ inhlb1e2(wda_ind)  marlb1e2(wda_ind) cdlb1e2(wda_ind) cavlb1e2(wda_ind)  lscpwlb1e2(wda_ind) lsclb1e2(wda_ind)  qmlb1e2(wda_ind) ]
+
+
+keqb02e05 = [ inhlb02e05(wda_ind)  marlb02e05(wda_ind) cdlb02e05(wda_ind) cavlb02e05(wda_ind) lscpwlb02e05(wda_ind) lsclb02e05(wda_ind)  qmlb02e05(wda_ind) ]
+
+keqb02e1 = [ inhlb02e1(wda_ind)  marlb02e1(wda_ind) cdlb02e1(wda_ind) cavlb02e1(wda_ind) lscpwlb02e1(wda_ind) lsclb02e1(wda_ind) qmlb02e1(wda_ind) ]
+
+keqb02e2 = [ inhlb02e2(wda_ind)  marlb02e2(wda_ind) cdlb02e2(wda_ind) cavlb02e2(wda_ind) lscpwlb02e2(wda_ind) lsclb02e2(wda_ind) qmlb02e2(wda_ind) ]
+
+keqb02e5 = [ inhlb02e5(wda_ind)  marlb02e5(wda_ind) cdlb02e5(wda_ind) cavlb02e5(wda_ind) lscpwlb02e5(wda_ind) lsclb02e5(wda_ind) qmlb02e5(wda_ind) ]
+
+
+
+
+-------- Modify LSC k(t) and P(t) by shiftting plateau keq to the correction one --------------
+
+Fro all the cases of omega_{DA}=2, beta=5,2,1, eta=0.5,1,2
+
+steplike= (1+tanh((tp-1)/0.2))/2
+
+
+
+For omega_{DA} = 0:
+
+s=1
+
+steplike= (1+tanh((tp-2)/0.6))/2
+
+s=3
+
+steplike= (1+tanh((tp-3)/0.8))/2
+
+s=5
+
+steplike= (1+tanh((tp-7)/1))/2
+
+
+%% --------------- update every time changes w or s --------------------
+
+
+
+kmodb5e05 = lscnelb5e05 + (keqb5e05(6) - keqb5e05(5)) * steplike'
+pmodb5e05 = kmodb5e05
+for i = 1:1:(TPMAX)
+	pmodb5e05(i) = exp( -1 * sum(kmodb5e05(1:i)) * dtp);
+end
+
+kmodb5e1 = lscnelb5e1 + (keqb5e1(6) - keqb5e1(5)) * steplike'
+pmodb5e1 = kmodb5e1
+for i = 1:1:(TPMAX)
+	pmodb5e1(i) = exp( -1 * sum(kmodb5e1(1:i)) * dtp);
+end
+
+kmodb5e2 = lscnelb5e2 + (keqb5e2(6) - keqb5e2(5)) * steplike'
+pmodb5e2 = kmodb5e2
+for i = 1:1:(TPMAX)
+	pmodb5e2(i) = exp( -1 * sum(kmodb5e2(1:i)) * dtp);
+end
+
+kmodb2e05 = lscnelb2e05 + (keqb2e05(6) - keqb2e05(5)) * steplike'
+pmodb2e05 = kmodb2e05
+for i = 1:1:(TPMAX)
+	pmodb2e05(i) = exp( -1 * sum(kmodb2e05(1:i)) * dtp);
+end
+
+kmodb2e1 = lscnelb2e1 + (keqb2e1(6) - keqb2e1(5)) * steplike'
+pmodb2e1 = kmodb2e1
+for i = 1:1:(TPMAX)
+	pmodb2e1(i) = exp( -1 * sum(kmodb2e1(1:i)) * dtp);
+end
+
+kmodb2e2 = lscnelb2e2 + (keqb2e2(6) - keqb2e2(5)) * steplike'
+pmodb2e2 = kmodb2e2
+for i = 1:1:(TPMAX)
+	pmodb2e2(i) = exp( -1 * sum(kmodb2e2(1:i)) * dtp);
+end
+
+kmodb1e05 = lscnelb1e05 + (keqb1e05(6) - keqb1e05(5)) * steplike'
+pmodb1e05 = kmodb1e05
+for i = 1:1:(TPMAX)
+	pmodb1e05(i) = exp( -1 * sum(kmodb1e05(1:i)) * dtp);
+end
+
+kmodb1e1 = lscnelb1e1 + (keqb1e1(6) - keqb1e1(5)) * steplike'
+pmodb1e1 = kmodb1e1
+for i = 1:1:(TPMAX)
+	pmodb1e1(i) = exp( -1 * sum(kmodb1e1(1:i)) * dtp);
+end
+
+kmodb1e2 = lscnelb1e2 + (keqb1e2(6) - keqb1e2(5)) * steplike'
+pmodb1e2 = kmodb1e2
+for i = 1:1:(TPMAX)
+	pmodb1e2(i) = exp( -1 * sum(kmodb1e2(1:i)) * dtp);
+end
+
+
+
+
+
+
+
+
+
+
+
+************* New FIGURE 1 - Donor-state population P(t) as function of time *****************
+
+
+SUBPLOT ********** 3x3 Full P(t) vs t at fixed omega_DA= 0 or 2  ****************
+
+
+take omega_DA = 0, s=1 for example.
+
+
+
+
+dtp = 0.2
+TPMAX = 200
+GAP = int64(TPMAX/20)  % every 20 points
+INIT = 5
+tp = [0:TPMAX-1]
+tp = tp * dtp
+
+
+
+
+
+subplot(3,3,1)
+plot(tp, inhpnelb5e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb5e05(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb5e05 = exp ( -1* keqb5e05(7) * tp)
+plot(tp, peqb5e05 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb5e05(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb5e05, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb5e05(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb5e05,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb5e05(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb5e05, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb5e05(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb5e05, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb5e05(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb5e05, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb5e05(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb5e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,2)
+plot(tp, inhpnelb5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb5e1(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb5e1 = exp ( -1* keqb5e1(7) * tp)
+plot(tp, peqb5e1 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb5e1(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb5e1, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb5e1(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb5e1,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb5e1(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb5e1, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb5e1(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb5e1, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb5e1(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb5e1, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb5e1(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb5e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,3)
+plot(tp, inhpnelb5e2, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb5e2(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb5e2 = exp ( -1* keqb5e2(7) * tp)
+plot(tp, peqb5e2 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb5e2(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb5e2, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb5e2(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb5e2,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb5e2(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb5e2, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb5e2(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb5e2, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb5e2(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb5e2, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb5e2(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb5e2, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,4)
+plot(tp, inhpnelb2e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb2e05(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb2e05 = exp ( -1* keqb2e05(7) * tp)
+plot(tp, peqb2e05 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb2e05(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb2e05, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb2e05(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb2e05,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb2e05(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb2e05, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb2e05(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb2e05, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb2e05(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb2e05, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb2e05(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb2e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,5)
+plot(tp, inhpnelb2e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb2e1(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb2e1 = exp ( -1* keqb2e1(7) * tp)
+plot(tp, peqb2e1 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb2e1(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb2e1, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb2e1(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb2e1,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb2e1(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb2e1, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb2e1(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb2e1, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb2e1(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb2e1, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb2e1(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb2e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,6)
+plot(tp, inhpnelb2e2, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb2e2(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb2e2 = exp ( -1* keqb2e2(7) * tp)
+plot(tp, peqb2e2 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb2e2(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb2e2, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb2e2(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb2e2,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb2e2(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb2e2, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb2e2(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb2e2, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb2e2(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb2e2, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb2e2(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb2e2, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,7)
+plot(tp, inhpnelb1e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb1e05(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb1e05 = exp ( -1* keqb1e05(7) * tp)
+plot(tp, peqb1e05 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb1e05(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb1e05, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb1e05(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb1e05,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb1e05(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb1e05, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb1e05(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb1e05, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb1e05(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb1e05, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb1e05(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb1e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,8)
+plot(tp, inhpnelb1e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb1e1(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb1e1 = exp ( -1* keqb1e1(7) * tp)
+plot(tp, peqb1e1 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb1e1(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb1e1, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb1e1(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb1e1,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb1e1(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb1e1, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb1e1(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb1e1, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb1e1(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb1e1, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb1e1(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb1e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,9)
+plot(tp, inhpnelb1e2, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhpnelb1e2(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+peqb1e2 = exp ( -1* keqb1e2(7) * tp)
+plot(tp, peqb1e2 , '--', 'color',[0.5 0.5 0.5])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), peqb1e2(INIT+10:TPMAX/GAP:TPMAX),'x','MarkerSize',9, 'MarkerEdgeColor', [0.5 0.5 0.5], 'MarkerFaceColor', [0.5 0.5 0.5])
+plot(tp, marcpnelb1e2, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcpnelb1e2(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdpnelb1e2,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdpnelb1e2(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavpnelb1e2, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavpnelb1e2(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, lscpnelb1e2, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscpnelb1e2(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, pmodb1e2, 'color',[0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), pmodb1e2(INIT:TPMAX/GAP:TPMAX),'s','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, pnelb1e2, 'color',[0.93 0.69 0.13])
+hold off
+
+
+omega_DA=0
+
+subplot(3,3,1)
+ylim([0.5 1])
+subplot(3,3,2)
+ylim([0.5 1])
+subplot(3,3,3)
+ylim([0.5 1])
+subplot(3,3,4)
+ylim([0.5 1])
+subplot(3,3,5)
+ylim([0.5 1])
+subplot(3,3,6)
+ylim([0.5 1])
+subplot(3,3,7)
+ylim([0.5 1])
+subplot(3,3,8)
+ylim([0.5 1])
+subplot(3,3,9)
+ylim([0.5 1])
+
+mtp=20
+subplot(3,3,1)
+xlim([0 mtp])
+subplot(3,3,2)
+xlim([0 mtp])
+subplot(3,3,3)
+xlim([0 mtp])
+subplot(3,3,4)
+xlim([0 mtp])
+subplot(3,3,5)
+xlim([0 mtp])
+subplot(3,3,6)
+xlim([0 mtp])
+subplot(3,3,7)
+xlim([0 mtp])
+subplot(3,3,8)
+xlim([0 mtp])
+subplot(3,3,9)
+xlim([0 mtp])
+
+
+omega_DA=2
+
+s=1,3
+
+subplot(3,3,1)
+ylim([0.8 1])
+subplot(3,3,2)
+ylim([0.8 1])
+subplot(3,3,3)
+ylim([0.8 1])
+subplot(3,3,4)
+ylim([0.7 1])
+subplot(3,3,5)
+ylim([0.7 1])
+subplot(3,3,6)
+ylim([0.7 1])
+subplot(3,3,7)
+ylim([0.4 1])
+subplot(3,3,8)
+ylim([0.4 1])
+subplot(3,3,9)
+ylim([0.4 1])
+
+s=5
+
+subplot(3,3,1)
+ylim([0.7 1])
+subplot(3,3,2)
+ylim([0.7 1])
+subplot(3,3,3)
+ylim([0.7 1])
+subplot(3,3,4)
+ylim([0.5 1])
+subplot(3,3,5)
+ylim([0.5 1])
+subplot(3,3,6)
+ylim([0.5 1])
+subplot(3,3,7)
+ylim([0.3 1])
+subplot(3,3,8)
+ylim([0.3 1])
+subplot(3,3,9)
+ylim([0.3 1])
+
+
+
+
+subplot(3,3,4)
+ylabel('P(t) ','FontSize', 24)
+subplot(3,3,8)
+xlabel('\omega_{c} t','FontSize',24)
+
+
+legend('W-0', 'W-0','eq', 'eq','C-0', 'C-0', 'C-D', 'C-D', 'C-AV', 'C-AV', 'W-AV', 'W-AV', 'W-AVe', 'W-AVe', 'exact')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+************* FIGURE 2 - Transfer rate k(t') as function of time *****************
+SUBPLOT **** 3x3 Full k(t') vs t' at fixed omega_DA=2
+
+
+
+
+
+subplot(3,3,1)
+plot(tp, inhnelb5e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb5e05(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb5e05, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb5e05(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb5e05,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb5e05(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb5e05, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb5e05(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb5e05(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb5e05, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb5e05(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb5e05, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb5e05(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb5e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,2)
+plot(tp, inhnelb5e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb5e1(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb5e1, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb5e1(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb5e1,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb5e1(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb5e1, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb5e1(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb5e1(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb5e1, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb5e1(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb5e1, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb5e1(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb5e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,3)
+plot(tp, inhnelb5e2, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb5e2(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb5e2, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb5e2(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb5e2,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb5e2(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb5e2, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb5e2(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb5e2(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb5e2, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb5e2(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb5e2, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb5e2(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb5e2, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,4)
+plot(tp, inhnelb2e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb2e05(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb2e05, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb2e05(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb2e05,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb2e05(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb2e05, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb2e05(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb2e05(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb2e05, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb2e05(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb2e05, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb2e05(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb2e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,5)
+plot(tp, inhnelb2e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb2e1(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb2e1, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb2e1(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb2e1,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb2e1(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb2e1, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb2e1(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb2e1(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb2e1, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb2e1(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb2e1, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb2e1(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb2e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,6)
+plot(tp, inhnelb2e2, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb2e2(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb2e2, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb2e2(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb2e2,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb2e2(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb2e2, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb2e2(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb2e2(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb2e2, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb2e2(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb2e2, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb2e2(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb2e2, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,7)
+plot(tp, inhnelb1e05, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb1e05(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb1e05, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb1e05(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb1e05,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb1e05(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb1e05, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb1e05(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb1e05(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb1e05, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb1e05(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb1e05, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb1e05(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb1e05, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,8)
+plot(tp, inhnelb1e1, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb1e1(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb1e1, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb1e1(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb1e1,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb1e1(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb1e1, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb1e1(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb1e1(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb1e1, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb1e1(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb1e1, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb1e1(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb1e1, 'color',[0.93 0.69 0.13])
+hold off
+
+subplot(3,3,9)
+plot(tp, inhnelb1e2, 'color',[0.75 0 0.75])
+hold on
+plot(tp(INIT:TPMAX/GAP:TPMAX), inhnelb1e2(INIT:TPMAX/GAP:TPMAX),'d','MarkerSize',7, 'MarkerEdgeColor', [0.75 0 0.75], 'MarkerFaceColor', [0.75 0 0.75])
+plot(tp, marcnelb1e2, 'g')
+plot(tp(INIT+5:TPMAX/GAP:TPMAX), marcnelb1e2(INIT+5:TPMAX/GAP:TPMAX),'>','MarkerSize',7, 'MarkerEdgeColor', 'g', 'MarkerFaceColor', 'g')
+plot(tp, cdnelb1e2,  'color',[0 0.75 0.75])
+plot(tp(INIT+10:TPMAX/GAP:TPMAX), cdnelb1e2(INIT+10:TPMAX/GAP:TPMAX),'V','MarkerSize',7, 'MarkerEdgeColor', [0 0.75 0.75], 'MarkerFaceColor', [0 0.75 0.75])
+plot(tp, cavnelb1e2, 'r')
+plot(tp(INIT+15:TPMAX/GAP:TPMAX), cavnelb1e2(INIT+15:TPMAX/GAP:TPMAX),'^','MarkerSize',7, 'MarkerEdgeColor', 'r', 'MarkerFaceColor', 'r')
+plot(tp, keqb1e2(7) * ones(1,TPMAX), '--', 'color',[0.5 0.5 0.5])
+plot(tp, kmodb1e2, 'color', [0.5 0 0])
+plot(tp(INIT:TPMAX/GAP:TPMAX), kmodb1e2(INIT:TPMAX/GAP:TPMAX), 's','MarkerSize',7, 'MarkerEdgeColor', [0.5 0 0], 'MarkerFaceColor', [0.5 0 0])
+plot(tp, lscnelb1e2, 'b', tp(INIT:TPMAX/GAP:TPMAX) ,lscnelb1e2(INIT:TPMAX/GAP:TPMAX),'bo','MarkerSize',7)
+plot(tp, nelb1e2, 'color',[0.93 0.69 0.13])
+hold off
+
+
+
+
+
+omega_DA = 0
+
+mtp=20
+
+subplot(3,3,1)
+xlim([0 mtp])
+subplot(3,3,2)
+xlim([0 mtp])
+subplot(3,3,3)
+xlim([0 mtp])
+subplot(3,3,4)
+xlim([0 mtp])
+subplot(3,3,5)
+xlim([0 mtp])
+subplot(3,3,6)
+xlim([0 mtp])
+subplot(3,3,7)
+xlim([0 mtp])
+subplot(3,3,8)
+xlim([0 mtp])
+subplot(3,3,9)
+xlim([0 mtp])
+
+
+
+omega_DA = 0
+
+s=1
+
+subplot(3,3,1)
+ylim([0 0.06])
+subplot(3,3,2)
+ylim([0 0.06])
+subplot(3,3,3)
+ylim([0 0.06])
+subplot(3,3,4)
+ylim([0 0.08])
+subplot(3,3,5)
+ylim([0 0.08])
+subplot(3,3,6)
+ylim([0 0.08])
+subplot(3,3,7)
+ylim([0 0.12])
+subplot(3,3,8)
+ylim([0 0.12])
+subplot(3,3,9)
+ylim([0 0.12])
+
+
+
+
+
+omega_DA = 2
+
+s=  1
+
+subplot(3,3,1)
+ylim([-0.005 0.03])
+subplot(3,3,2)
+ylim([-0.005 0.03])
+subplot(3,3,3)
+ylim([-0.005 0.03])
+subplot(3,3,4)
+ylim([0 0.04])
+subplot(3,3,5)
+ylim([0 0.04])
+subplot(3,3,6)
+ylim([0 0.04])
+subplot(3,3,7)
+ylim([0 0.07])
+subplot(3,3,8)
+ylim([0 0.07])
+subplot(3,3,9)
+ylim([0 0.07])
+
+s=  3
+
+subplot(3,3,1)
+ylim([-0.01 0.05])
+subplot(3,3,2)
+ylim([-0.01 0.05])
+subplot(3,3,3)
+ylim([-0.01 0.05])
+subplot(3,3,4)
+ylim([-0.01 0.07])
+subplot(3,3,5)
+ylim([-0.01 0.07])
+subplot(3,3,6)
+ylim([-0.01 0.07])
+subplot(3,3,7)
+ylim([0 0.1])
+subplot(3,3,8)
+ylim([0 0.1])
+subplot(3,3,9)
+ylim([0 0.1])
+
+s= 5
+
+subplot(3,3,1)
+ylim([-0.01 0.05])
+subplot(3,3,2)
+ylim([-0.01 0.05])
+subplot(3,3,3)
+ylim([-0.01 0.05])
+subplot(3,3,4)
+ylim([-0.01 0.07])
+subplot(3,3,5)
+ylim([-0.01 0.07])
+subplot(3,3,6)
+ylim([-0.01 0.07])
+subplot(3,3,7)
+ylim([0 0.1])
+subplot(3,3,8)
+ylim([0 0.1])
+subplot(3,3,9)
+ylim([0 0.1])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
